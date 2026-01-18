@@ -1,4 +1,4 @@
-# Homelab Documentation Repository
+# Homelab – Repository Overview
 
 Dieses Repository enthält die **strukturierte, versionierte Dokumentation** meines Homelabs.
 Es ist **Git-führend** aufgebaut und **Logseq-kompatibel**.

@@ -1,4 +1,4 @@
-# Archiv – README
+# Archiv – Homelab Dokumente
 
 Dieses Verzeichnis enthält **archivierte Dokumente** des Homelabs.
 
