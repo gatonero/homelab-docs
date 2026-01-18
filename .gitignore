@@ -1,0 +1,8 @@
+# Logseq internals
+logseq/
+journals/
+
+# OS / Editor
+.DS_Store
+*.swp
+*.tmp
