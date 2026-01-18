@@ -1,99 +1,71 @@
-page-name:: Betrieb-Overview
 # Betrieb – Overview
+
+Diese Übersicht bündelt alle Dokumente zum **laufenden Betrieb**, zur **Wiederherstellung** und zur **Absicherung** des Homelabs.
+
+Sie ist der Einstiegspunkt für alles, was im Alltag, im Fehlerfall oder bei Systemwechseln relevant ist.
+
+---
 
 ## Zweck
 
-Dieses Dokument ist der **Einstiegspunkt** für alle betrieblichen Themen des HomeLabs.
+Der Bereich **Betrieb** beantwortet insbesondere:
 
-Es beschreibt, **wie das System im laufenden Betrieb stabil gehalten wird**, wie auf Störungen reagiert wird und welche Dokumente **unter Zeitdruck** relevant sind.
-
-Der Fokus liegt auf **Wiederherstellbarkeit, Klarheit und Stressresistenz**.
-
----
-
-## Geltungsbereich
-
-Der Ordner *Betrieb* umfasst:
-
-* Restore- und Wiederherstellungsszenarien
-* Notfall- und Drill-Dokumente
-* Onboarding-Prozesse mit Betriebsrelevanz
-
-Er behandelt **nicht**:
-
-* Architekturentscheidungen
-* Detailkonfiguration einzelner Services
-* experimentelle Änderungen
+* Wie wird das System sicher betrieben?
+* Wie wird dokumentations- und versionssicher gearbeitet?
+* Wie läuft ein Restore strukturiert ab?
+* Wie wird der Ernstfall geübt?
 
 ---
 
-## Betriebliche Leitprinzipien
+## Enthaltene Dokumente
 
-* Betrieb priorisiert **Stabilität vor Optimierung**
-* Unter Stress zählt **Dokumentation**, nicht Erinnerung
-* Restore ist ein **definierter Prozess**, keine Reparaturarbeit
-* Änderungen am Betrieb folgen festen Checklisten
+### Versionskontrolle & Sicherung
 
-Improvisation ist kein Betriebsmodell.
+* **GitHub-Setup & Workflow**
+  Dokumentiert die verbindliche Nutzung von Git und GitHub zur externen Sicherung und Versionierung.
 
----
-
-## Kritische Betriebsszenarien
-
-Der Betrieb fokussiert sich auf wenige, realistische Szenarien:
-
-* Ausfall der Docker-VM
-* Nicht erreichbare Services hinter dem Reverse Proxy
-* DNS- oder TLS-bezogene Erreichbarkeitsprobleme
-
-Für jedes dieser Szenarien existieren **konkrete, getestete Dokumente**.
+  → `pages/Betrieb/GitHub-Setup.md`
 
 ---
 
-## Dokumente in diesem Ordner
+### Notfall & Wiederherstellung
 
-* **Notfallrestore-Docker-VM.md**
-  Schritt-für-Schritt-Checkliste für den Restore der zentralen Service-VM.
+* **Notfallrestore – Docker-VM**
+  Checkliste für den reproduzierbaren Restore der zentralen Service-VM.
 
-* **Restore-Drill-Docker-VM.md**
-  Übungsszenario zur regelmäßigen Überprüfung der Restore-Fähigkeit.
+  → `pages/Betrieb/Notfallrestore-Docker-VM.md`
 
-* **Service-Onboarding.md**
-  Betriebsrelevante Aspekte beim Hinzufügen neuer Services.
+* **Restore-Drill – Docker-VM**
+  Übungsszenario zur Überprüfung der Wiederherstellungsfähigkeit.
 
----
-
-## Nutzung im Ernstfall
-
-* Dokumente in diesem Ordner sind so geschrieben, dass sie:
-
-  * ohne Kontextwissen verständlich sind
-  * klare Reihenfolgen vorgeben
-  * Entscheidungen abnehmen
-
-Im Notfall wird **nicht interpretiert**, sondern abgearbeitet.
+  → `pages/Betrieb/Restore-Drill-Docker-VM.md`
 
 ---
 
-## Änderungsregeln
+### Service-Betrieb
 
-* Betriebsdokumente dürfen angepasst werden, wenn:
+* **Service-Onboarding**
+  Vorgehen für das strukturierte Hinzufügen neuer Services.
 
-  * ein Drill Lücken aufdeckt
-  * ein realer Vorfall neue Erkenntnisse liefert
-
-Jede Anpassung dient der **Reduktion von Unsicherheit**.
+  → `pages/Betrieb/Service-Onboarding.md`
 
 ---
 
-## Merksatz
+## Arbeitsprinzipien (verbindlich)
 
-> Betrieb bedeutet, vorbereitet zu sein – nicht, schnell zu sein.
+* Betrieb folgt dokumentierten Prozessen
+* Wiederherstellung wird **geübt**, nicht angenommen
+* Versionskontrolle ist Teil des Betriebs
+* Dokumentation wird **nachgezogen**, nicht improvisiert
 
 ---
 
 ## Status
 
-* gültig
-* verbindlich
-* notfallrelevant
+* Rolle: Operativer Einstiegspunkt
+* Änderungsfrequenz: niedrig bis mittel
+* Verbindlichkeit: hoch
+
+---
+
+> **Was nicht dokumentiert ist, gilt im Betrieb als nicht vorhanden.**

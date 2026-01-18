@@ -1,76 +1,115 @@
 # Homelab – Gesamtübersicht
 
+Diese Seite ist der **zentrale Einstiegspunkt** für die gesamte Homelab-Dokumentation.
+
+Sie dient als **Orientierung**, nicht als Detailreferenz, und verlinkt auf die thematischen Hauptbereiche.
+
+---
+
 ## Zweck
 
-Dieses Dokument ist der **Einstiegspunkt** für alle architekturbezogenen Inhalte des HomeLabs.
+Diese Übersicht beantwortet auf einen Blick:
 
-Es beschreibt **keine technischen Schritte**, sondern legt die **architektonischen Leitplanken** fest, innerhalb derer Betrieb, Erweiterungen und Entscheidungen stattfinden.
+* Welche Themenbereiche existieren?
+* Wo finde ich Architektur‑Entscheidungen?
+* Wo ist Betriebs‑ und Restore‑Wissen dokumentiert?
+* Wo liegen Service‑spezifische Details?
 
-Die Architektur-Dokumente beantworten nicht die Frage *wie* etwas gebaut wird, sondern *warum* es so gebaut ist.
-
----
-
-## Geltungsbereich
-
-Dieser Ordner beschreibt:
-
-* die Gesamtarchitektur des HomeLabs
-* grundlegende Strukturentscheidungen
-* bewusste Abgrenzungen und Nicht-Ziele
-
-Die hier beschriebenen Prinzipien sind **verbindlich** für:
-
-* Netzwerk- und DNS-Design
-* Service-Onboarding
-* NetBox-Modellierung
-* Betriebs- und Restore-Konzepte
+Sie ersetzt **keine** Detaildokumentation.
 
 ---
 
-## Inhaltliche Schwerpunkte
+## Struktur der Dokumentation
 
-Die Architektur-Dokumentation fokussiert sich auf:
+Die Dokumentation ist in **klar getrennte Themenbereiche** gegliedert:
+
+### Architektur
+
+Grundlegende, langfristig gültige Entscheidungen.
 
 * Trennung von Control Plane und Service Plane
-* Stabilität vor Komfort
-* klare Verantwortlichkeiten von Komponenten
-* Vermeidung unnötiger Kopplungen
+* Systemrollen und Verantwortlichkeiten
+* Bewusste Ausschlüsse ("Was wird nicht getan?")
 
-Details zur konkreten Umsetzung (Docker, Compose, CLI-Befehle) gehören **nicht** in diesen Ordner.
-
----
-
-## Dokumente in diesem Ordner
-
-* **Architektur-Gesamt.md**
-  Gesamtüberblick über das HomeLab, zentrale Entscheidungen und Merksätze.
-
-* **Hardware.md**
-  Überblick über eingesetzte Hardware und deren Rolle im Gesamtsystem.
-
-* **LAN-Konfiguration.md**
-  Beschreibung der logischen Netzstruktur und Segmentierung.
+→ `pages/Architektur/`
 
 ---
 
-## Änderungsregeln
+### Netzwerk · DNS · TLS
 
-* Änderungen an Architektur-Dokumenten sind selten
-* jede Änderung ist **bewusst** und begründet
-* Architektur wird nur angepasst, wenn sich **Prinzipien** ändern
+Alles, was Namensauflösung, Erreichbarkeit und Sicherheit betrifft.
 
-Reine Betriebs- oder Implementierungsdetails führen **nicht** zu Architekturänderungen.
+* DNS‑Konzept (`home.arpa`)
+* Reverse Proxy
+* TLS‑Terminierung
+* Control‑Plane‑Policy
+
+→ `pages/Netzwerk-DNS-TLS/`
 
 ---
 
-## Merksatz
+### NetBox
 
-> Architektur ist das, was auch dann noch gilt, wenn alles andere kaputt ist.
+Modellierung und Pflege der Infrastruktur‑Struktur.
+
+* Wann ist NetBox führend?
+* Templates vs. Custom Services
+* Arbeits‑ und Pflegekonzept
+
+→ `pages/NetBox/`
+
+---
+
+### Services
+
+Service‑spezifische Dokumentation.
+
+* Aufbau
+* Besonderheiten
+* Abweichungen von Standards
+
+→ `pages/Services/`
+
+---
+
+### Betrieb
+
+Alles für den **laufenden Betrieb** und den **Ernstfall**.
+
+* Restore‑Checklisten
+* Drill‑Szenarien
+* Onboarding neuer Services
+
+→ `pages/Betrieb/`
+
+---
+
+## Arbeitsprinzipien (Kurzfassung)
+
+* Architektur wird **bewusst entschieden**
+* Betrieb ist **reproduzierbar**
+* Dokumentation ist **verbindlich**
+* Git ist die **Source of Truth**
+* Logseq ist **Editor und Graph**, nicht Quelle
+
+---
+
+## Einstiegsempfehlung
+
+Neu oder länger nicht hier gewesen?
+
+1. Architektur‑Gesamtüberblick lesen
+2. Control‑Plane‑Policy prüfen
+3. Aktuelle Betriebs‑Checklisten sichten
 
 ---
 
 ## Status
 
-* gültig
-* verbindlich
-* Grundlage für alle weiteren Dokumente
+* Rolle: Einstiegspunkt
+* Änderungsfrequenz: gering
+* Verbindlichkeit: hoch
+
+---
+
+> **Diese Seite erklärt, wo Wissen liegt – nicht das Wissen selbst.**

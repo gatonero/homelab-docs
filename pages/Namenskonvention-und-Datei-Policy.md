@@ -1,15 +1,13 @@
-# Namenskonvention & Datei-Policy
+# Namenskonvention und Datei-Policy
 
-## Zweck
+Dieses Dokument definiert **verbindliche Regeln** für Dateinamen, Seitentitel und Struktur
+im Homelab-Dokumentations-Repository.
 
-Dieses Dokument definiert die **verbindlichen Regeln** für Dateinamen, Ordnerstruktur und Dokumenttypen in diesem Repository.
+Ziel ist eine **dauerhaft konfliktfreie Nutzung** mit:
 
-Ziel ist:
-
-* langfristige Wartbarkeit
-* eindeutige Orientierung (auch unter Stress)
-* saubere Git-Historie
-* problemlose Nutzung mit Logseq
+* Git
+* Logseq
+* Markdown-Editoren
 
 Diese Regeln sind **verbindlich für alle bestehenden und zukünftigen Dateien**.
 
@@ -17,130 +15,142 @@ Diese Regeln sind **verbindlich für alle bestehenden und zukünftigen Dateien**
 
 ## 1. Grundprinzipien
 
-* Dateinamen sind **stabiler als Inhalte**
-* Namen dienen der **Navigation**, nicht der Beschreibung jedes Details
-* Konsistenz ist wichtiger als sprachliche Perfektion
-* Keine impliziten Bedeutungen
+* **Eine Datei = eine Seite**
+* **Ein global eindeutiger Seitentitel (`# …`)**
+* **Git ist führend, Logseq ist Darstellung**
+* **Struktur schlägt Bequemlichkeit**
+
+Alles, was diese Prinzipien verletzt, gilt als **Fehlkonfiguration**.
 
 ---
 
-## 2. Sprache & Zeichensatz
+## 2. Seitentitel (H1) – kritisch
 
-### Sprache
+### Verbindliche Regeln
 
-* Dokumente: **Deutsch**
-* Fachbegriffe: Englisch, wenn etabliert (z. B. DNS, TLS, Backend)
-
-### Zeichensatz
-
-* UTF-8
-* **keine Sonderzeichen** in Dateinamen
-* keine Umlaute, keine Akzente
-* keine Backticks, Klammern oder Sonder-Symbole
-
----
-
-## 3. Dateinamen – verbindliches Schema
-
-### Allgemeine Regeln
-
-* ausschließlich Kleinbuchstaben
-* Wörter mit Bindestrich `-` trennen
-* keine Leerzeichen
-* keine Versionsnummern im Dateinamen
-
-### Erlaubt
-
-```
-architektur-gesamt.md
-lokales-ssl-home-arpa.md
-service-onboarding.md
-```
+* Jede Markdown-Datei beginnt mit **genau einer** H1-Überschrift (`#`)
+* Dieser Titel ist **global eindeutig** im gesamten Repository
+* Ordnernamen spielen **keine Rolle** für Logseq
 
 ### Verboten
 
-```
-Lokales SSL Setup.md
-netbox_doku_final_v3.md
-README (final).md
-```
+* identische Titel in mehreren Dateien
+* generische Titel wie:
+
+  * `# Overview`
+  * `# 00-Overview`
+  * `# Notes`
+
+### Erlaubt / empfohlen
+
+* sprechende Titel mit Kontext:
+
+  * `# Architektur – Overview`
+  * `# NetBox – Arbeitsmodell`
+  * `# Betrieb – Restore-Drill`
+
+---
+
+## 3. Dateinamen
+
+### Allgemeine Regeln
+
+* keine Leerzeichen
+* keine Sonderzeichen außer `-`
+* UTF‑8 ist erlaubt
+* Endung immer `.md`
+
+### Empfohlenes Schema
+
+* Inhalte: `Klarer-Name.md`
+* Overviews: `Overview-<Bereich>.md`
+
+### Beispiele
+
+| Zweck                 | Dateiname                     |
+| --------------------- | ----------------------------- |
+| Architektur-Übersicht | `Overview-Architektur.md`     |
+| Service-Doku          | `Jellyfin.md`                 |
+| Richtlinie            | `Control-Plane-Policy-NPM.md` |
 
 ---
 
 ## 4. Ordnerstruktur
 
-* Jeder Ordner enthält **genau eine** `00-overview.md`
-* Weitere Dateien sind thematisch untergeordnet
-* Keine verschachtelten Unterordner ohne Notwendigkeit
+Die Ordnerstruktur bildet **Themenbereiche**, nicht Seitenidentitäten.
 
-Die Ordnerstruktur ist **Teil der Architektur**.
+```text
+pages/
+├── Architektur/
+├── Betrieb/
+├── NetBox/
+├── Netzwerk-DNS-TLS/
+├── Services/
+```
 
----
+### Regeln
 
-## 5. Dokumenttypen
-
-### 00-Overview.md
-
-* Einstiegspunkt eines Ordners
-* normativ und navigational
-* keine Anleitungen
-* keine Codeblöcke
-
-### Architektur-Dokumente
-
-* beschreiben Prinzipien und Entscheidungen
-* ändern sich selten
-* keine Schritt-für-Schritt-Anleitungen
-
-### Betriebs-Dokumente
-
-* klar, linear, checklistenartig
-* für Nutzung unter Zeitdruck
-* keine Hintergrunddiskussionen
-
-### Service-Dokumente
-
-* beschreiben eine konkrete Umsetzung
-* folgen immer dem Service-Onboarding
-* enthalten nur servicespezifische Abweichungen
+* Dateien dürfen **verschoben**, aber nicht dupliziert werden
+* Overviews liegen **immer im jeweiligen Ordner**
+* Es gibt **keine** mehrfach verwendeten `00-Overview.md`
 
 ---
 
-## 6. Dateiinhalt – formale Regeln
+## 5. Logseq-spezifische Regeln
 
-* genau **ein Thema pro Datei**
-* klare Überschriftenhierarchie
-* keine Vermischung von Architektur und Betrieb
-* Merksätze explizit kennzeichnen
+* Logseq nutzt den **Seitentitel**, nicht den Dateinamen
+* Gleichlautende Titel führen zu:
 
----
+  * Importfehlern
+  * übersprungenen Seiten
+  * inkonsistenten Graphen
 
-## 7. Änderungen & Versionierung
+### Nach strukturellen Änderungen
 
-* Änderungen erfolgen **inhaltlich**, nicht durch neue Dateien
-* keine Kopien oder Varianten
-* Historie gehört ins Git, nicht in den Dateinamen
+Pflichtschritte:
 
----
-
-## 8. Review-Regeln
-
-* jede strukturelle Änderung benötigt Review
-* Architekturänderungen sind dokumentationspflichtig
-* bei Unklarheit: **nicht ändern**, sondern klären
+1. Logseq schließen
+2. Lokales Verzeichnis `logseq/` löschen
+3. Logseq neu starten und neu indexieren
 
 ---
 
-## Merksätze
+## 6. Git-Regeln
 
-* Dateinamen sind Teil der Architektur
-* Ordnung schlägt Vollständigkeit
-* Was nicht auffindbar ist, existiert nicht
+* Versioniert werden:
+
+  * `pages/`
+  * `assets/`
+  * `files/`
+
+* Niemals versioniert werden:
+
+  * `logseq/`
+  * `journals/`
+
+* Jede strukturelle Änderung:
+
+  * eigener Commit
+  * sprechende Commit-Message
 
 ---
 
-## Status
+## 7. Kontrollfragen vor neuen Dateien
 
-* verbindlich
-* repo-weit gültig
-* Grundlage für Git-Nutzung
+Vor dem Anlegen einer neuen Datei müssen alle Fragen mit **Ja** beantwortet sein:
+
+* Ist der Seitentitel eindeutig?
+* Ist der Dateiname eindeutig?
+* Passt die Datei thematisch in genau **einen** Ordner?
+* Wird keine bestehende Seite logisch dupliziert?
+
+Wenn nicht: **nicht anlegen**.
+
+---
+
+## 8. Merksatz
+
+> **In Logseq ist der Titel der Primärschlüssel.**
+> **In Git ist die Datei der Primärschlüssel.**
+
+Beides muss eindeutig sein – immer.

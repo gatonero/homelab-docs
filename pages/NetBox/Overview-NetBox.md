@@ -1,99 +1,92 @@
-page-name:: NetBox-Overview
 # NetBox – Overview
+
+Diese Übersicht beschreibt die Rolle von **NetBox** im Homelab sowie die verbindlichen Regeln für dessen Nutzung.
+
+NetBox ist **Modellierungs- und Referenzsystem**, nicht Betriebswerkzeug.
+
+---
 
 ## Zweck
 
-Dieses Dokument ist der **Einstiegspunkt** für die Nutzung von NetBox im HomeLab.
+Der NetBox-Bereich beantwortet:
 
-Es beschreibt **die Rolle von NetBox im Gesamtsystem**, die Grenzen seiner Nutzung und das verbindliche Arbeitsmodell. NetBox dient der **Modellierung von Struktur und Architektur**, nicht der Abbildung jedes technischen Details.
+* Welche Systeme und Services existieren?
+* Welche Rollen und Abhängigkeiten sind architektonisch relevant?
+* Wann ist NetBox führend – und wann bewusst nicht?
 
----
-
-## Geltungsbereich
-
-Der NetBox-Ordner regelt:
-
-* wie Infrastruktur und Services modelliert werden
-* wann NetBox führend ist und wann bewusst nicht
-* die Entscheidung zwischen **Service Templates** und **Custom Services**
-
-Die hier beschriebenen Regeln gelten für **alle Einträge in NetBox**.
+NetBox beschreibt den **Soll-Zustand** der Infrastruktur.
 
 ---
 
-## Rolle von NetBox im HomeLab
+## Rolle von NetBox im Homelab
 
-NetBox ist die **Source of Truth für Struktur**:
+NetBox ist die **Source of Truth für Struktur und Architektur**:
 
-* welche Systeme existieren
-* welche Rollen sie haben
-* wie Services logisch zueinander stehen
-* welche Abhängigkeiten architektonisch relevant sind
+* Devices und Virtual Machines
+* Rollen und Verantwortlichkeiten
+* Application Services
+* Abhängigkeiten zwischen Infrastruktur und Applikationen
 
-NetBox ist **nicht**:
+NetBox ist **kein**:
 
-* ein Orchestrator
-* ein Konfigurationsmanagement
-* ein Logbuch
-* ein Monitoring-System
-
----
-
-## Verbindliches Arbeitsmodell
-
-Die Nutzung von NetBox folgt einem festen Ablauf:
-
-1. **Denken & Planen** – Struktur in NetBox modellieren
-2. **Bauen** – Umsetzung in der Realität (Proxmox, Docker, Netzwerk)
-3. **Abgleichen** – NetBox ergänzen, wo Struktur betroffen ist
-4. **Dokumentieren** – Architektur nur bei Regeländerungen anpassen
-
-Diese Reihenfolge ist verbindlich.
+* Orchestrator
+* Konfigurations-Repository
+* Logbuch
+* Monitoring-System
 
 ---
 
-## Service-Modellierung
+## Enthaltene Dokumente
 
-NetBox kennt zwei Arten von Services:
+* **NetBox – Arbeitsmodell**
+  Beschreibt Pflegekonzept, Änderungsarten und Entscheidungslogik.
 
-* **Service Templates**
-
-  * für wiederkehrende technische Muster
-  * stabil in Port, Protokoll und Rolle
-
-* **Custom Services**
-
-  * für einmalige, temporäre oder experimentelle Dienste
-
-Die Entscheidung folgt klaren Kriterien und ist nicht optional.
+  → `pages/NetBox/NetBox-Arbeitsmodell.md`
 
 ---
 
-## Dokumente in diesem Ordner
+## Arbeitsprinzipien (verbindlich)
 
-* **NetBox-Arbeitsmodell.md**
-  Ausführliche Beschreibung der Pflege- und Entscheidungslogik.
-
----
-
-## Änderungsregeln
-
-* NetBox wird nicht bei jeder technischen Änderung angepasst
-* Einträge werden nur geändert, wenn sich **Struktur oder Abhängigkeiten** ändern
-* Notfälle werden **nicht** in NetBox gelöst, sondern danach reflektiert
-
-NetBox bleibt bewusst ruhig und übersichtlich.
+* Struktur wird **zuerst** in NetBox gedacht
+* Technik wird **zuerst** in der Realität umgesetzt
+* NetBox wird **danach** abgeglichen
+* Nicht jede technische Änderung gehört in NetBox
 
 ---
 
-## Merksatz
+## Typische Anwendungsfälle
 
-> NetBox erklärt die Architektur – es betreibt sie nicht.
+### NetBox zuerst
+
+* neue VM oder neues Device
+* neuer Service
+* neue Rolle oder Kategorie
+* neue Abhängigkeiten
+
+### Realität zuerst
+
+* Konfigurationsänderungen
+* Performance-Tuning
+* Zertifikatserneuerung
+* temporäre Anpassungen
+
+---
+
+## Abgrenzung zu anderen Bereichen
+
+* **Architektur** definiert Grundregeln und Prinzipien
+* **NetBox** modelliert konkrete Instanzen innerhalb dieser Regeln
+* **Betrieb** beschreibt Wiederherstellung und Alltag
+* **Services** dokumentieren Implementierungsdetails
 
 ---
 
 ## Status
 
-* gültig
-* verbindlich
-* architekturführend
+* Rolle: Strukturelle Referenz
+* Änderungsfrequenz: niedrig
+* Verbindlichkeit: hoch
+
+---
+
+> **NetBox hilft beim Denken – nicht beim Tippen von Konfigurationen.**

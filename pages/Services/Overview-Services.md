@@ -1,103 +1,84 @@
-page-name:: Services-Overview
 # Services – Overview
+
+Diese Übersicht beschreibt den Umgang mit **Services** im Homelab und dient als Einstiegspunkt für service‑spezifische Dokumentation.
+
+Services sind **konkrete Anwendungen**, die innerhalb der vorgegebenen Architektur betrieben werden.
+
+---
 
 ## Zweck
 
-Dieses Dokument ist der **Einstiegspunkt** für alle servicebezogenen Dokumentationen im HomeLab.
+Der Bereich **Services** beantwortet:
 
-Es beschreibt die **gemeinsamen Regeln, Erwartungen und den Lebenszyklus** aller Services – unabhängig davon, ob sie auf der Docker-VM, auf dem NAS oder auf einer dedizierten VM laufen.
+* Welche Services existieren aktuell?
+* Wie sind sie grundsätzlich angebunden (DNS, Proxy, Backend)?
+* Wo sind Besonderheiten und Abweichungen dokumentiert?
 
-Dieses Dokument ist **normativ**, nicht service-spezifisch.
-
----
-
-## Geltungsbereich
-
-Der Ordner *Services* umfasst:
-
-* alle dokumentierten Applikations-Services
-* deren Einbindung in DNS, Reverse Proxy und TLS
-* service-spezifische Besonderheiten, **nicht** die Grundarchitektur
-
-Die hier beschriebenen Regeln gelten für **jeden Service ohne Ausnahme**.
+Diese Übersicht ersetzt **keine** Detaildokumentation einzelner Services.
 
 ---
 
-## Was ein „Service“ ist
+## Rolle von Services im Gesamtsystem
 
-Ein Service ist eine **benutzerseitig erreichbare Anwendung** oder eine klar abgegrenzte Applikationskomponente, die:
+Services:
 
-* unter einem festen Namen erreichbar ist
-* eine definierte Aufgabe erfüllt
-* in DNS, Proxy und ggf. Monitoring eingebunden ist
+* laufen **innerhalb** der Service Plane
+* folgen den architektonischen Vorgaben
+* sind austauschbar
+* hängen von Infrastruktur‑Services ab (DNS, Reverse Proxy)
 
-Ein Service ist **kein**:
-
-* Infrastruktur-Baustein (DNS, Proxy, Router)
-* temporärer Test ohne Lebenszyklus
-* internes Backend ohne Benutzerbezug
+Services definieren **keine Architekturregeln**, sondern **nutzen** sie.
 
 ---
 
-## Gemeinsame Service-Regeln
+## Enthaltene Dokumente
 
-Für alle Services gilt:
+### Aktive Services
 
-* jeder Service folgt dem **Service-Onboarding-Prozess**
-* DNS-Namen folgen dem Schema `service.home.arpa`
-* TLS endet **immer** am Reverse Proxy
-* Backends sprechen **ausschließlich HTTP**
-* Services sind logisch von Infrastruktur abhängig
+* **Jellyfin**
+  Medienserver mit externer Datenquelle (QNAP) und Docker‑Deployment.
 
-Abweichungen sind **nicht erlaubt**, sondern müssen als neue Architekturentscheidung dokumentiert werden.
+  → `pages/Services/Jellyfin.md`
 
----
+* **Paperless‑ngx**
+  Dokumentenmanagementsystem hinter Reverse Proxy.
 
-## Lebenszyklus eines Services
-
-Jeder Service durchläuft dieselben Phasen:
-
-1. Planung & Modellierung (NetBox)
-2. Technische Bereitstellung
-3. Reverse Proxy & TLS
-4. DNS-Anbindung
-5. Validierung
-6. Betrieb & Monitoring
-7. Stilllegung oder Migration
-
-Dokumentation begleitet den gesamten Lebenszyklus.
+  → `pages/Services/Paperless-ngx.md`
 
 ---
 
-## Dokumente in diesem Ordner
+## Dokumentationsprinzipien (verbindlich)
 
-* **Jellyfin.md**
-  Medienserver mit besonderem Fokus auf Storage- und Berechtigungskonzepte.
+Für jeden Service gilt:
 
-* **Paperless-ngx.md**
-  Dokumentenmanagement mit Backend- und Proxy-Trennung.
+* **Was** wird betrieben?
+* **Wo** läuft der Service?
+* **Wie** ist er angebunden?
+* **Welche Abweichungen** gibt es vom Standard?
 
-Weitere Services werden nach demselben Muster ergänzt.
+Nicht dokumentiert werden:
 
----
-
-## Abgrenzung zur Architektur
-
-* Architektur definiert **Regeln und Prinzipien**
-* Service-Dokumente beschreiben **konkrete Umsetzungen**
-
-Service-Dokumente dürfen Architektur **nicht verändern**.
+* triviale Konfigurationsoptionen
+* experimentelle Tests
+* kurzlebige Debug‑Schritte
 
 ---
 
-## Merksatz
+## Abgrenzung zu anderen Bereichen
 
-> Services sind austauschbar – die Regeln, nach denen sie integriert werden, nicht.
+* **Architektur**: legt Regeln fest
+* **NetBox**: modelliert Services strukturell
+* **Services**: dokumentieren konkrete Implementierungen
+* **Betrieb**: beschreibt Wiederherstellung und Alltag
 
 ---
 
 ## Status
 
-* gültig
-* verbindlich
-* Grundlage für alle Service-Dokumente
+* Rolle: Service‑Einstiegspunkt
+* Änderungsfrequenz: mittel
+* Verbindlichkeit: hoch
+
+---
+
+> **Services dürfen variieren – die Architektur nicht.**
