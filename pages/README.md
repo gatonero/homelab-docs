@@ -10,6 +10,9 @@ Die Dokumentation dient:
 * der **langfristigen Wartbarkeit**
 * der Nutzung als **persönliche Wissensbasis (PKM)**
 
+> Alle technischen Beispiele, IP-Adressen, Hostnamen und Konfigurationen
+> sind abstrahiert und nicht 1:1 als produktive Umgebung zu verstehen.
+
 ---
 - ## Zielsetzung
   
@@ -146,6 +149,14 @@ Die Dokumentation dient:
   
   ---
   
+  
   **Dieses Repository ist kein Tagebuch.**
   **Es ist eine technische Referenz.**
+  
+  ---
+- ## License
+  
+  This documentation is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).  See the LICENSE file for details.
+  
+  ---
 -
