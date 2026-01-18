@@ -148,15 +148,14 @@ Die Dokumentation dient:
   * Erweiterbar: ja
   
   ---
+- ## License
+  
+  This documentation is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).  See the LICENSE file for details.
+  
+  ---
   
   
   **Dieses Repository ist kein Tagebuch.**
   **Es ist eine technische Referenz.**
   
   ---
-- ## License
-  
-  This documentation is licensed under the  Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).  See the LICENSE file for details.
-  
-  ---
--
