@@ -159,3 +159,10 @@ Die Dokumentation dient:
   **Es ist eine technische Referenz.**
   
   ---
+---
+
+## English Documentation
+
+An English version of this documentation is available under:
+
+- `pages-en/`
