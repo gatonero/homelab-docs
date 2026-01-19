@@ -1,3 +1,6 @@
+---
+logseq: false
+---
 # Homelab Documentation
 
 This repository contains documentation for a personal homelab setup
