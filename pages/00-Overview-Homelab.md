@@ -24,7 +24,11 @@ ihrer Darstellung auf GitHub.
 
 ## Struktur der Dokumentation
 
-- **Architektur**  
+- **Gesamtzusammenhang**  
+  [`Architektur/Gesamtzusammenhang.md`](Architektur/Gesamtzusammenhang.md)  
+  Uebergreifender Kontext und Abhaengigkeiten zwischen allen Bereichen.
+
+  - **Architektur**  
   [`Architektur/Overview-Architektur.md`](Architektur/Overview-Architektur.md)  
   Gesamtaufbau, Rollen, Abhaengigkeiten und Integrationsprinzipien.
 
@@ -47,10 +51,6 @@ ihrer Darstellung auf GitHub.
 - **Governance**  
   [`Governance/Dokumentationsprinzipien.md`](Governance/Dokumentationsprinzipien.md)  
   Dokumentationsregeln, Review-Prozesse und Versionierung.
-
-- **Gesamtzusammenhang**  
-  [`Architektur/Gesamtzusammenhang.md`](Architektur/Gesamtzusammenhang.md)  
-  Uebergreifender Kontext und Abhaengigkeiten zwischen allen Bereichen.
 
 ## Abgrenzung
 Diese Seite enthaelt keine technischen Details.
