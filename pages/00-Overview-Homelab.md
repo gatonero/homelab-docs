@@ -24,6 +24,10 @@ ihrer Darstellung auf GitHub.
 
 ## Struktur der Dokumentation
 
+- **Governance**  
+  [`Governance/Dokumentationsprinzipien.md`](Governance/Dokumentationsprinzipien.md)  
+  Dokumentationsregeln, Review-Prozesse und Versionierung.
+
 - **Gesamtzusammenhang**  
   [`Architektur/Gesamtzusammenhang.md`](Architektur/Gesamtzusammenhang.md)  
   Uebergreifender Kontext und Abhaengigkeiten zwischen allen Bereichen.
@@ -47,10 +51,6 @@ ihrer Darstellung auf GitHub.
 - **NetBox / Inventar**  
   [`NetBox/Overview-NetBox.md`](NetBox/Overview-NetBox.md)  
   Inventarisierungsmodell, Rollen, Beziehungen und Source of Truth.
-
-- **Governance**  
-  [`Governance/Dokumentationsprinzipien.md`](Governance/Dokumentationsprinzipien.md)  
-  Dokumentationsregeln, Review-Prozesse und Versionierung.
 
 ## Abgrenzung
 Diese Seite enthaelt keine technischen Details.
