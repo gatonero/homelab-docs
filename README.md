@@ -44,6 +44,31 @@ Each layer builds on the previous ones.
 
 ---
 
+## Start Here
+
+If you are new to this documentation, start with the following pages:
+
+- **Homelab Overview**  
+  [`pages/00-Overview-Homelab.md`](pages/00-Overview-Homelab.md)  
+  High-level introduction and conceptual entry point.
+
+- **Architecture Overview**  
+  [`pages/Architektur/Overview-Architektur.md`](pages/Architektur/Overview-Architektur.md)  
+  Structural principles, roles, and dependencies.
+
+- **Operations Overview**  
+  [`pages/Betrieb/Overview-Betrieb.md`](pages/Betrieb/Overview-Betrieb.md)  
+  Backup, restore, monitoring, and lifecycle concepts.
+
+- **Security Overview**  
+  [`pages/Sicherheit/Zugriffsmodell.md`](pages/Sicherheit/Zugriffsmodell.md)  
+  Access models and security boundaries.
+
+- **Inventory / NetBox Overview**  
+  [`pages/NetBox/Overview-NetBox.md`](pages/NetBox/Overview-NetBox.md)  
+  Inventory model and source-of-truth concepts.
+---
+
 ## Guiding Principles
 
 - Conceptual first, implementation second
