@@ -56,4 +56,47 @@ Each layer builds on the previous ones.
 
 ## Intended Audience
 
-This documentation is written for **technically experienced ad**
+This documentation is written for **technically experienced administrators and engineers**.
+
+It is not a step-by-step beginner tutorial. Instead, it is intended to serve as:
+
+- a technical reference
+- a decision log
+- a long-term knowledge base
+
+---
+
+## Versions
+
+Releases mark **stable reference points** of the documentation:
+
+- `v1.x` – initial documentation
+- `v2.0.0` – canonical structure established
+- `v2.1.0` – consolidated architecture, operations, security, and governance
+
+The `main` branch always reflects the latest stable state.
+
+---
+
+## Logseq and GitHub
+
+The same content is also maintained in a **Logseq graph** for local knowledge management and navigation.
+
+- **GitHub** is used for canonical version control, releases, and external reference
+- **Logseq** is used as a working environment and exploration tool
+
+---
+
+## License
+
+This documentation is intended for learning, inspiration, and reuse.
+
+See [`LICENSE`](LICENSE) for details.
+
+---
+
+## Status
+
+Current stable release: **v2.1.0**
+
+The documentation is actively maintained and extended in small, deliberate steps.
