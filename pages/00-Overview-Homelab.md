@@ -28,7 +28,7 @@ ihrer Darstellung auf GitHub.
   [`Architektur/Gesamtzusammenhang.md`](Architektur/Gesamtzusammenhang.md)  
   Uebergreifender Kontext und Abhaengigkeiten zwischen allen Bereichen.
 
-  - **Architektur**  
+- **Architektur**  
   [`Architektur/Overview-Architektur.md`](Architektur/Overview-Architektur.md)  
   Gesamtaufbau, Rollen, Abhaengigkeiten und Integrationsprinzipien.
 
