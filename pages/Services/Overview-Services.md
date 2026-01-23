@@ -4,6 +4,8 @@ title: "Services - Overview"
 
 # Services - Overview
 
+← Zurueck zur [Homelab-Overview](../00-Overview-Homelab.md)
+
 Uebersicht ueber alle im Homelab betriebenen Dienste und deren Einordnung
 in die Gesamtarchitektur.
 
@@ -39,5 +41,13 @@ Konfigurationsdetails. Solche Informationen befinden sich auf den
 jeweiligen Service-spezifischen Seiten.
 
 ## Weiterfuehrend
-Detailseiten beschreiben einzelne Services, deren Architektur,
-Betriebskonzepte und Besonderheiten.
+
+Die folgenden Detailseiten beschreiben das Service-Modell sowie die im Homelab
+betriebenen Dienste:
+
+- [Service-Modell](Service-Modell.md)
+- [Jellyfin](Jellyfin.md)
+- [Paperless-ngx](Paperless-ngx.md)
+- [Reverse Proxy](Reverse-Proxy.md)
+- [DNS](DNS.md)
+- [Monitoring](Monitoring.md)
