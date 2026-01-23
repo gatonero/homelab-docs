@@ -64,8 +64,9 @@ Diese Seite enthaelt keine:
 Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
+
 Weitere Seiten vertiefen unter anderem:
 
-- Rollen- und Beziehungsmodelle
-- NetBox als Source of Truth
+- [Rollen und Beziehungen](Rollen-und-Beziehungen.md)
+- [NetBox als Source of Truth](NetBox-als-Source-of-Truth.md)
 - Zusammenspiel mit Betrieb und Dokumentation
