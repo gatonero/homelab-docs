@@ -51,3 +51,11 @@ Fuer Container und Workloads gelten folgende Prinzipien:
 - Reproduzierbarkeit statt manueller Pflege
 - Klare Trennung von Code, Konfiguration und Daten
 - Schnelle Wiederherstellbarkei
+
+## Weiterfuehrend
+
+Weitere Seiten zu strukturellen und organisatorischen Aspekten von Workloads:
+
+- [Virtualisierung](Virtualisierung.md)
+- [Plattform und Rollen](Plattform-und-Rollen.md)
+- [Integrationsprinzipien](Integrationsprinzipien.md)

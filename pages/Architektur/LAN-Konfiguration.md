@@ -67,8 +67,8 @@ Diese Seite enthaelt keine:
 Solche Details werden auf spezialisierten Detailseiten behandelt.
 
 ## Weiterfuehrend
-Weitere Seiten beschreiben detailliert:
 
-- DNS- und Namenskonzepte
-- Sicherheits- und Zugriffskontrollen
-- Integration externer Netze oder Dienste
+Weitere Seiten mit Bezug zur Netzwerk- und Plattformstruktur:
+
+- [Plattform und Rollen](Plattform-und-Rollen.md)
+- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)

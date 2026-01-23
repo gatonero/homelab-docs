@@ -51,3 +51,11 @@ Fuer virtualisierte Systeme gelten besondere Betriebsaspekte:
 - Ressourcenplanung und -begrenzung
 - Klare Namens- und Rollenmodelle
 - Kontrollierte Aenderungen an Sys
+
+## Weiterfuehrend
+
+Weitere Seiten beleuchten angrenzende Aspekte der Virtualisierungsstrategie:
+
+- [Virtualisierung und Container](Virtualisierung-und-Container.md)
+- [Container und Workloads](Container-und-Workloads.md)
+- [Plattform und Rollen](Plattform-und-Rollen.md)

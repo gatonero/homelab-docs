@@ -71,8 +71,9 @@ Diese Seite enthaelt keine:
 Solche Details werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten vertiefen unter anderem:
 
-- Virtualisierungskonzepte
-- Container- und Workload-Modelle
-- Betriebs- und Wartungsstrategien fuer Plattformen
+Die folgenden Seiten vertiefen die technische Umsetzung der Plattform-Ebene:
+
+- [Virtualisierung](Virtualisierung.md)
+- [Container und Workloads](Container-und-Workloads.md)
+- [LAN-Konfiguration](LAN-Konfiguration.md)

@@ -66,4 +66,9 @@ Diese Seite enthaelt keine:
 Solche Details werden auf nachgelagerten Detailseiten behandelt.
 
 ## Weiterfuehrend
-Weitere Seiten beschreiben:
+
+Weitere Seiten beleuchten angrenzende Aspekte der Virtualisierungsstrategie:
+
+- [Virtualisierung und Container](Virtualisierung-und-Container.md)
+- [Container und Workloads](Container-und-Workloads.md)
+- [Plattform und Rollen](Plattform-und-Rollen.md)

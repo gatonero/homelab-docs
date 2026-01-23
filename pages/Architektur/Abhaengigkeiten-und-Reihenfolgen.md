@@ -76,8 +76,9 @@ Diese Seite enthaelt keine:
 Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten vertiefen unter anderem:
 
-- Integrationsprinzipien
-- Gesamtzusammenhang des Systems
-- Priorisierung im Betrieb und Notfall
+Weitere Seiten beschreiben angrenzende strukturelle und konzeptionelle Aspekte:
+
+- [Gesamtzusammenhang](Gesamtzusammenhang.md)
+- [Integrationsprinzipien](Integrationsprinzipien.md)
+- [Plattform und Rollen](Plattform-und-Rollen.md)

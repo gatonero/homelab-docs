@@ -73,6 +73,9 @@ Diese Seite enthaelt keine:
 Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten koennen beschreiben:
 
-- Gesamtzusammenhang der Architekt
+Vertiefende Seiten zu technischen und strukturellen Integrationsaspekten:
+
+- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)
+- [Virtualisierung](Virtualisierung.md)
+- [Container und Workloads](Container-und-Workloads.md)
