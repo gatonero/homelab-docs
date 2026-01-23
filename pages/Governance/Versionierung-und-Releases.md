@@ -4,6 +4,8 @@ title: "Governance - Versionierung und Releases"
 
 # Governance - Versionierung und Releases
 
+← Zurueck zu den [Dokumentationsprinzipien](Dokumentationsprinzipien.md)
+
 Konzeptionelle Beschreibung, wie abgeschlossene Zustaende des Homelabs
 versioniert und als Releases gekennzeichnet werden.
 

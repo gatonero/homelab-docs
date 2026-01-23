@@ -4,6 +4,8 @@ title: "Governance - Aenderungs- und Reviewprozess"
 
 # Governance - Aenderungs- und Reviewprozess
 
+← Zurueck zu den [Dokumentationsprinzipien](Dokumentationsprinzipien.md)
+
 Konzeptionelle Beschreibung, wie Aenderungen an System und Dokumentation
 geplant, geprueft und nachvollziehbar umgesetzt werden.
 
