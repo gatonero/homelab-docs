@@ -4,6 +4,8 @@ title: "Services - Paperless-ngx"
 
 # Services - Paperless-ngx
 
+← Zurueck zur [Services-Overview](Overview-Services.md)
+
 Dokumentation des Dokumentenmanagement-Services Paperless-ngx im Homelab.
 
 ## Zweck
