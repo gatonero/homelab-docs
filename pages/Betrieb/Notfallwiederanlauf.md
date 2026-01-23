@@ -4,6 +4,8 @@ title: "Betrieb - Notfallwiederanlauf"
 
 # Betrieb - Notfallwiederanlauf
 
+← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+
 Konzeptionelle Beschreibung des Vorgehens beim Wiederanlauf des Homelabs
 nach schwerwiegenden Stoerungen oder Totalausfaellen.
 

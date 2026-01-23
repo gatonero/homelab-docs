@@ -4,6 +4,8 @@ title: "Betrieb - Stilllegung und Archivierung"
 
 # Betrieb - Stilllegung und Archivierung
 
+← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+
 Konzeptionelle Beschreibung, wie Systeme und Services bewusst ausser
 Betrieb genommen und relevante Informationen archiviert werden.
 

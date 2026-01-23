@@ -4,6 +4,8 @@ title: "Betrieb - Backup Overview"
 
 # Betrieb - Backup Overview
 
+← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+
 Konzeptioneller Ueberblick ueber Backup-Strategien, Ziele und Grundsaetze
 im Betrieb des Homelabs.
 

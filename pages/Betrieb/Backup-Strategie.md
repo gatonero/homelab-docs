@@ -4,6 +4,8 @@ title: "Betrieb - Backup-Strategie"
 
 # Betrieb - Backup-Strategie
 
+← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+
 Vertiefende Beschreibung der Backup-Strategie im Homelab mit Fokus auf
 Betriebssicherheit und Wiederherstellbarkeit.
 
