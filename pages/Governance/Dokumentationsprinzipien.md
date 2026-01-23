@@ -4,6 +4,8 @@ title: "Governance - Dokumentationsprinzipien"
 
 # Governance - Dokumentationsprinzipien
 
+← Zurueck zur [Homelab-Overview](../00-Overview-Homelab.md)
+
 Grundlegende Prinzipien fuer konsistente, wartbare und nachvollziehbare
 Dokumentation im Homelab.
 
@@ -63,8 +65,9 @@ Diese Seite enthaelt keine:
 Solche Inhalte werden auf spezialisierten Seiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten vertiefen unter anderem:
 
-- Aenderungs- und Reviewprozesse
-- Versionierung und Releases
-- Qualitaetssicherung der Dokumentation
+Die folgenden Seiten beschreiben die organisatorischen und
+methodischen Grundlagen der Dokumentation:
+
+- [Aenderungs- und Reviewprozess](Aenderungs-und-Reviewprozess.md)
+- [Versionierung und Releases](Versionierung-und-Releases.md)
