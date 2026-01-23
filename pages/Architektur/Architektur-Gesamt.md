@@ -4,6 +4,9 @@ title: "Architektur - Gesamtueberblick"
 
 # Architektur - Gesamtueberblick
 
+← Zurueck zur [Homelab-Overview](../00-Overview-Homelab.md)
+
+
 Konzeptioneller Gesamtueberblick ueber Aufbau, Struktur und Leitlinien der
 Homelab-Architektur.
 
@@ -65,8 +68,11 @@ Diese Seite enthaelt keine:
 Solche Informationen werden auf nachgelagerten Detailseiten behandelt.
 
 ## Weiterfuehrend
-Weitere Architektur-Detailseiten vertiefen einzelne Aspekte, etwa:
 
-- Netzwerk- und LAN-Design
-- Virtualisierungs- und Container-Plattformen
-- Sicherheits- und Zugriffsmodelle
+Die folgenden Detailseiten vertiefen einzelne Aspekte der Architektur:
+
+- [LAN-Konfiguration](LAN-Konfiguration.md)
+- [Virtualisierung](Virtualisierung.md)
+- [Container und Workloads](Container-und-Workloads.md)
+- [Plattform und Rollen](Plattform-und-Rollen.md)
+- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)
