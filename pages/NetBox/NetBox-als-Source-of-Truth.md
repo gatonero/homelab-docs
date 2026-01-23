@@ -4,6 +4,8 @@ title: "NetBox - Als Source of Truth"
 
 # NetBox - Als Source of Truth
 
+← Zurueck zur [NetBox-Overview](Overview-NetBox.md)
+
 Konzeptionelle Beschreibung der Rolle von NetBox als zentrale
 Wahrheitsquelle (Source of Truth) im Homelab.
 

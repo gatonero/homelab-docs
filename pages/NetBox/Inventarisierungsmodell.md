@@ -4,6 +4,8 @@ title: "NetBox - Inventarisierungsmodell"
 
 # NetBox - Inventarisierungsmodell
 
+← Zurueck zur [NetBox-Overview](Overview-NetBox.md)
+
 Konzeptionelle Beschreibung des Inventarisierungsmodells im Homelab
 und der Rolle von NetBox als zentrales Inventarsystem.
 

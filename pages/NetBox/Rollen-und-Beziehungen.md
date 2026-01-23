@@ -4,6 +4,8 @@ title: "NetBox - Rollen und Beziehungen"
 
 # NetBox - Rollen und Beziehungen
 
+← Zurueck zur [NetBox-Overview](Overview-NetBox.md)
+
 Konzeptionelle Beschreibung, wie Rollen und Beziehungen zwischen Objekten
 im Homelab modelliert und dokumentiert werden.
 
