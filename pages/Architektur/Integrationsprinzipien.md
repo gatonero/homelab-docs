@@ -4,6 +4,8 @@ title: "Architektur - Integrationsprinzipien"
 
 # Architektur - Integrationsprinzipien
 
+← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+
 Konzeptionelle Beschreibung der Prinzipien, nach denen einzelne
 Komponenten im Homelab miteinander integriert werden.
 

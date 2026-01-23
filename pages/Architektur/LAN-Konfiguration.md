@@ -4,6 +4,8 @@ title: "Architektur - LAN-Konfiguration"
 
 # Architektur - LAN-Konfiguration
 
+← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+
 Konzeptionelle Beschreibung des LAN-Designs und der Netzwerksegmentierung
 im Homelab.
 

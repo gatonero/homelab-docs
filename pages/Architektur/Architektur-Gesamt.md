@@ -4,8 +4,7 @@ title: "Architektur - Gesamtueberblick"
 
 # Architektur - Gesamtueberblick
 
-← Zurueck zur [Homelab-Overview](../00-Overview-Homelab.md)
-
+← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
 
 Konzeptioneller Gesamtueberblick ueber Aufbau, Struktur und Leitlinien der
 Homelab-Architektur.

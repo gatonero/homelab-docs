@@ -4,6 +4,8 @@ title: "Architektur - Virtualisierung"
 
 # Architektur - Virtualisierung
 
+← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+
 Konzeptionelle Beschreibung der Virtualisierung als zentrale Abstraktion
 zwischen physischer Plattform und betriebenen Systemen.
 

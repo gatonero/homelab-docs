@@ -4,6 +4,8 @@ title: "Architektur - Plattform und Rollen"
 
 # Architektur - Plattform und Rollen
 
+← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+
 Konzeptionelle Beschreibung der Plattformebene und der darauf definierten
 Rollen im Homelab.
 

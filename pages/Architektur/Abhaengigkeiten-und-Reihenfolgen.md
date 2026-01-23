@@ -4,6 +4,8 @@ title: "Architektur - Abhaengigkeiten und Reihenfolgen"
 
 # Architektur - Abhaengigkeiten und Reihenfolgen
 
+← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+
 Konzeptionelle Beschreibung der Abhaengigkeiten zwischen Architektur-,
 Betriebs- und Governance-Ebenen im Homelab.
 
