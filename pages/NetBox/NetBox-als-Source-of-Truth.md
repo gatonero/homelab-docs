@@ -54,3 +54,9 @@ Aenderungen am Soll-Zustand erfolgen kontrolliert:
 - Dokumentation wird bei Bedarf angepasst
 
 Die Source of Truth bleibt aktuell und vertrauensw
+
+## Weiterfuehrend
+
+- [Inventarisierungsmodell](Inventarisierungsmodell.md)
+- [Rollen und Beziehungen](Rollen-und-Beziehungen.md)
+- Zusammenspiel mit Betrieb und Dokumentation

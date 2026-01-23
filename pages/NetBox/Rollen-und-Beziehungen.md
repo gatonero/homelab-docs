@@ -68,3 +68,8 @@ Diese Seite enthaelt keine:
 
 - Konkreten Beziehungsdiagramme
 - Tool-spezifischen Modellierung
+
+## Weiterfuehrend
+
+- [Inventarisierungsmodell](Inventarisierungsmodell.md)
+- [NetBox als Source of Truth](NetBox-als-Source-of-Truth.md)
