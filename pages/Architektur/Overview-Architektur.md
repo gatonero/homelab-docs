@@ -4,6 +4,8 @@ title: "Architektur - Overview"
 
 # Architektur - Overview
 
+← Zurueck zur [Homelab-Overview](../00-Overview-Homelab.md)
+
 Uebersicht ueber den strukturellen Aufbau und die grundlegenden
 Architekturentscheidungen des Homelabs.
 
@@ -35,5 +37,13 @@ Technische Umsetzungen und detaillierte Beschreibungen befinden sich auf
 den jeweiligen Unterseiten.
 
 ## Weiterfuehrend
-Detailseiten vertiefen die einzelnen Architekturbausteine und beschreiben
-konkrete Systeme, Dienste und Entscheidungen.
+
+Die folgenden Detailseiten vertiefen einzelne Aspekte der Architektur:
+
+- [Architektur – Gesamtueberblick](Architektur-Gesamt.md)
+- [LAN-Konfiguration](LAN-Konfiguration.md)
+- [Virtualisierung](Virtualisierung.md)
+- [Virtualisierung und Container](Virtualisierung-und-Container.md)
+- [Container und Workloads](Container-und-Workloads.md)
+- [Plattform und Rollen](Plattform-und-Rollen.md)
+- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)
