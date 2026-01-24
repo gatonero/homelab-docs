@@ -2,15 +2,13 @@
 
 ## Zweck
 
-Diese Seite dient als **minimaler, DNS-unabhängiger Einstiegspunkt** für den Betrieb und den Wiederanlauf des Homelabs.
+Minimaler, DNS-unabhängiger Einstiegspunkt für Betrieb und Wiederanlauf.
 
-Sie wird insbesondere genutzt:
+Diese Seite wird genutzt:
 
 * nach Stromausfall
 * nach geplantem Shutdown
 * bei Problemen mit DNS oder Reverse Proxy
-
-Alle Zugriffe erfolgen **ausschließlich über feste IP-Adressen**.
 
 ---
 
@@ -29,16 +27,12 @@ Alle Zugriffe erfolgen **ausschließlich über feste IP-Adressen**.
 
 ## Hinweise
 
-* Diese Seite ist **bewusst kurz gehalten**.
-* Weitere Dienste (Monitoring, Management, Applikationen) sind **nicht** Teil dieses Einstiegs.
-* Änderungen an IP-Adressen müssen hier **zuerst** nachgeführt werden.
+* bewusst minimal gehalten
+* ausschließlich IP-basierte URLs
+* Änderungen an IPs hier zuerst pflegen
 
 ---
 
-## Ablageort
+## Weiterführend
 
-```
-pages/Einstieg/Kritische-Systeme.md
-```
-
-Diese Seite ist Bestandteil des operativen Betriebs und wird im Rahmen von Architektur- oder Netzwerkänderungen aktualisiert.
+* [[Wiederanlauf-Playbook]]
