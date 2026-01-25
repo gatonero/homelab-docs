@@ -41,32 +41,25 @@ ihrer Darstellung auf GitHub.
 ## Struktur der Dokumentation
 
 * **Governance**
-  [`pages/Governance/Dokumentationsprinzipien.md`](pages/Governance/Dokumentationsprinzipien.md)
-  Dokumentationsregeln, Review-Prozesse und Versionierung.
+  [`Dokumentationsprinzipien`](/pages/Governance/Dokumentationsprinzipien.md)
 
 * **Gesamtzusammenhang**
-  [`pages/Architektur/Gesamtzusammenhang.md`](pages/Architektur/Gesamtzusammenhang.md)
-  Uebergreifender Kontext und Abhaengigkeiten zwischen allen Bereichen.
+  [`Gesamtzusammenhang`](/pages/Architektur/Gesamtzusammenhang.md)
 
 * **Architektur**
-  [`pages/Architektur/Overview-Architektur.md`](pages/Architektur/Overview-Architektur.md)
-  Gesamtaufbau, Rollen, Abhaengigkeiten und Integrationsprinzipien.
+  [`Overview Architektur`](/pages/Architektur/Overview-Architektur.md)
 
 * **Betrieb**
-  [`pages/Betrieb/Overview-Betrieb.md`](pages/Betrieb/Overview-Betrieb.md)
-  Betriebskonzepte, Backup, Restore, Monitoring und Lifecycle.
+  [`Overview Betrieb`](/pages/Betrieb/Overview-Betrieb.md)
 
 * **Netzwerk, DNS und TLS**
-  [`pages/Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md`](pages/Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md)
-  Namensaufloesung, Zertifikate, Routing und Zugriffspfade.
+  [`Overview Netzwerk, DNS und TLS`](/pages/Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md)
 
 * **Services**
-  [`pages/Services/Overview-Services.md`](pages/Services/Overview-Services.md)
-  Service-Modell und Dokumentation der betriebenen Anwendungen.
+  [`Overview Services`](/pages/Services/Overview-Services.md)
 
 * **NetBox / Inventar**
-  [`pages/NetBox/Overview-NetBox.md`](pages/NetBox/Overview-NetBox.md)
-  Inventarisierungsmodell, Rollen, Beziehungen und Source of Truth.
+  [`Overview NetBox`](/pages/NetBox/Overview-NetBox.md)
 
 ---
 
