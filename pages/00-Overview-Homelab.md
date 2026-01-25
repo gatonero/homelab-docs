@@ -11,7 +11,7 @@ Zentraler Einstiegspunkt und Navigationsanker fuer die gesamte Homelab-Dokumenta
 ## Einstieg
 
 * **Einstieg (kritische Systeme)**
-  [`pages/Einstieg/Kritische-Systeme.md`](pages/Einstieg/Kritische-Systeme.md)
+  [`Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)
   Minimaler, DNS-unabhaengiger Einstieg fuer Wiederanlauf, Stromausfall
   und Stoerungsfaelle.
 
