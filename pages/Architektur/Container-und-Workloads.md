@@ -56,6 +56,6 @@ Fuer Container und Workloads gelten folgende Prinzipien:
 
 Weitere Seiten zu strukturellen und organisatorischen Aspekten von Workloads:
 
-- [Virtualisierung](Virtualisierung.md)
-- [Plattform und Rollen](Plattform-und-Rollen.md)
-- [Integrationsprinzipien](Integrationsprinzipien.md)
+* [`Virtualisierung`](/pages/Architektur/Virtualisierung.md)
+* [`Plattform und Rollen`](/pages/Architektur/Plattform-und-Rollen.md)
+* [`Integrationsprinzipien`](/pages/Architektur/Integrationsprinzipien.md)

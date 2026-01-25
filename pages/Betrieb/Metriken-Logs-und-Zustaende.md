@@ -71,8 +71,7 @@ Diese Seite enthaelt keine:
 Solche Details werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten koennen beschreiben:
 
-- Alarmierung auf Basis von Zustaenden
-- Korrelation von Signalen
-- Nutzung im Stoerungsfall
+* [`Alarmierung und Reaktion`](/pages/Betrieb/Alarmierung-und-Reaktion.md)
+* [`Monitoring – Grundsaetze`](/pages/Betrieb/Monitoring-Grundsaetze.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)

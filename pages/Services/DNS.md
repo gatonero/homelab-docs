@@ -60,3 +60,13 @@ Umgekehrt haengen nahezu alle Services funktional von DNS ab.
 Im Betrieb gelten fuer DNS folgende Grundsaetze:
 
 - Aenderungen an Zonen oder Rewrites erfolgen kontroll
+
+---
+
+## Abgrenzung
+
+
+---
+
+## Weiterfuehrend
+

@@ -70,5 +70,5 @@ Solche Details werden auf spezialisierten Detailseiten behandelt.
 
 Weitere Seiten mit Bezug zur Netzwerk- und Plattformstruktur:
 
-- [Plattform und Rollen](Plattform-und-Rollen.md)
-- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)
+* [`Plattform und Rollen`](/pages/Architektur/Plattform-und-Rollen.md)
+* [`Abhaengigkeiten und Reihenfolgen`](/pages/Architektur/Abhaengigkeiten-und-Reihenfolgen.md)

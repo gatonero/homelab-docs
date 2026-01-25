@@ -76,6 +76,6 @@ Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
 
 Vertiefende Seiten zu technischen und strukturellen Integrationsaspekten:
 
-- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)
-- [Virtualisierung](Virtualisierung.md)
-- [Container und Workloads](Container-und-Workloads.md)
+* [`Abhaengigkeiten und Reihenfolgen`](/pages/Architektur/Abhaengigkeiten-und-Reihenfolgen.md)
+* [`Virtualisierung`](/pages/Architektur/Virtualisierung.md)
+* [`Container und Workloads`](/pages/Architektur/Container-und-Workloads.md)

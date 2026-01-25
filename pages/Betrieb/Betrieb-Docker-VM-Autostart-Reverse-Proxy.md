@@ -1,4 +1,10 @@
+---
+title: "Betrieb – Docker-VM Autostart & Reverse Proxy"
+---
+
 # Betrieb – Docker-VM Autostart & Reverse Proxy
+
+← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
 
 ## Zweck
 
@@ -115,9 +121,7 @@ Dies signalisiert:
 
 ---
 
-## Weiterführend
+## Weiterfuehrend
 
-> Hinweis: Die folgenden Verweise sind für die GitHub-Navigation vorgesehen.
-
-* `pages/Betrieb/Wiederanlauf-Playbook.md`
-* `pages/Einstieg/Kritische-Systeme.md`
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
+* [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)

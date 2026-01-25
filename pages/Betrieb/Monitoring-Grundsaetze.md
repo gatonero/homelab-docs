@@ -4,6 +4,8 @@ title: "Betrieb - Monitoring-Grundsaetze"
 
 # Betrieb - Monitoring-Grundsaetze
 
+← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
+
 Konzeptionelle Beschreibung der Monitoring-Grundsaetze im Homelab und der
 Rolle von Transparenz fuer stabilen Betrieb.
 
@@ -72,8 +74,7 @@ Diese Seite enthaelt keine:
 Solche Details werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten vertiefen unter anderem:
 
-- Metriken, Logs und Zustandsmodelle
-- Alarmierung und Reaktionsstrategien
-- Monitoring im Notfallbetrieb
+* [`Metriken, Logs und Zustaende`](/pages/Betrieb/Metriken-Logs-und-Zustaende.md)
+* [`Alarmierung und Reaktion`](/pages/Betrieb/Alarmierung-und-Reaktion.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)

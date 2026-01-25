@@ -4,6 +4,8 @@ title: "Namenskonventionen und Datei-Policy"
 
 # Namenskonventionen und Datei-Policy
 
+← Zurueck zur [`Overview`](/pages/00-Overview-Homelab.md)
+
 Verbindliche Regeln fuer Benennung, Struktur und Pflege der Dokumentation.
 
 ## Zweck
@@ -45,5 +47,11 @@ bewusst geplant und nicht implizit durch Umbenennungen oder Massenbearbeitungen
 eingefuehrt.
 
 ## Weiterfuehrend
-Diese Regeln bilden die Grundlage fuer alle weiteren Dokumentationsarbeiten
-und gelten versionsuebergreifend.
+
+* [`Dokumentationsprinzipien`](/pages/Governance/Dokumentationsprinzipien.md)
+* [`Versionierung und Releases`](/pages/Governance/Versionierung-und-Releases.md)
+
+---
+
+## Abgrenzung
+

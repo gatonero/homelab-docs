@@ -4,6 +4,8 @@ title: "Governance - Aenderungs- und Reviewprozess"
 
 # Governance - Aenderungs- und Reviewprozess
 
+← Zurueck zur [`Overview`](/pages/Governance/Dokumentationsprinzipien.md)
+
 ← Zurueck zu den [Dokumentationsprinzipien](Dokumentationsprinzipien.md)
 
 Konzeptionelle Beschreibung, wie Aenderungen an System und Dokumentation
@@ -51,3 +53,13 @@ Fuer Aenderungen gelten klare Verantwortlichkeiten:
 
 - Initiator der Aenderung ist verantwortlich fuer Dokumentation
 - Reviews erfolgen bewusst u
+
+---
+
+## Abgrenzung
+
+
+---
+
+## Weiterfuehrend
+

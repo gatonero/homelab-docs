@@ -1,4 +1,10 @@
+---
+title: "Betrieb – Geplanter Shutdown"
+---
+
 # Betrieb – Geplanter Shutdown
+
+← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
 
 ## Zweck
 
@@ -122,7 +128,7 @@ Der Shutdown gilt als erfolgreich, wenn:
 
 ---
 
-## Weiterführend
+## Weiterfuehrend
 
-* [[Betrieb – Wiederanlauf-Playbook]]
-* [[Einstieg – Kritische Systeme]]
+* [`Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
+* [`Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)

@@ -1,6 +1,5 @@
 ---
 
-## title: "Betrieb - Backup-Strategie"
 
 # Betrieb - Backup-Strategie
 
@@ -154,3 +153,12 @@ Die Backup-Strategie ist:
 
 Sie vermeidet bewusst dezentrale Sonderloesungen und minimiert damit
 Komplexitaet und Fehlerquellen.
+
+---
+
+## Weiterfuehrend
+
+* [`Backup – Overview`](/pages/Betrieb/Backup-Overview.md)
+* [`Restore-Drill`](/pages/Betrieb/Restore-Drill.md)
+* [`Restore-Szenarien`](/pages/Betrieb/Restore-Szenarien.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)

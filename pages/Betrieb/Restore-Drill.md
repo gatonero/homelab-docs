@@ -55,8 +55,7 @@ Diese Seite enthaelt keine:
 Solche Details werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten beschreiben:
 
-- Konkrete Restore-Szenarien
-- Notfallwiederherstellung
-- Ableitung von Verbesserungsmassnahmen aus Drills
+* [`Restore-Szenarien`](/pages/Betrieb/Restore-Szenarien.md)
+* [`Notfallwiederanlauf`](/pages/Betrieb/Notfallwiederanlauf.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
