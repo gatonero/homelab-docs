@@ -74,8 +74,7 @@ Diese Seite enthaelt keine:
 Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten vertiefen unter anderem:
 
-- Wartungs- und Aenderungsprozesse
-- Stilllegung und Archivierung
-- Lifecycle-Management im Betrieb
+* [`Wartung und Aenderungen`](/pages/Betrieb/Wartung-und-Aenderungen.md)
+* [`Stilllegung und Archivierung`](/pages/Betrieb/Stilllegung-und-Archivierung.md)
+* [`Versions- und Aenderungsmanagement`](/pages/Betrieb/Versions-und-Aenderungsmanagement.md)

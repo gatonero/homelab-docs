@@ -58,4 +58,10 @@ Auch im Notfall ist Dokumentation wichtig:
 Der Notfall liefert wertvolle Erkenntnisse.
 
 ## Abgrenzung
-Diese Seite en
+
+---
+
+## Weiterfuehrend
+
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
+* [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)

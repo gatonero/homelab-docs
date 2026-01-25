@@ -4,6 +4,8 @@ title: "Architektur - Gesamtzusammenhang"
 
 # Architektur - Gesamtzusammenhang
 
+← Zurueck zur [`Overview`](/pages/Architektur/Overview-Architektur.md)
+
 Zusammenfuehrende Beschreibung der Architektur-, Betriebs- und
 Governance-Ebenen des Homelabs als kohärentes Gesamtsystem.
 
@@ -80,6 +82,6 @@ erweiterbaren System.
 
 Die folgenden Seiten vertiefen einzelne Aspekte des architektonischen Gesamtzusammenhangs:
 
-- [Architektur – Gesamtueberblick](Architektur-Gesamt.md)
-- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)
-- [Integrationsprinzipien](Integrationsprinzipien.md)
+* [`Architektur – Gesamtueberblick`](/pages/Architektur/Architektur-Gesamt.md)
+* [`Abhaengigkeiten und Reihenfolgen`](/pages/Architektur/Abhaengigkeiten-und-Reihenfolgen.md)
+* [`Integrationsprinzipien`](/pages/Architektur/Integrationsprinzipien.md)

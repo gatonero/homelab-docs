@@ -66,8 +66,5 @@ Solche Inhalte werden auf spezialisierten Seiten beschrieben.
 
 ## Weiterfuehrend
 
-Die folgenden Seiten beschreiben die organisatorischen und
-methodischen Grundlagen der Dokumentation:
-
-- [Aenderungs- und Reviewprozess](Aenderungs-und-Reviewprozess.md)
-- [Versionierung und Releases](Versionierung-und-Releases.md)
+* [`Aenderungs- und Reviewprozess`](/pages/Governance/Aenderungs-und-Reviewprozess.md)
+* [`Versionierung und Releases`](/pages/Governance/Versionierung-und-Releases.md)

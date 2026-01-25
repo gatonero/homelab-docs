@@ -1,4 +1,10 @@
+---
+title: "Einstieg – Kritische Systeme"
+---
+
 # Einstieg – Kritische Systeme
+
+← Zurueck zur [`Overview`](/pages/00-Overview-Homelab.md)
 
 ## Zweck
 
@@ -67,8 +73,7 @@ Alle Backup-bezogenen Maßnahmen werden **ausschließlich** auf dem QNAP durchge
 
 ---
 
-## Weiterführend
+## Weiterfuehrend
 
-> Hinweis: Die folgenden Verweise sind für die GitHub-Navigation vorgesehen.
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
 
-* `pages/Betrieb/Wiederanlauf-Playbook.md`

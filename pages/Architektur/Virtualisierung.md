@@ -56,6 +56,6 @@ Fuer virtualisierte Systeme gelten besondere Betriebsaspekte:
 
 Weitere Seiten beleuchten angrenzende Aspekte der Virtualisierungsstrategie:
 
-- [Virtualisierung und Container](Virtualisierung-und-Container.md)
-- [Container und Workloads](Container-und-Workloads.md)
-- [Plattform und Rollen](Plattform-und-Rollen.md)
+* [`Virtualisierung und Container`](/pages/Architektur/Virtualisierung-und-Container.md)
+* [`Container und Workloads`](/pages/Architektur/Container-und-Workloads.md)
+* [`Plattform und Rollen`](/pages/Architektur/Plattform-und-Rollen.md)

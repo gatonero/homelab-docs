@@ -69,4 +69,7 @@ Diese Seite enthaelt keine:
 Solche Details werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten vertiefen unter ander
+
+* [`Overview Betrieb`](/pages/Betrieb/Overview-Betrieb.md)
+* [`Versionierung und Releases`](/pages/Governance/Versionierung-und-Releases.md)
+* [`Aenderungs- und Reviewprozess`](/pages/Governance/Aenderungs-und-Reviewprozess.md)

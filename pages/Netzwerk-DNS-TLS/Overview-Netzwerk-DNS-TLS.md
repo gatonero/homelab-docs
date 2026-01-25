@@ -38,3 +38,8 @@ Namensaufloesung und Transportverschluesselung im Homelab:
 - [Namensraum und Zonen](Namensraum-und-Zonen.md)
 - [TLS und Zertifikate](TLS-und-Zertifikate.md)
 - [Reverse Proxy und Zugriffspfade](Reverse-Proxy-und-Zugriffspfade.md)
+
+---
+
+## Abgrenzung
+

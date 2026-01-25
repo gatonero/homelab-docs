@@ -43,3 +43,14 @@ Reaktionen folgen festen Prinzipien:
 - Dokumentation von Ursache und Massnahmen
 
 Reaktion ist Teil des Betriebs
+
+---
+
+## Abgrenzung
+
+---
+
+## Weiterfuehrend
+
+* [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)

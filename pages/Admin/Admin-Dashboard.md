@@ -1,4 +1,10 @@
+---
+title: "Admin – Dashboard"
+---
+
 # Admin – Dashboard
+
+← Zurueck zur [`Overview`](/pages/00-Overview-Homelab.md)
 
 ## Zweck
 
@@ -97,28 +103,14 @@ Diese Seite ergänzt die operative Dokumentation, ist jedoch **nicht kritisch f�
 
 ---
 
-## Weiterführend
+## Weiterfuehrend
 
-* [[Wiederanlauf-Playbook]]
-* [[Einstieg – Kritische Systeme]]
-
----
-
-## Weiterführend
-
-* [[Einstieg – Kritische Systeme]]
-* [[Betrieb – Docker-VM Autostart & Reverse Proxy]]
-
----
-
-## Weiterführend
-
-* [[Wiederanlauf-Playbook]]
-
----
+* [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
+* [`Betrieb – Docker-VM Autostart & Reverse Proxy`](/pages/Betrieb/Betrieb-Docker-VM-Autostart-Reverse-Proxy.md)
 
 ## Hinweis
 
 Für den Betrieb im Fehlerfall und den Wiederanlauf ist **nicht** diese Seite maßgeblich.
 
-➡️ Siehe: [[Einstieg – Kritische Systeme]]
+➡ Siehe: [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)

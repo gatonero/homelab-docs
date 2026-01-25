@@ -4,6 +4,8 @@ title: "Governance - Versionierung und Releases"
 
 # Governance - Versionierung und Releases
 
+← Zurueck zur [`Overview`](/pages/Governance/Dokumentationsprinzipien.md)
+
 ← Zurueck zu den [Dokumentationsprinzipien](Dokumentationsprinzipien.md)
 
 Konzeptionelle Beschreibung, wie abgeschlossene Zustaende des Homelabs
@@ -69,3 +71,8 @@ Rueckverfolgbarkeit ist zentral fuer Vertrauen und Stabilitaet.
 Diese Seite enthaelt keine:
 
 - Konkreten Tagging-
+
+---
+
+## Weiterfuehrend
+

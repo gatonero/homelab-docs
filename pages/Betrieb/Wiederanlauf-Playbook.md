@@ -1,4 +1,10 @@
+---
+title: "Betrieb – Wiederanlauf-Playbook"
+---
+
 # Betrieb – Wiederanlauf-Playbook
+
+← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
 
 ## Zweck
 
@@ -116,9 +122,8 @@ Der Wiederanlauf gilt als erfolgreich, wenn:
 
 ---
 
-## Weiterführend
+## Weiterfuehrend
 
-> Hinweis: Die folgenden Verweise sind für die GitHub-Navigation vorgesehen.
+* [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)
+* [`Betrieb – Docker-VM Autostart & Reverse Proxy`](/pages/Betrieb/Betrieb-Docker-VM-Autostart-Reverse-Proxy.md)
 
-* `pages/Einstieg/Kritische-Systeme.md`
-* `pages/Betrieb/Betrieb-Docker-VM-Autostart-Reverse-Proxy.md`

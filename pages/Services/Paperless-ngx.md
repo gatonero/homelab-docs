@@ -65,3 +65,13 @@ Zu sichern sind insbesondere:
 - Metadaten und Datenbankinhalte
 - Konfigurationsdateien
 - Import- u
+
+---
+
+## Abgrenzung
+
+
+---
+
+## Weiterfuehrend
+

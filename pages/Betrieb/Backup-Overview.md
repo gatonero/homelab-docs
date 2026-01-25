@@ -57,8 +57,8 @@ Diese Seite enthaelt keine:
 Solche Details werden auf nachgelagerten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten vertiefen unter anderem:
 
-- Konkrete Backup-Setups
-- Restore- und Wiederanlaufprozesse
-- Regelmaessige Test- und Validierungsverfahren
+* [`Backup-Strategie`](/pages/Betrieb/Backup-Strategie.md)
+* [`Restore-Drill`](/pages/Betrieb/Restore-Drill.md)
+* [`Restore-Szenarien`](/pages/Betrieb/Restore-Szenarien.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)

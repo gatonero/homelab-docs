@@ -72,8 +72,7 @@ Diese Seite enthaelt keine:
 Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
 
 ## Weiterfuehrend
-Weitere Seiten koennen beschreiben:
 
-- Change-Management im Detail
-- Rollback-Strategien
-- Verknuepfung mit Monitoring und Backup
+* [`Versions- und Aenderungsmanagement`](/pages/Betrieb/Versions-und-Aenderungsmanagement.md)
+* [`Monitoring – Grundsaetze`](/pages/Betrieb/Monitoring-Grundsaetze.md)
+* [`Backup-Strategie`](/pages/Betrieb/Backup-Strategie.md)

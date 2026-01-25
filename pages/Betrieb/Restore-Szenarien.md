@@ -67,3 +67,10 @@ Diese Seite enthaelt keine:
 
 - Konkreten Restore-Anleitungen oder Befehle
 - Tool-spezifische
+
+---
+
+## Weiterfuehrend
+
+* [`Restore-Drill`](/pages/Betrieb/Restore-Drill.md)
+* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)

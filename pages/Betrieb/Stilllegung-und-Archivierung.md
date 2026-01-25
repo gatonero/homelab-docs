@@ -67,3 +67,8 @@ Diese Seite enthaelt keine:
 - Konkreten Abschalt- oder Loeschbefehle
 - Tool-spezifischen Stilllegungsprozesse
 - Automatis
+
+---
+
+## Weiterfuehrend
+
