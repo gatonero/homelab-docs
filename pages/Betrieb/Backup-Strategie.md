@@ -1,34 +1,156 @@
 ---
-title: "Betrieb - Backup-Strategie"
----
+
+## title: "Betrieb - Backup-Strategie"
 
 # Betrieb - Backup-Strategie
 
 ← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
 
-Vertiefende Beschreibung der Backup-Strategie im Homelab mit Fokus auf
-Betriebssicherheit und Wiederherstellbarkeit.
+Diese Seite beschreibt die **aktuelle, verbindliche Backup-Strategie** des Homelabs.
+Der Fokus liegt auf **Betriebssicherheit**, **klarer Verantwortlichkeit** und **nachvollziehbarer Wiederherstellbarkeit**.
+
+---
 
 ## Zweck
-Diese Seite konkretisiert die zuvor beschriebenen Backup-Grundsaetze und
-ordnet sie in eine uebergeordnete Strategie ein.
 
-Ziel ist es, Backups nicht als Einzelmassnahme, sondern als integralen
-Bestandteil des Betriebs zu verstehen.
+Diese Seite konkretisiert die Backup-Grundsaetze und ordnet sie in eine
+**zentrale, betrieblich orientierte Strategie** ein.
+
+Backups werden nicht als Einzelmassnahme verstanden, sondern als
+**integraler Bestandteil des laufenden Betriebs**.
+
+---
 
 ## Strategische Leitlinien
-Die Backup-Strategie folgt klaren Leitlinien:
 
-- Backups sind regelmaessig und automatisiert
-- Sicherungen sind logisch von Produktivsystemen getrennt
-- Mehrere Generationen werden vorgehalten
-- Wiederherstellung wird regelmaessig getestet
+Die Backup-Strategie folgt klaren, bewusst restriktiven Leitlinien:
 
-Ein Backup ohne getesteten Restore gilt als unvollstaendig.
+* Backups sind **regelmaessig und automatisiert**
+* Backup-Logik ist **zentralisiert**
+* Produktivsysteme fuehren **keine eigenen Offsite-Backups** aus
+* Wiederherstellung ist **explizit Teil des Konzepts**
 
-## Schutzobjekte
-Backups fokussieren sich auf klar definierte Schutzobjekte:
+Ein Backup ohne getesteten Restore gilt als **nicht akzeptabel**.
 
-- System- und Service-Konfigurationen
-- Persistente Anwendungsdaten
-- Metadaten und Betriebsinformationen
+---
+
+## Zentrale Architektur
+
+### QNAP als Daten- und Backup-Anker
+
+Der **QNAP TS-464** ist die **einzige Backup-Instanz** im Homelab:
+
+* zentrale Datenhaltung
+* Ausfuehrung aller produktiven Backup-Jobs
+* Steuerung der Offsite-Sicherung
+
+Alle Offsite-Backups erfolgen **ausschliesslich ueber den QNAP**.
+
+---
+
+## Backup-Ziele
+
+### Google Drive (Offsite)
+
+Google Drive wird ausschliesslich als **Offsite-Ziel** genutzt:
+
+* Schutz vor Brand, Diebstahl und Totalausfall
+* keine Arbeitskopien
+* kein produktiver Zugriff
+
+Das Offsite-Backup dient der **Wiederherstellbarkeit**, nicht der Historisierung von Arbeitsstaenden.
+
+---
+
+## Gesicherte Schutzobjekte
+
+### Dokumente
+
+* **Quelle:** `/share/homes/cs/Dokumente/`
+* **Tool:** HBS3 (Backup)
+* **Ziel:** Google Drive
+* **Versionierung:** aktiviert und begrenzt
+* **Zielsetzung:** Schutz kritischer Arbeits- und Referenzdokumente
+
+Die Versionierung dient dem Schutz vor Fehlbedienung und unbeabsichtigtem Datenverlust.
+
+---
+
+### paperless-ngx
+
+Gesichert werden ausschliesslich die **fachlich relevanten Daten**:
+
+* `media` (Originaldokumente)
+* `data` (Metadaten, OCR-Ergebnisse)
+
+Nicht Bestandteil des Backups sind:
+
+* `pgdata` (PostgreSQL-Datenbank)
+
+* `redisdata`
+
+* temporaere Verzeichnisse
+
+* **Backup-Typ:** HBS3 Backup (`.qdff`)
+
+* **Versionierung:** systembedingt minimal
+
+* **Datenvolumen:** ca. 3–4 GiB
+
+Der Fokus liegt auf einer **schlanken, aktuellen Sicherung**, nicht auf Archivierung.
+
+---
+
+### Weitere Systeme
+
+#### elselevy7.org
+
+* Backup erfolgt **ausschliesslich ueber UpdraftPlus**
+* kein HBS3-Backup
+* keine zusaetzliche Offsite-Sicherung ueber den QNAP
+
+---
+
+## Abgrenzung
+
+### Mini-IT13
+
+* kein Backup-Knoten
+* keine Cloud-Anbindung
+* keine Backup-Tools aktiv
+
+### Docker-VM
+
+* kein Backup-Knoten
+* keine Offsite-Sicherung
+* rein produktiver Applikationshost
+
+### Syncthing
+
+* dient ausschliesslich der Arbeitskopie
+* kein Backup
+* keine Historisierung
+
+---
+
+## Wiederanlauf und Restore
+
+* Backup-Jobs laufen serverseitig auf dem QNAP
+* nach Stromausfall oder Reboot ist **kein manuelles Eingreifen erforderlich**
+* Wiederherstellung erfolgt ausschliesslich ueber HBS3
+
+Restore-Tests werden **gezielt und dokumentiert** durchgefuehrt.
+
+---
+
+## Zusammenfassung
+
+Die Backup-Strategie ist:
+
+* zentralisiert
+* wartbar
+* nachvollziehbar
+* auf das notwendige Mass reduziert
+
+Sie vermeidet bewusst dezentrale Sonderloesungen und minimiert damit
+Komplexitaet und Fehlerquellen.

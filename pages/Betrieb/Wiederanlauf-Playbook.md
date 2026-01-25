@@ -7,7 +7,18 @@ Dieses Playbook beschreibt den **standardisierten Wiederanlauf** des Homelabs na
 * geplantem Shutdown
 * ungeplantem Stromausfall
 
-Ziel ist ein deterministisches Vorgehen ohne situative Entscheidungen.
+Ziel ist ein **deterministisches Vorgehen ohne situative Entscheidungen**.
+
+---
+
+## Grundsatz (verbindlich)
+
+* **Backups werden ausschließlich zentral auf dem QNAP TS-464 durchgeführt**
+* Der QNAP ist der **Datenanker** des Homelabs
+* Nach einem Stromausfall sind **keine manuellen Backup-Aktionen** auf Clients oder Servern erforderlich
+* Google Drive dient **nur als Offsite-Ziel** für HBS3-Backups
+
+> Clientseitige Backup-Tools (rclone, restic) sind **nicht im Einsatz**.
 
 ---
 
@@ -16,8 +27,8 @@ Ziel ist ein deterministisches Vorgehen ohne situative Entscheidungen.
 Empfohlene Reihenfolge:
 
 1. Stromversorgung herstellen
-2. NAS starten
-3. Proxmox-Host starten
+2. NAS starten (QNAP TS-464)
+3. Proxmox-Host starten (M720q)
 4. Docker-VM startet automatisch
 5. Docker-Stacks starten automatisch
 6. Funktionsprüfung
@@ -31,17 +42,24 @@ Empfohlene Reihenfolge:
 
 ---
 
-## Schritt 2 – NAS
+## Schritt 2 – NAS (QNAP TS-464)
 
 * NAS einschalten
-* warten, bis Storage und Netzwerkdienste verfügbar sind
+* warten, bis:
+
+  * Storage verfügbar ist
+  * Netzwerkdienste aktiv sind
+  * HBS3 betriebsbereit ist
+
+**Hinweis:**
+Backups laufen serverseitig und werden vom QNAP selbständig gemäß Zeitplan ausgeführt.
 
 ---
 
 ## Schritt 3 – Proxmox-Host
 
 * Proxmox-Host starten
-* Management-UI erreichbar abwarten
+* Management-UI (Web) erreichbar abwarten
 
 ---
 
@@ -55,14 +73,21 @@ Empfohlene Reihenfolge:
 ## Schritt 5 – Docker-Stacks
 
 * Start erfolgt durch `docker-compose-autostart.service`
-* erwarteter Zustand: alle produktiven Container `Up`
+* erwarteter Zustand:
+
+  * alle produktiven Container im Status `Up`
 
 ---
 
 ## Schritt 6 – Funktionsprüfung
 
 * Reverse Proxy erreichbar
-* kritische Dienste verfügbar
+* kritische Dienste verfügbar (z. B.:
+
+  * NGINX Proxy Manager
+  * Home Assistant
+  * NetBox
+  * Uptime Kuma)
 
 ---
 
@@ -72,10 +97,28 @@ Der Wiederanlauf gilt als erfolgreich, wenn:
 
 * alle kritischen Systeme erreichbar sind
 * keine manuellen Startmaßnahmen erforderlich waren
+* keine Backup-bezogenen Eingriffe notwendig waren
+
+---
+
+## Abgrenzung
+
+* **Mini-IT13**:
+
+  * kein Backup-Knoten
+  * keine Cloud-Anbindung
+  * keine Backup-Tools aktiv
+
+* **Syncthing**:
+
+  * dient ausschließlich der Arbeitskopien
+  * kein Backup, keine Historisierung
 
 ---
 
 ## Weiterführend
 
-* [[Einstieg – Kritische Systeme]]
-* [[Betrieb – Docker-VM Autostart & Reverse Proxy]]
+> Hinweis: Die folgenden Verweise sind für die GitHub-Navigation vorgesehen.
+
+* `pages/Einstieg/Kritische-Systeme.md`
+* `pages/Betrieb/Betrieb-Docker-VM-Autostart-Reverse-Proxy.md`
