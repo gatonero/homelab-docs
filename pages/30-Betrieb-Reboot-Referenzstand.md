@@ -4,6 +4,8 @@ title: "Reboot- und Betriebsarchitektur – stabiler Referenzstand"
 
 # Reboot- und Betriebsarchitektur – stabiler Referenzstand
 
+← Zurueck zur [`Overview`](/pages/00-Overview-Homelab.md)
+
 ## Ziel dieses Dokuments
 
 Dieses Dokument beschreibt den **stabilen, verifizierten Betriebszustand** des Homelabs nach Abschluss der strukturellen Bereinigung, der Ingress-Migration und eines erfolgreichen Reboot-/Stromausfall-Tests.

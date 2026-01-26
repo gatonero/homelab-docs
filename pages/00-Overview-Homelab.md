@@ -55,6 +55,9 @@ ihrer Darstellung auf GitHub.
 * **Betrieb**
   [`Overview Betrieb`](/pages/Betrieb/Overview-Betrieb.md)
 
+* **Betrieb – Reboot & Wiederanlauf**
+  [`Reboot-Referenzstand`](/pages/30-Betrieb-Reboot-Referenzstand.md)
+
 * **Netzwerk, DNS und TLS**
   [`Overview Netzwerk, DNS und TLS`](/pages/Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md)
 
@@ -65,7 +68,6 @@ ihrer Darstellung auf GitHub.
   [`Overview NetBox`](/pages/NetBox/Overview-NetBox.md)
 
 ---
-
 ## Abgrenzung
 
 Diese Seite enthaelt **keine technischen Details**.
