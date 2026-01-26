@@ -46,6 +46,9 @@ ihrer Darstellung auf GitHub.
 * **Gesamtzusammenhang**
   [`Gesamtzusammenhang`](/pages/Architektur/Gesamtzusammenhang.md)
 
+* **Architektur (Querschnitt)**
+  [`Ingress- und Betriebsarchitektur`](/pages/ingress-und-betriebsarchitektur.md)
+
 * **Architektur**
   [`Overview Architektur`](/pages/Architektur/Overview-Architektur.md)
 
