@@ -57,6 +57,14 @@ ihrer Darstellung auf GitHub.
 
 * **Betrieb – Reboot & Wiederanlauf**
   [`Reboot-Referenzstand`](/pages/30-Betrieb-Reboot-Referenzstand.md)
+  
+* **Monitoring – Uptime Kuma**  
+  [`Monitoring – Uptime Kuma`](/pages/Monitoring-Uptime-Kuma.md)  
+  Zentrale Übersicht zur Monitoring-Architektur im Homelab (INFRA, SERVICE, JOB), inklusive Namens- und Strukturkonventionen.
+
+* **Monitoring – Proxmox Backup (Uptime Kuma Push)**  
+  [`Monitoring – Proxmox Backup (Uptime Kuma Push)`](/pages/Monitoring-Proxmox-Backup.md)  
+  Detaillierte Beschreibung des job-basierten Monitorings für den täglichen Proxmox-Backup-Lauf.
 
 * **Netzwerk, DNS und TLS**
   [`Overview Netzwerk, DNS und TLS`](/pages/Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md)
