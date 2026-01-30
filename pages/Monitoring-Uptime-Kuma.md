@@ -162,3 +162,46 @@ Detaillierte, betrieblich relevante Monitoring-Szenarien werden bewusst in **eig
   [`Monitoring – Proxmox Backup (Uptime Kuma Push)`](/pages/Monitoring-Proxmox-Backup.md)
 
 Weitere spezialisierte JOB-Monitore (z. B. Offsite-Backups, rsync-Jobs, Dokumentations-Backups) werden nach demselben Muster als eigene Detaildokumente ergänzt.
+
+## Rolle von Uptime Kuma im Monitoring
+
+Uptime Kuma ist die zentrale Monitoring-Instanz des Homelabs.
+Sie dient ausschließlich der Zustandsüberwachung und Alarmierung,
+nicht der Ursachenanalyse.
+
+Alle Alarmentscheidungen werden bewusst außerhalb der technischen
+Abhängigkeiten getroffen und folgen der definierten Monitoring-Taxonomie.
+
+## Selbstüberwachung
+
+Uptime Kuma überwacht sich selbst über einen HTTP-Monitor:
+
+    [SERVICE] Uptime Kuma – HTTP
+
+Dieser Monitor dient ausschließlich der Sichtbarkeit und Diagnose.
+Er ist bewusst **nicht** an eine Benachrichtigung gekoppelt.
+
+Begründung:
+- fällt Uptime Kuma vollständig aus, können keine Benachrichtigungen versendet werden
+- der Monitor liefert im Nachgang eine zeitliche Einordnung („Monitoring war blind“)
+- er verhindert Fehlinterpretationen bei gleichzeitigen Ausfällen anderer Monitore
+
+## Einordnung in die Alarmstrategie
+
+Uptime Kuma selbst ist kein alarmrelevanter Dienst.
+Die Alarmrelevanz ergibt sich ausschließlich aus den überwachten Kategorien:
+
+- [EXTERN] – Außenwirkung und Vertrauensbildung
+- [INFRA] – technische Basis
+- [JOB] – ereignisgetriebene Betriebsaufgaben
+- [SERVICE] – interne Dienste mit definiertem Vertrauensbezug
+
+Uptime Kuma ist damit ein Werkzeug zur Umsetzung der Alarmstrategie,
+nicht Teil der alarmierten Zielsysteme.
+
+## Grundsatz
+
+Ein Ausfall von Uptime Kuma wird nicht aktiv alarmiert,
+sondern durch fehlende Alarme und den Selbstmonitor sichtbar.
+
+Monitoring darf niemals mehr Alarm erzeugen als es Information liefert.
