@@ -78,3 +78,42 @@ Solche Details werden auf spezialisierten Detailseiten beschrieben.
 * [`Metriken, Logs und Zustaende`](/pages/Betrieb/Metriken-Logs-und-Zustaende.md)
 * [`Alarmierung und Reaktion`](/pages/Betrieb/Alarmierung-und-Reaktion.md)
 * [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
+
+## Monitoring-Taxonomie und Alarmstrategie
+
+Das Monitoring ist bewusst in Kategorien unterteilt, um Ausfälle schnell
+einordnen und priorisieren zu können.
+
+### Kategorien
+
+**[EXTERN]**
+Externe, öffentlich erreichbare Dienste.
+Sie repräsentieren die Außenwirkung und sind maßgeblich für Vertrauen
+in Zuverlässigkeit und Betrieb.
+
+**[INFRA]**
+Zentrale technische Basis wie Proxmox, QNAP oder Router.
+Ausfälle erklären Ursachen, entschuldigen aber keine EXTERN-Probleme.
+
+**[JOB]**
+Ereignisgetriebene Aufgaben wie Backups.
+Ein fehlender Push ist immer ein Fehlerzustand.
+
+**[SERVICE]**
+Interne Dienste innerhalb des LANs.
+
+### Alarmpriorität
+
+Die Alarmierung folgt der Wirkung, nicht der technischen Abhängigkeit:
+
+1. [EXTERN] – höchste Priorität, sofortige Alarmierung
+2. [INFRA] – sofortige Alarmierung
+3. [JOB] – Alarm nach Ablauf des erwarteten Zeitfensters
+4. [SERVICE] Home Assistant – alarmrelevant als Alltags- und Vertrauenssystem
+5. [SERVICE] sonstige – Sichtbarkeit ohne Alarm
+
+### Grundsatz
+
+Ein Alarm bedeutet immer, dass eine Handlung erforderlich ist.
+Dienste, bei denen im Alarmfall keine Reaktion erfolgen würde,
+dürfen keine Benachrichtigungen auslösen.
