@@ -1,6 +1,6 @@
 # Homelab Cheat-Sheet
 
-Kompakte Übersicht der **wichtigsten Befehle** für dein System. Fokus: reproduzierbar, robust, ohne implizite Annahmen.
+Kompakte Übersicht der **wichtigsten Befehle**.
 
 ---
 
