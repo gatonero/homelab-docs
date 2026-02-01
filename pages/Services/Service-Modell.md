@@ -1,62 +1,59 @@
 ---
-title: "Services - Service-Modell"
+title: "Service Model"
 ---
 
-# Services - Service-Modell
+# Service Model
 
-← Zurueck zur [Services-Overview](Overview-Services.md)
+The service model defines how services are described, categorized, and managed consistently.
 
-Konzeptionelles Modell zur Einordnung, Dokumentation und zum Betrieb von
-Services im Homelab.
+It ensures comparability and reduces ambiguity across the service landscape.
 
-## Zweck
-Diese Seite beschreibt ein einheitliches Modell, nach dem Services im
-Homelab betrachtet, dokumentiert und betrieben werden.
+---
 
-Ziel ist es, Services vergleichbar zu machen und klare Erwartungen an
-Aufbau, Betrieb und Dokumentation zu definieren.
+## Core Attributes
 
-## Definition eines Service
-Ein Service ist eine klar abgegrenzte Funktionseinheit, die:
+Each service is described using the following attributes:
 
-- eine definierte Aufgabe erfuellt
-- ueber klar beschriebene Schnittstellen verfuegt
-- betrieben und wiederhergestellt werden kann
-- dokumentiert ist
+- Purpose
+- Service type
+- Dependencies
+- Exposure (internal / external)
+- Operational criticality
+- Monitoring and alerting
+- Backup and recovery relevance
 
-Ein Service kann aus einer oder mehreren technischen Komponenten bestehen.
+Missing attributes indicate incomplete documentation.
 
-## Service-Kategorien
-Services lassen sich in verschiedene Kategorien einteilen, zum Beispiel:
+---
 
-- Infrastruktur-Services (z. B. DNS, Reverse Proxy)
-- Plattformnahe Services (z. B. Container-Management)
-- Anwendungs-Services (z. B. Medien, Dokumentenmanagement)
+## Service Types
 
-Die Kategorie beeinflusst Anforderungen an Verfuegbarkeit und Betrieb.
+Services are classified into:
 
-## Dokumentationsbestandteile
-Jeder Service sollte mindestens folgende Aspekte dokumentieren:
+- Infrastructure services
+- Platform services
+- Application services
 
-- Zweck und Funktion
-- Abhaengigkeiten (technisch und organisatorisch)
-- Betriebs- und Wartungsaspekte
-- Backup- und Restore-Relevanz
+The classification reflects operational impact, not implementation details.
 
-Die Tiefe der Dokumentation richtet sich nach Kritikalitaet und Komplexitaet.
+---
 
-## Betriebsaspekte
-Fuer alle Services gelten grundlegende Betriebsprinzipien:
+## Dependencies
 
-- Services sind beobachtbar (Logs, Status)
-- Aenderungen erfolgen kontrolliert
-- Wiederherstellung ist geplant und getestet
-- Abhaengigkeiten sind bekannt
+Dependencies must be explicit and directional.
 
-## Abgrenzung
-Diese Seite enthaelt keine service-spezifischen Details.
-Solche Informationen befinden sich auf den jeweiligen Service-Seiten.
+Implicit dependencies are considered operational risks.
 
-## Weiterfuehrend
-Weitere Seiten beschreiben einzelne Services im Detail und wenden dieses
-Modell konkret an.
+---
+
+## Lifecycle Integration
+
+Every service follows the defined lifecycle:
+
+- Introduction
+- Operation
+- Change
+- Decommissioning
+
+Services outside the lifecycle are not acceptable.
+
