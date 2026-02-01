@@ -4,7 +4,7 @@ title: "Netzwerk - TLS und Zertifikate"
 
 # Netzwerk - TLS und Zertifikate
 
-← Zurueck zur [Netzwerk-DNS-TLS-Overview](Overview-Netzwerk-DNS-TLS.md)
+← Zurueck zur [Overview-Netzwerk-DNS-TLS](Overview-Netzwerk-DNS-TLS.md)
 
 Konzeptionelle Beschreibung des Einsatzes von TLS und Zertifikaten zur
 Absicherung von Kommunikation im Homelab.

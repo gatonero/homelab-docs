@@ -4,7 +4,7 @@ title: "Sicherheit - Geheimnisse und Zugangsdaten"
 
 # Sicherheit - Geheimnisse und Zugangsdaten
 
-← Zurueck zur [`Overview`](/pages/Sicherheit/Overview-Sicherheit.md)
+← Zurueck zur [Overview-Sicherheit](Overview-Sicherheit.md)
 
 Konzeptionelle Beschreibung des Umgangs mit Geheimnissen und
 Zugangsdaten im Homelab.

@@ -4,7 +4,7 @@ title: "Netzwerk - Reverse Proxy und Zugriffspfade"
 
 # Netzwerk - Reverse Proxy und Zugriffspfade
 
-← Zurueck zur [Netzwerk-DNS-TLS-Overview](Overview-Netzwerk-DNS-TLS.md)
+← Zurueck zur [Overview-Netzwerk-DNS-TLS](Overview-Netzwerk-DNS-TLS.md)
 
 Konzeptionelle Beschreibung, wie Zugriffspfade ueber Reverse Proxies
 strukturiert und kontrolliert werden.
@@ -15,6 +15,29 @@ bei der Bereitstellung von Zugriffspfaden auf interne Services.
 
 Ziel ist eine klare, nachvollziehbare und sichere Struktur fuer Zugriffe,
 ohne direkte Exponierung interner Dienste.
+
+## Begriffsabgrenzung: Ingress und Reverse Proxy
+Der **Ingress** beschreibt die **Rolle und Funktion des Eintrittspunkts** für HTTP(S)-Traffic in das Homelab.
+Er ist verantwortlich für:
+
+- Annahme eingehender Verbindungen
+- TLS-Terminierung
+- Routing zu internen Zielsystemen
+- Trennung interner und externer Zugriffspfade
+
+Der **Reverse Proxy** ist **keine eigenständige Architekturkomponente**, sondern die **technische Funktion**, mit der der Ingress diese Aufgaben umsetzt.
+
+Er übernimmt insbesondere:
+
+- Weiterleitung von Anfragen an Backend-Services
+- Durchsetzung von TLS- und Header-Regeln
+- Protokoll- und Verbindungssteuerung
+
+**Abgrenzung der Dokumentationsebenen:**
+
+- **Architektur** beschreibt *warum* der Ingress so aufgebaut ist
+- **Netzwerk, DNS und TLS** beschreiben *wie* Zugriff technisch umgesetzt wird
+- **Betrieb** beschreibt *was zu tun ist*, wenn der Zugriff nicht wie erwartet funktioniert
 
 ## Zugriffspfade
 Zugriff auf Services erfolgt grundsaetzlich ueber definierte Pfade:

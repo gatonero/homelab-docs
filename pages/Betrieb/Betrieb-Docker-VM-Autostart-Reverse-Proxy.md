@@ -6,6 +6,9 @@ title: "Betrieb – Docker-VM Autostart & Reverse Proxy"
 
 ← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
 
+Die Rolle des Reverse Proxys ist Teil des Ingress-Konzepts.
+Details siehe: [`Netzwerk – Reverse Proxy und Zugriffspfade`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
+
 ## Zweck
 
 Diese Seite beschreibt den **betrieblichen Autostart der Docker-VM** sowie die Rolle des **Reverse Proxys** im Homelab.
@@ -17,6 +20,10 @@ Ziel ist ein **stabiler, reproduzierbarer Betrieb** nach:
 * Neustart einzelner Systeme
 
 Die hier beschriebenen Mechanismen sind **deterministisch** und erfordern im Normalfall **kein manuelles Eingreifen**.
+
+Hinweis: Die technische Rolle des Reverse Proxys als Bestandteil des Ingress
+ist im Netzwerk- und Zugriffskontext beschrieben.
+Siehe: [`Netzwerk – Reverse Proxy und Zugriffspfade`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
 
 ---
 

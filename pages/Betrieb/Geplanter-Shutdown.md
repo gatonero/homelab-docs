@@ -6,6 +6,10 @@ title: "Betrieb – Geplanter Shutdown"
 
 ← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
 
+Hinweis: Die Rolle des Reverse Proxys innerhalb des Ingress ist
+netzwerkseitig beschrieben unter:
+[`Netzwerk – Reverse Proxy und Zugriffspfade`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
+
 ## Zweck
 
 Dieses Dokument beschreibt den **standardisierten, geplanten Shutdown** des Homelabs.

@@ -38,10 +38,6 @@ Der Einsatz von NetBox folgt einigen klaren Leitlinien:
 Diese Seite enthaelt keine detaillierten Anleitungen zur Bed
 
 ## Weiterfuehrend
-
-Die folgenden Detailseiten beschreiben das Inventarisierungs- und
-Dokumentationsmodell des Homelabs auf Basis von NetBox:
-
 - [Inventarisierungsmodell](Inventarisierungsmodell.md)
 - [Rollen und Beziehungen](Rollen-und-Beziehungen.md)
 - [NetBox als Source of Truth](NetBox-als-Source-of-Truth.md)

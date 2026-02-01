@@ -1,111 +1,117 @@
 ---
-title: "Ingress & externe Absicherung"
+title: "Ingress"
 ---
 
-## Überblick
+# Zentraler Eintrittspunkt für externe und interne HTTP(S)-Zugriffe
 
-Der externe Zugriff auf die Homelab-Services erfolgt ausschließlich über einen dedizierten Ingress-Host (VM 1000).
-Ziel ist ein stabiler, nachvollziehbarer und bewusst begrenzter Eintrittspunkt nach außen.
+← Zurück zur [`Overview Architektur`](/pages/Architektur/Overview-Architektur.md)
 
-Der aktuelle Stand ist das Ergebnis einer vollständigen Härtung inklusive praktischer Zugriffstests und stellt den eingefrorenen Referenzzustand dar.
+Der externe Zugriff auf die im Homelab betriebenen Web-Services erfolgt ausschließlich über einen **dedizierten Ingress**.  
+Dieser stellt einen bewusst begrenzten, kontrollierten und nachvollziehbaren Eintrittspunkt dar.
+
+Der hier beschriebene Zustand repräsentiert einen **verifizierten Referenzstand** nach vollständiger Härtung und praktischen Zugriffstests.
 
 ---
 
 ## Architektur
 
-### Ingress-Host
+### Rolle des Ingress
 
-- Host: VM 1000 (`ci-debian12-base`)
-- Rolle: einziger externer Entry Point
-- Funktion: Reverse Proxy (nginx) vor der Applikation (WordPress)
-- Firewall: nftables, fail-closed
+Der Ingress übernimmt die zentrale Rolle als:
+
+- einziger Eintrittspunkt für HTTP(S)-Traffic
+- Trennschicht zwischen externen Zugriffen und internen Services
+- Ort der TLS-Terminierung und Zugriffskontrolle
+
+Der Ingress enthält **keine Applikationslogik** und **keinen persistenten Storage**.
+
+Die technische Umsetzung des Reverse Proxys als Bestandteil des Ingress ist im Detail beschrieben unter:  
+[`Netzwerk – Reverse Proxy und Zugriffspfade`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
+
+---
 
 ### Netzwerkprinzipien
 
-- Extern erreichbar: TCP 80 / TCP 443
-- Administrativer Zugriff (SSH): nur intern
-  - LAN
-  - WireGuard-Zugriff über die Fritz!Box
-- IPv6: nicht verwendet / effektiv ausgeschlossen
+Der Ingress folgt klaren netzwerkseitigen Leitlinien:
+
+- Extern erreichbar sind ausschließlich die für HTTP(S) erforderlichen Ports
+- Administrativer Zugriff ist **nicht öffentlich exponiert**
+- Management-Zugriffe erfolgen ausschließlich über kontrollierte interne Zugriffspfade
+- Nicht genutzte Protokolle und Adressfamilien sind konsequent ausgeschlossen
+
+Diese Prinzipien reduzieren die Angriffsfläche und vereinfachen Analyse und Betrieb.
 
 ---
 
-## Firewall-Status (Referenz)
+## Sicherheitsprinzipien
 
-- INPUT: DROP
-- FORWARD: DROP
-- OUTPUT: ACCEPT
-- Explizite Freigaben:
-  - established/related
-  - loopback
-  - TCP 80 / 443 (extern)
-  - TCP 22 (nur 192.168.1.0/24)
+### Firewall-Grundsätze
 
-Firewall-Regeln sind vollständig per Ansible reproduzierbar und wurden live verifiziert.
+Der Ingress ist nach dem **fail-closed-Prinzip** abgesichert:
 
----
+- eingehender Traffic ist standardmäßig blockiert
+- explizit erlaubte Verbindungen sind auf das notwendige Minimum beschränkt
+- etablierte Verbindungen werden korrekt weitergeführt
 
-## nginx & HTTP-Sicherheit
-
-### TLS
-
-- Debian-konforme Standardkonfiguration
-- TLS ≥ 1.2
-- Keine manuelle Überschreibung von `ssl_*`-Direktiven außerhalb von `nginx.conf`
-
-### Security Header (Ist-Zustand)
-
-- X-Content-Type-Options: nosniff
-- Referrer-Policy: strict-origin-when-cross-origin
-- X-Frame-Options: SAMEORIGIN (applikationsseitig gesetzt)
-- Kein Strict-Transport-Security (HSTS)
-
-#### Begründung
-
-- WordPress setzt Header selbst und überschreibt nginx-seitige Vorgaben
-- Ein erzwungener Header-Kampf zwischen Ingress und Applikation wurde bewusst vermieden
-- SAMEORIGIN wird als sicher und praxisgerecht akzeptiert
-- HSTS ist bewusst nicht erzwungen, um Ingress und Applikation sauber zu trennen
+Firewall-Regeln sind vollständig reproduzierbar und Teil der automatisierten Systemkonfiguration.
 
 ---
 
-## Härtetest – durchgeführte Prüfungen
+### TLS und HTTP-Sicherheit
 
-### Zulässige Zugriffe
-- HTTPS-Zugriff auf elselevy7.org: erfolgreich
-- HTTP → HTTPS Redirect: korrekt
+#### TLS
 
-### Unzulässige Pfade
-- /.env, /.git/: 404
-- /wp-config.php: kein Inhalt
-- /wp-admin: Login erforderlich
-- /wp-admin/install.php: Information sichtbar, keine Installation möglich
-- /server-status: 403 (Server-Signatur sichtbar, akzeptiert)
+- zeitgemäße, distributionskonforme TLS-Konfiguration
+- bewusste Vermeidung applikationsspezifischer Sonderkonfigurationen
+- zentrale Pflege der TLS-Parameter
 
-### HTTP-Methoden
-- TRACE: blockiert (405)
-- OPTIONS: beantwortet (200), kein Allow-Leak
+#### HTTP-Sicherheitsheader
+
+Sicherheitsheader werden konsistent eingesetzt, ohne Konflikte zwischen Ingress und Applikationen zu erzwingen.
+
+Bewusst umgesetzt sind u. a.:
+
+- Schutz vor MIME-Type-Sniffing
+- kontrolliertes Referrer-Verhalten
+- Rahmensetzung durch die jeweilige Applikation
+
+Eine Erzwingung zusätzlicher Header auf Ingress-Ebene erfolgt nur dort, wo keine Konflikte entstehen.
+
+---
+
+## Verifizierte Zugriffstests
+
+Der Referenzstand wurde durch gezielte Prüfungen validiert, darunter:
+
+- korrekte HTTPS-Erreichbarkeit
+- deterministische Weiterleitung von HTTP auf HTTPS
+- kontrollierter Umgang mit nicht vorgesehenen Pfaden
+- Blockade unsicherer HTTP-Methoden
+- kein unbeabsichtigtes Leaken interner Informationen
+
+Diese Tests bestätigen die Wirksamkeit der getroffenen Architektur- und Sicherheitsentscheidungen.
 
 ---
 
 ## Bewusste Akzeptanzen
 
-- Keine Erzwingung von HSTS auf Ingress-Ebene
-- X-Frame-Options: SAMEORIGIN statt DENY
-- Erreichbarkeit von /wp-admin/install.php mit Statusinformation
-- OPTIONS-Anfragen ohne Methoden-Leak
-- Sichtbare Backend-Signatur bei abgewiesenen Anfragen
+Bestimmte Aspekte werden bewusst akzeptiert, um Stabilität und Wartbarkeit zu gewährleisten, darunter:
 
-Diese Entscheidungen dienen der Stabilität, Wartbarkeit und Update-Festigkeit des Systems.
+- keine erzwungene globale HSTS-Policy auf Ingress-Ebene
+- applikationsseitige Verantwortung für bestimmte Header
+- kontrollierte Sichtbarkeit technischer Informationen bei abgewiesenen Anfragen
+
+Diese Entscheidungen sind dokumentiert, bewertet und können bei geänderten Anforderungen neu überprüft werden.
 
 ---
 
 ## Referenzstatus
 
 Der beschriebene Zustand ist:
+
 - technisch verifiziert
 - sicherheitsseitig bewertet
-- methodisch sauber
-- eingefrorener Referenzstand
+- methodisch sauber dokumentiert
+- als stabiler Referenzstand eingefroren
 
-Änderungen erfolgen nur bei neuen Anforderungen oder nach erneuter Bewertung.
+Änderungen erfolgen ausschließlich nach erneuter Bewertung und dokumentierter Entscheidung.

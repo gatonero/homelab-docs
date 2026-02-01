@@ -2,93 +2,28 @@
 title: "Homelab - Overview"
 ---
 
-# Homelab - Overview
-
-Zentraler Einstiegspunkt und Navigationsanker fuer die gesamte Homelab-Dokumentation.
+# Homelab – Gesamtüberblick
 
 ---
-
-## Einstieg
-
-* **Einstieg (kritische Systeme)**
-  [`Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)
-  Minimaler, DNS-unabhaengiger Einstieg fuer Wiederanlauf, Stromausfall
-  und Stoerungsfaelle.
-
----
-
 ## Zweck
+Zentraler Einstiegspunkt in die Homelab-Dokumentation.
 
-Diese Seite bietet einen strukturierten Gesamtueberblick ueber das Homelab.
-Sie dient als Startpunkt fuer Leser und als konzeptioneller Rahmen fuer alle
-weiteren Themenbereiche wie Architektur, Betrieb, Netzwerk, Services und Tools.
-
----
-
-## Kontext und Nutzung
-
-Diese Seite ist der **kanonische Einstiegspunkt** in die Homelab-Dokumentation.
-
-Beim Lesen der Dokumentation auf GitHub dient sie als zentraler
-Navigationsknoten und Startpunkt fuer alle wesentlichen Themenbereiche.
-
-In anderen Nutzungskontexten (z. B. lokales Wissensmanagement) kann diese
-Seite ebenfalls als konzeptioneller Anker verwendet werden, unabhaengig von
-ihrer Darstellung auf GitHub.
+Diese Seite dient der Orientierung und verweist auf die thematischen
+Bereiche der Dokumentation.
 
 ---
-
-## Struktur der Dokumentation
-
-* **Governance**
-  [`Dokumentationsprinzipien`](/pages/Governance/Dokumentationsprinzipien.md)
-
-* **Gesamtzusammenhang**
-  [`Gesamtzusammenhang`](/pages/Architektur/Gesamtzusammenhang.md)
-
-* **Architektur (Querschnitt)**
-  [`Ingress- und Betriebsarchitektur`](/pages/ingress-und-betriebsarchitektur.md)
-
-* **Architektur**
-  [`Overview Architektur`](/pages/Architektur/Overview-Architektur.md)
-
-* **Betrieb**
-  [`Overview Betrieb`](/pages/Betrieb/Overview-Betrieb.md)
-
-* **Betrieb – Reboot & Wiederanlauf**
-  [`Reboot-Referenzstand`](/pages/30-Betrieb-Reboot-Referenzstand.md)
-  
-* **Monitoring – Uptime Kuma**  
-  [`Monitoring – Uptime Kuma`](/pages/Monitoring-Uptime-Kuma.md)  
-  Zentrale Übersicht zur Monitoring-Architektur im Homelab (INFRA, SERVICE, JOB), inklusive Namens- und Strukturkonventionen.
-
-* **Monitoring – Proxmox Backup (Uptime Kuma Push)**  
-  [`Monitoring – Proxmox Backup (Uptime Kuma Push)`](/pages/Monitoring-Proxmox-Backup.md)  
-  Detaillierte Beschreibung des job-basierten Monitorings für den täglichen Proxmox-Backup-Lauf.
-
-* **Netzwerk, DNS und TLS**
-  [`Overview Netzwerk, DNS und TLS`](/pages/Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md)
-
-* **Services**
-  [`Overview Services`](/pages/Services/Overview-Services.md)
-
-* **NetBox / Inventar**
-  [`Overview NetBox`](/pages/NetBox/Overview-NetBox.md)
+## Dokumentationsbereiche
+- [Architektur](Architektur/Overview-Architektur.md)
+- [Betrieb](Betrieb/Overview-Betrieb.md)
+- [Services](Services/Overview-Services.md)
+- [Netzwerk, DNS & TLS](Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md)
+- [Sicherheit](Sicherheit/Overview-Sicherheit.md)
+- [NetBox](NetBox/Overview-NetBox.md)
+- [Governance](Governance/Dokumentationsprinzipien.md)
 
 ---
-## Abgrenzung
-
-Diese Seite enthaelt **keine technischen Details**.
-Sie verweist nicht auf konkrete Konfigurationen oder Schritt-fuer-Schritt-
-Anleitungen. Details befinden sich ausschliesslich auf den jeweiligen
-Uebersichts- und Detailseiten der Fachbereiche.
-
----
-
-## Weiterfuehrend
-
-* [`Overview Architektur`](/pages/Architektur/Overview-Architektur.md)
-* [`Overview Betrieb`](/pages/Betrieb/Overview-Betrieb.md)
-* [`Overview Netzwerk, DNS und TLS`](/pages/Netzwerk-DNS-TLS/Overview-Netzwerk-DNS-TLS.md)
-* [`Overview Services`](/pages/Services/Overview-Services.md)
-* [`Overview NetBox`](/pages/NetBox/Overview-NetBox.md)
+## Grundprinzipien
+Die Dokumentation ist:
+- strukturiert
+- konsistent
+- auf langfristige Wartbarkeit ausgelegt

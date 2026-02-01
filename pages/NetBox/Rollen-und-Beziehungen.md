@@ -70,6 +70,5 @@ Diese Seite enthaelt keine:
 - Tool-spezifischen Modellierung
 
 ## Weiterfuehrend
-
 - [Inventarisierungsmodell](Inventarisierungsmodell.md)
 - [NetBox als Source of Truth](NetBox-als-Source-of-Truth.md)

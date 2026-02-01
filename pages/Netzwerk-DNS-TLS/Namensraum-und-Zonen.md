@@ -4,7 +4,7 @@ title: "Netzwerk - Namensraum und DNS-Zonen"
 
 # Netzwerk - Namensraum und DNS-Zonen
 
-← Zurueck zur [Netzwerk-DNS-TLS-Overview](Overview-Netzwerk-DNS-TLS.md)
+← Zurueck zur [Overview-Netzwerk-DNS-TLS](Overview-Netzwerk-DNS-TLS.md)
 
 Konzeptionelle Beschreibung der internen Namensraeume und DNS-Zonen im
 Homelab.

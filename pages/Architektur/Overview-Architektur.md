@@ -2,48 +2,29 @@
 title: "Architektur - Overview"
 ---
 
-# Architektur - Overview
+# Einstieg in die Architektur des Homelabs
 
 ← Zurueck zur [Homelab-Overview](../00-Overview-Homelab.md)
 
-Uebersicht ueber den strukturellen Aufbau und die grundlegenden
-Architekturentscheidungen des Homelabs.
-
+---
 ## Zweck
-Diese Seite beschreibt den konzeptionellen Gesamtaufbau des Homelabs.
-Sie dient als Einstiegspunkt fuer alle architekturbezogenen Themen und
-ordnet einzelne Komponenten, Systeme und Dienste in ein konsistentes
-Gesamtbild ein.
+Einstiegspunkt in die Architektur. Diese Seite ordnet die Themen ein und verweist auf vertiefende Dokumente.
 
+---
 ## Architekturprinzipien
-Die Architektur des Homelabs folgt einigen grundlegenden Prinzipien:
-
 - Klare Trennung von Rollen und Verantwortlichkeiten
 - Modularer Aufbau mit lose gekoppelten Komponenten
-- Nachvollziehbarkeit und Dokumentierbarkeit aller Kernsysteme
-- Bevorzugung einfacher, robuster Loesungen gegenueber komplexen Setups
+- Nachvollziehbarkeit und Dokumentierbarkeit
+- Bevorzugung einfacher, robuster Loesungen
 
+---
 ## Struktur
-Die Architektur ist thematisch weiter untergliedert, unter anderem in:
-
-- Gesamtarchitektur und Systemueberblick
+Vertiefungen finden sich u. a. in:
+- Gesamtueberblick (Architekturmodell)
 - Netzwerk- und Namenskonzepte
-- Virtualisierung und Containerisierung
-- Zentrale Infrastrukturkomponenten
+- Virtualisierung und Container
+- Zentrale Plattform- und Rollenmodelle
 
+---
 ## Abgrenzung
-Diese Seite enthaelt keine konkreten Konfigurationsdetails.
-Technische Umsetzungen und detaillierte Beschreibungen befinden sich auf
-den jeweiligen Unterseiten.
-
-## Weiterfuehrend
-
-Die folgenden Detailseiten vertiefen einzelne Aspekte der Architektur:
-
-- [Architektur – Gesamtueberblick](Architektur-Gesamt.md)
-- [LAN-Konfiguration](LAN-Konfiguration.md)
-- [Virtualisierung](Virtualisierung.md)
-- [Virtualisierung und Container](Virtualisierung-und-Container.md)
-- [Container und Workloads](Container-und-Workloads.md)
-- [Plattform und Rollen](Plattform-und-Rollen.md)
-- [Abhaengigkeiten und Reihenfolgen](Abhaengigkeiten-und-Reihenfolgen.md)
+Keine Systemebenen, keine Betriebs- oder Governance-Inhalte.

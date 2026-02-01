@@ -4,7 +4,7 @@ title: "Sicherheit - Netzwerksegmentierung"
 
 # Sicherheit - Netzwerksegmentierung
 
-← Zurueck zur [`Overview`](/pages/Sicherheit/Overview-Sicherheit.md)
+← Zurueck zur [Overview-Sicherheit](Overview-Sicherheit.md)
 
 Konzeptionelle Beschreibung der Netzwerksegmentierung als zentrales
 Sicherheits- und Strukturierungsprinzip im Homelab.

@@ -6,6 +6,10 @@ title: "Betrieb – Wiederanlauf-Playbook"
 
 ← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
 
+Hinweis: Die konzeptionelle Einordnung des Reverse Proxys erfolgt im Rahmen
+des Ingress-Modells.
+Siehe: [`Netzwerk – Reverse Proxy und Zugriffspfade`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
+
 ## Zweck
 
 Dieses Playbook beschreibt den **standardisierten Wiederanlauf** des Homelabs nach:
