@@ -1,78 +1,61 @@
 ---
-title: "Betrieb - Wartung und Aenderungen"
+title: "Maintenance and Changes"
 ---
 
-# Betrieb - Wartung und Aenderungen
+# Maintenance and Changes
 
-← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+Maintenance ensures that systems remain secure, stable, and supportable.
 
-Konzeptionelle Beschreibung, wie Wartung und Aenderungen im laufenden
-Betrieb geplant, durchgefuehrt und nachvollziehbar dokumentiert werden.
+Changes are treated as controlled operational events.
 
-## Zweck
-Diese Seite beschreibt, wie Stabilitaet und Weiterentwicklung im Betrieb
-in Einklang gebracht werden.
+---
 
-Ziel ist es, ungeplante Eingriffe zu vermeiden und Aenderungen kontrolliert
-und bewusst umzusetzen.
+## Maintenance Principles
 
-## Wartung als Teil des Betriebs
-Wartung ist kein Ausnahmezustand:
+Maintenance activities follow these principles:
 
-- Regelmaessige Ueberpruefung von Systemen
-- Einspielen von Aktualisierungen
-- Bereinigung von Altlasten
+- Prefer automation over manual work
+- Minimize service disruption
+- Maintain rollback capability
+- Verify outcomes explicitly
 
-Wartung erhaelt die Betriebsfaehigkeit.
+Unverified maintenance is considered incomplete.
 
-## Arten von Aenderungen
-Aenderungen treten in verschiedenen Formen auf:
+---
 
-- Routinewartung
-- Funktionale Erweiterungen
-- Technische Anpassungen
-- Fehlerbehebungen
+## Types of Maintenance
 
-Nicht jede Aenderung hat denselben Impact.
+Typical maintenance includes:
 
-## Planung und Vorbereitung
-Aenderungen werden vorbereitet:
+- Security updates
+- Dependency upgrades
+- Configuration adjustments
+- Resource optimization
 
-- Bewertung von Risiken und Auswirkungen
-- Abstimmung mit Abhaengigkeiten
-- Festlegung von Rueckfalloptionen
+Each maintenance activity has a defined scope.
 
-Vorbereitung reduziert Stoerungen.
+---
 
-## Durchfuehrung und Kontrolle
-Bei der Umsetzung gelten klare Prinzipien:
+## Change Handling
 
-- Schrittweises Vorgehen
-- Kontrolle der Auswirkungen
-- Dokumentation der Massnahmen
+All changes must:
 
-Kontrolle ist Teil der Aenderung.
+- Be planned
+- Be documented
+- Be executed deliberately
+- Be verified after completion
 
-## Dokumentation und Nachvollziehbarkeit
-Aenderungen muessen nachvollziehbar sein:
+Emergency changes are documented retroactively.
 
-- Was wurde geaendert?
-- Warum wurde es geaendert?
-- Welche Auswirkungen traten auf?
+---
 
-Dokumentation schafft Transparenz.
+## Post-Change Verification
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+After any change:
 
-- Konkreten Wartungsplaene
-- Tool- oder Update-Anleitungen
-- Automatisierte Change-Prozesse
+- System health is verified
+- Monitoring signals are checked
+- Unexpected side effects are investigated
 
-Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
+A change is not complete until verification succeeds.
 
-## Weiterfuehrend
-
-* [`Versions- und Aenderungsmanagement`](/pages/Betrieb/Versions-und-Aenderungsmanagement.md)
-* [`Monitoring – Grundsaetze`](/pages/Betrieb/Monitoring-Grundsaetze.md)
-* [`Backup-Strategie`](/pages/Betrieb/Backup-Strategie.md)

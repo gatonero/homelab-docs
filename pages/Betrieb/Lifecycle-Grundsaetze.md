@@ -1,80 +1,68 @@
 ---
-title: "Betrieb - Lifecycle-Grundsaetze"
+title: "Lifecycle Principles"
 ---
 
-# Betrieb - Lifecycle-Grundsaetze
+# Lifecycle Principles
 
-← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+Lifecycle management defines how systems are introduced, operated, changed, and eventually retired.
 
-Konzeptionelle Beschreibung des Lebenszyklus von Systemen und Services im
-Homelab.
+Its purpose is to keep the Homelab maintainable, predictable, and recoverable over time.
 
-## Zweck
-Diese Seite beschreibt die grundlegenden Phasen, die Systeme und Services
-waehrend ihres Bestehens durchlaufen.
+---
 
-Ziel ist es, den gesamten Lebenszyklus bewusst zu betrachten und nicht
-nur die Betriebsphase.
+## Scope of Lifecycle Management
 
-## Phasen des Lifecycles
-Der Lifecycle umfasst mehrere Phasen:
+Lifecycle management applies to:
 
-- Planung und Entstehung
-- Inbetriebnahme
-- Betrieb und Nutzung
-- Aenderung und Weiterentwicklung
-- Stilllegung
+- Virtual machines
+- Containers and services
+- Configuration and automation artifacts
+- Operational documentation
 
-Jede Phase hat eigene Anforderungen und Risiken.
+No component exists outside the lifecycle.
 
-## Planung und Entstehung
-Bereits vor der Inbetriebnahme werden wichtige Entscheidungen getroffen:
+---
 
-- Zweck und Ziel des Systems
-- Einordnung in Architektur und Rollen
-- Abhaengigkeiten zu anderen Komponenten
-- Betriebs- und Sicherheitsanforderungen
+## Introduction Phase
 
-Gute Planung reduziert spaetere Probleme.
+New components are introduced in a controlled manner.
 
-## Betrieb und Nutzung
-Im Betrieb stehen Stabilitaet und Wartbarkeit im Vordergrund:
+Before a component becomes operational:
 
-- Ueberwachung und Pflege
-- Dokumentation von Aenderungen
-- Regelmaessige Ueberpruefung der Relevanz
+- Its purpose is documented
+- Its dependencies are known
+- Monitoring and backup are defined
+- Recovery paths are understood
 
-Betrieb ist ein fortlaufender Prozess.
+Undocumented components are not introduced.
 
-## Aenderungen und Weiterentwicklung
-Systeme bleiben selten unveraendert:
+---
 
-- Anpassung an neue Anforderungen
-- Technische Aktualisierungen
-- Optimierungen oder Vereinfachungen
+## Change Phase
 
-Aenderungen sind Teil des Lifecycles.
+Changes are expected and managed explicitly.
 
-## Stilllegung als bewusste Phase
-Auch das Ende eines Systems ist Teil des Lifecycles:
+All changes must be:
 
-- Geplante Ausserbetriebnahme
-- Sicherung relevanter Daten
-- Aufraeumen von Abhaengigkeiten
+- Intentional
+- Documented
+- Reversible where possible
+- Observable through monitoring
 
-Stilllegung verhindert Altlasten.
+Ad-hoc or implicit changes are avoided.
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+---
 
-- Konkreten Betriebs- oder Wartungsanleitungen
-- Zeitplaene oder Automatisierungen
-- Tool-spezifischen Prozesse
+## Retirement Phase
 
-Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
+Components are retired deliberately.
 
-## Weiterfuehrend
+Before retirement:
 
-* [`Wartung und Aenderungen`](/pages/Betrieb/Wartung-und-Aenderungen.md)
-* [`Stilllegung und Archivierung`](/pages/Betrieb/Stilllegung-und-Archivierung.md)
-* [`Versions- und Aenderungsmanagement`](/pages/Betrieb/Versions-und-Aenderungsmanagement.md)
+- Dependencies are removed
+- Data is archived or deleted as appropriate
+- Monitoring is disabled
+- Documentation is updated
+
+Orphaned components are not tolerated.
+

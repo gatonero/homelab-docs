@@ -1,41 +1,50 @@
 ---
-title: "Betrieb - Versions- und Aenderungsmanagement"
+title: "Version and Change Management"
 ---
 
-# Umsetzung von Änderungen im laufenden Betrieb
+# Version and Change Management
 
-← Zurueck zur [Betrieb-Overview](../Overview-Betrieb.md)
+Version and change management provide traceability and control over system evolution.
 
----
-
-## Zweck
-Beschreibt, wie Aenderungen im **laufenden Betrieb** umgesetzt werden:
-Ablauf, Verantwortlichkeiten und Sicherheitschecks.
+They ensure that the current state can always be explained and reconstructed.
 
 ---
 
-## Aenderungsarten
-- Konfigurationsaenderungen
-- Service-Aktualisierungen
-- Wartungs- und Betriebsanpassungen
+## Version Control
+
+All relevant artifacts are version-controlled, including:
+
+- Configuration files
+- Automation code
+- Documentation
+
+Unversioned operational artifacts are not acceptable.
 
 ---
 
-## Ablauf
-- Aenderung beschreiben
-- Risiko und Auswirkung pruefen
-- Umsetzung geplant durchfuehren
-- Ergebnis verifizieren
-- Dokumentation aktualisieren
+## Change Tracking
+
+Every change must be traceable to:
+
+- A documented intention
+- A version control commit
+- A known operational context
+
+Changes without context are considered risk factors.
 
 ---
 
-## Abgrenzung
-Dieses Dokument beschreibt **keine Governance-Entscheidungen**
-und **keine Release-Definitionen**.
+## Rollback Capability
+
+Where possible, rollback paths are defined in advance.
+
+If rollback is not possible, the risk is explicitly acknowledged.
 
 ---
 
-## Weiterfuehrend
-- Governance – Aenderungs- und Reviewprozess
-- Governance – Versionierung und Releases
+## Operational Transparency
+
+The system state must be explainable at any point in time.
+
+Version history is a core operational asset, not an administrative detail.
+
