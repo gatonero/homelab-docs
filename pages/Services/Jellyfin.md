@@ -1,81 +1,59 @@
 ---
-title: "Services - Jellyfin"
+title: "Jellyfin Service"
 ---
 
-# Services - Jellyfin
+# Jellyfin Service
 
-← Zurueck zur [Services-Overview](Overview-Services.md)
+Jellyfin provides media library management and streaming services within the Homelab.
 
-Dokumentation des Media-Server-Services Jellyfin im Homelab.
+It is an application service focused on availability and user experience rather than critical data.
 
-## Zweck
-Jellyfin dient als zentraler Media-Server zur Bereitstellung von Video-
-und Audioinhalten innerhalb des internen Netzwerks.
+---
 
-Der Service ist auf private Nutzung ausgelegt und stellt Inhalte ueber
-eine Weboberflaeche sowie kompatible Clients bereit.
+## Purpose
 
-## Einordnung
-Jellyfin ist ein Anwendungs-Service mit folgenden Eigenschaften:
+The service exists to:
 
-- Benutzerorientierter Zugriff
-- Persistente Mediendaten
-- Abhaengigkeit von Speicher- und Netzwerkdiensten
-- Geringe externe Abhaengigkeiten
+- Organize media libraries
+- Provide local streaming access
+- Support multiple client devices
+- Centralize media playback
 
-Der Service laeuft isoliert von anderen Anwendungen und wird klar als
-eigenstaendige Einheit betrieben.
+Media content is considered replaceable.
 
-## Architektur
-Jellyfin ist typischerweise wie folgt eingebettet:
+---
 
-- Betrieb in einer virtualisierten oder containerisierten Umgebung
-- Zugriff auf persistente Mediendaten ueber Netzwerkspeicher
-- Bereitstellung des Dienstes ueber HTTP(S)
-- Integration in DNS- und Reverse-Proxy-Strukturen
+## Scope
 
-Die Trennung von Anwendung, Daten und Zugriffspfad ist bewusst umgesetzt.
+Jellyfin covers:
 
-## Abhaengigkeiten
-Der Service haengt unter anderem ab von:
+- Media indexing and metadata retrieval
+- Streaming to supported clients
+- User profile and playback state management
 
-- Stabiler Netzwerk- und Namensaufloesung
-- Verfuegbarem und konsistentem Speicher
-- Reverse Proxy und TLS (optional, aber empfohlen)
-- Backup der Konfigurations- und Metadaten
+It does not perform media acquisition.
 
-Diese Abhaengigkeiten sind fuer Betrieb und Wiederherstellung relevant.
+---
 
-## Betrieb
-Im Betrieb gelten fuer Jellyfin folgende Grundsaetze:
+## Dependencies
 
-- Konfigurationsaenderungen erfolgen bewusst und dokumentiert
-- Updates werden kontrolliert durchgefuehrt
-- Logs und Status werden bei Stoerungen herangezogen
-- Der Service ist nicht kritisch fuer den Gesamtbetrieb des Homelabs
+The Jellyfin service depends on:
 
-## Backup und Restore
-Zu sichern sind insbesondere:
+- Network availability
+- Media storage access
+- Hardware acceleration where configured
+- Reverse proxy for access
 
-- Konfigurationsdateien
-- Metadaten und Datenbankinhalte
-- Benutzer- und Bibliotheksinformationen
+Temporary unavailability is acceptable.
 
-Mediendateien selbst werden separat betrachtet und unterliegen ggf.
-eigenen Sicherungsstrategien.
+---
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Operational Considerations
 
-- Installations- oder Update-Anleitungen
-- Client-spezifischen Konfigurationen
-- Performance-Tuning-Hinweise
+- Configuration is reproducible
+- Media libraries are monitored for access errors
+- Updates are low-risk
+- Backups focus on configuration, not media data
 
-Solche Inhalte werden auf spezialisierten Detailseiten behandelt.
+Service continuity is preferred but not critical.
 
-## Weiterfuehrend
-Weitere Seiten koennen beschreiben:
-
-- Konkrete Deployment-Varianten
-- Anbindung an Speicher
-- Betrieb hinter einem Reverse Proxy

@@ -1,77 +1,60 @@
 ---
-title: "Services - Paperless-ngx"
+title: "Paperless-ngx Service"
 ---
 
-# Services - Paperless-ngx
+# Paperless-ngx Service
 
-← Zurueck zur [Services-Overview](Overview-Services.md)
+Paperless-ngx provides document ingestion, processing, indexing, and retrieval within the Homelab.
 
-Dokumentation des Dokumentenmanagement-Services Paperless-ngx im Homelab.
-
-## Zweck
-Paperless-ngx dient als zentrales System zur Erfassung, Ablage und
-Durchsuchbarkeit von Dokumenten. Der Service unterstuetzt die
-papierarme Organisation und langfristige Archivierung.
-
-Der Fokus liegt auf strukturierter Ablage, Volltextsuche und
-Nachvollziehbarkeit.
-
-## Einordnung
-Paperless-ngx ist ein Anwendungs-Service mit folgenden Eigenschaften:
-
-- Verarbeitung und Speicherung sensibler Dokumente
-- Persistente Datenhaltung
-- Abhaengigkeit von Speicher, Datenbank und Hintergrunddiensten
-- Hoehere Anforderungen an Backup und Wiederherstellung
-
-Der Service ist funktional zentral, aber technisch klar abgegrenzt.
-
-## Architektur
-Paperless-ngx ist typischerweise wie folgt eingebettet:
-
-- Betrieb in einer containerisierten Umgebung
-- Nutzung einer Datenbank fuer Metadaten
-- Persistenter Speicher fuer Dokumente und Medien
-- Zugriff ueber Weboberflaeche innerhalb des internen Netzes
-
-Die Trennung von Anwendung, Datenbank und Dateispeicher ist bewusst
-umgesetzt.
-
-## Abhaengigkeiten
-Der Service haengt unter anderem ab von:
-
-- Stabiler Netzwerk- und Namensaufloesung
-- Zuverlaessigem persistentem Speicher
-- Datenbank- und Hintergrunddiensten
-- Backup-Mechanismen fuer Daten und Metadaten
-
-Diese Abhaengigkeiten sind kritisch fuer Betrieb und Wiederherstellung.
-
-## Betrieb
-Im Betrieb gelten fuer Paperless-ngx folgende Grundsaetze:
-
-- Dokumente gelten nach Import als produktiv
-- Aenderungen an Struktur oder Metadaten erfolgen bewusst
-- Updates werden geplant und getestet
-- Zugriff ist auf berechtigte Nutzer beschraenkt
-
-Stoerungen oder Datenverluste haben direkte Auswirkungen auf die
-Dokumentenorganisation.
-
-## Backup und Restore
-Zu sichern sind insbesondere:
-
-- Dokumente und Medien
-- Metadaten und Datenbankinhalte
-- Konfigurationsdateien
-- Import- u
+It is an application service with persistent data and defined backup requirements.
 
 ---
 
-## Abgrenzung
+## Purpose
 
+The service exists to:
+
+- Digitize incoming documents
+- Classify and index content
+- Provide searchable document storage
+- Reduce reliance on physical archives
+
+Data integrity is operationally critical.
 
 ---
 
-## Weiterfuehrend
+## Scope
+
+Paperless-ngx covers:
+
+- Document ingestion workflows
+- Metadata extraction and indexing
+- Long-term document storage
+- User access to archived documents
+
+It is not used as a general file storage system.
+
+---
+
+## Dependencies
+
+The Paperless-ngx service depends on:
+
+- Persistent storage
+- Database and message components
+- OCR and processing backends
+- Reverse proxy for access
+
+Loss of dependencies impacts data availability.
+
+---
+
+## Operational Considerations
+
+- Backups are mandatory and verified
+- Storage growth is monitored
+- Updates are performed cautiously
+- Restore procedures are defined
+
+Unrecoverable document loss is unacceptable.
 
