@@ -1,61 +1,55 @@
 ---
-title: "Betrieb - Restore Drill"
+title: "Restore Drill"
 ---
 
-# Betrieb - Restore Drill
+# Restore Drill
 
-← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+Restore drills are controlled exercises to validate backup and recovery capabilities.
 
-Konzeptioneller Rahmen fuer geplante Wiederherstellungsuebungen (Restore Drills)
-im Homelab.
+They are performed proactively, not during incidents.
 
-## Zweck
-Diese Seite beschreibt, warum und wie regelmaessige Restore Drills
-durchgefuehrt werden. Ziel ist es, die praktische Wiederherstellbarkeit
-von Systemen und Daten sicherzustellen und Schwachstellen fruehzeitig zu
-erkennen.
+---
 
-Ein Restore Drill ist kein Notfall, sondern ein bewusst geplanter Test.
+## Purpose of Drills
 
-## Ziele von Restore Drills
-Restore Drills verfolgen mehrere Ziele:
+Restore drills serve to:
 
-- Ueberpruefung der tatsaechlichen Wiederherstellbarkeit
-- Validierung von Backup-Inhalten und -Prozessen
-- Training von Wiederanlaufablaeufen
-- Reduktion von Unsicherheiten im Ernstfall
+- Verify backup usability
+- Validate documented procedures
+- Identify gaps in recovery paths
+- Build operational confidence
 
-Ein erfolgreiches Backup ohne getesteten Restore gilt als unvollstaendig.
+A restore that has never been tested is considered unreliable.
 
-## Umfang und Abgrenzung
-Restore Drills koennen unterschiedliche Umfaenge haben:
+---
 
-- Wiederherstellung einzelner Dateien oder Verzeichnisse
-- Wiederanlauf einzelner Dienste oder Systeme
-- Test kompletter Systemwiederherstellungen
+## Drill Execution
 
-Nicht jeder Drill muss den maximalen Umfang haben; entscheidend ist die
-Regelmaessigkeit und Nachvollziehbarkeit.
+A restore drill follows these steps:
 
-## Durchfuehrungsprinzipien
-Fuer Restore Drills gelten einige Grundsaetze:
+1. Select a defined restore scenario
+2. Prepare an isolated test environment
+3. Execute the restore procedure
+4. Verify functional correctness
+5. Document findings if relevant
 
-- Drills erfolgen geplant und dokumentiert
-- Produktivsysteme werden nicht gefaehrdet
-- Ergebnisse und Erkenntnisse werden festgehalten
-- Erkenntnisse fliessen in Backup- und Betriebsprozesse ein
+---
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Frequency
 
-- Konkreten Restore-Anleitungen
-- Tool- oder systemspezifischen Befehle
-- Zeitplaene oder Frequenzen
+Restore drills are performed periodically or after significant changes.
 
-Solche Details werden auf spezialisierten Detailseiten beschrieben.
+Frequency is chosen to balance confidence and operational effort.
 
-## Weiterfuehrend
+---
 
-* [`Restore-Szenarien`](/pages/Betrieb/Restore-Szenarien.md)
-* [`Notfallwiederanlauf`](/pages/Betrieb/Notfallwiederanlauf.md)
-* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
+## Outcomes
+
+If a restore drill fails:
+
+- The backup is considered invalid
+- The procedure is corrected
+- The drill is repeated
+
+Unverified backups are not trusted.
+
