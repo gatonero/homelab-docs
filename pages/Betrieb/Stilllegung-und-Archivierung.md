@@ -1,74 +1,77 @@
 ---
-title: "Betrieb - Stilllegung und Archivierung"
+title: "Decommissioning and Archiving"
 ---
 
-# Betrieb - Stilllegung und Archivierung
+# Decommissioning and Archiving
 
-← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+Decommissioning defines the controlled removal of systems and services from operation.
 
-Konzeptionelle Beschreibung, wie Systeme und Services bewusst ausser
-Betrieb genommen und relevante Informationen archiviert werden.
-
-## Zweck
-Diese Seite beschreibt, wie Stilllegung als geplanter Bestandteil des
-Lifecycles verstanden wird.
-
-Ziel ist es, technische und dokumentarische Altlasten zu vermeiden und
-Ressourcen sauber freizugeben.
-
-## Bedeutung der Stilllegung
-Stilllegung ist mehr als Abschalten:
-
-- Bewusste Entscheidung zum Beenden eines Systems
-- Klare Trennung von aktivem Betrieb
-- Vermeidung ungenutzter oder vergessener Komponenten
-
-Ein System ohne Zweck ist ein Risiko.
-
-## Vorbereitung der Stilllegung
-Vor der Stilllegung werden wichtige Fragen geklaert:
-
-- Sind alle Abhaengigkeiten bekannt?
-- Sind relevante Daten gesichert?
-- Gibt es Ersatz oder Nachfolge?
-
-Vorbereitung verhindert Datenverlust und Nebenwirkungen.
-
-## Durchfuehrung
-Die Stilllegung erfolgt kontrolliert:
-
-- Abschaltung von Services
-- Entfernen von Zugriffsrechten
-- Bereinigung von Konfigurationen und Abhaengigkeiten
-
-Kontrolliertes Vorgehen ist entscheidend.
-
-## Archivierung
-Nicht alles wird geloescht:
-
-- Dokumentation bleibt erhalten
-- Wichtige Konfigurationsstaende werden archiviert
-- Entscheidungen und Hintergruende bleiben nachvollziehbar
-
-Archivierung dient der Nachvollziehbarkeit.
-
-## Nachbereitung
-Nach der Stilllegung erfolgt eine Nachbereitung:
-
-- Ueberpruefung auf verbliebene Abhaengigkeiten
-- Aktualisierung von Inventar und Dokumentation
-- Ableitung von Lessons Learned
-
-Stilllegung schliesst den Lifecycle ab.
-
-## Abgrenzung
-Diese Seite enthaelt keine:
-
-- Konkreten Abschalt- oder Loeschbefehle
-- Tool-spezifischen Stilllegungsprozesse
-- Automatis
+Archiving ensures that required information and data remain available after active use has ended.
 
 ---
 
-## Weiterfuehrend
+## Purpose
+
+The purpose of decommissioning is to:
+
+- Reduce operational complexity
+- Eliminate unused attack surfaces
+- Prevent orphaned dependencies
+- Maintain a clean and explainable system state
+
+Decommissioning is a planned operational activity, not an ad-hoc cleanup.
+
+---
+
+## Decommissioning Criteria
+
+A component is eligible for decommissioning when:
+
+- Its function is no longer required
+- A replacement is fully operational
+- All dependencies are identified
+- Data handling requirements are clarified
+
+Undocumented components are not decommissioned.
+
+---
+
+## Decommissioning Process
+
+The standard decommissioning process includes:
+
+1. Identify and confirm scope
+2. Remove dependencies
+3. Archive or delete data as required
+4. Disable monitoring and alerting
+5. Remove the component
+6. Update documentation
+
+Skipping steps increases operational risk.
+
+---
+
+## Archiving Principles
+
+Archiving follows these principles:
+
+- Archived data is immutable
+- Retention requirements are explicit
+- Access is restricted and auditable
+- Restore procedures are known
+
+Archived data without context is operationally useless.
+
+---
+
+## Completion Criteria
+
+Decommissioning is complete when:
+
+- The component is fully removed
+- No dependencies remain
+- Monitoring is clean
+- Documentation reflects reality
+
+Incomplete decommissioning is treated as an operational defect.
 
