@@ -1,77 +1,62 @@
 ---
-title: "Betrieb - Metriken, Logs und Zustaende"
+title: "Metrics, Logs, and States"
 ---
 
-# Betrieb - Metriken, Logs und Zustaende
+# Metrics, Logs, and States
 
-← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+Operational observability is built on three pillars: metrics, logs, and states.
 
-Konzeptionelle Beschreibung der verschiedenen Beobachtungsebenen im
-Monitoring und ihres Zusammenspiels im Betrieb.
+Each serves a distinct purpose and must not be mixed indiscriminately.
 
-## Zweck
-Diese Seite beschreibt, welche Arten von Signalen im Monitoring genutzt
-werden und welche Rolle sie jeweils spielen.
+---
 
-Ziel ist es, die unterschiedlichen Informationsquellen gezielt und
-bewusst einzusetzen, statt sie unstrukturiert zu sammeln.
+## Metrics
 
-## Metriken
-Metriken sind zeitbasierte, numerische Messwerte:
+Metrics represent quantitative measurements over time.
 
-- Auslastung von Ressourcen
-- Antwortzeiten und Durchsatz
-- Fehler- und Erfolgsraten
+Examples include:
 
-Sie eignen sich besonders fuer Trends, Vergleiche und Schwellen.
+- Disk utilization
+- Memory consumption
+- Service uptime
+
+Metrics are useful when clear thresholds exist that trigger operational decisions.
+
+---
 
 ## Logs
-Logs liefern ereignisbasierte Informationen:
 
-- Fehler- und Warnmeldungen
-- Statuswechsel
-- Detailinformationen zu Abläufen
+Logs provide contextual, event-oriented information.
 
-Logs sind detailliert, aber ohne Kontext oft schwer auswertbar.
+They are primarily used for:
 
-## Zustaende
-Zustaende fassen Informationen zusammen:
+- Root cause analysis
+- Incident investigation
+- Verification of expected behavior
 
-- Dienst erreichbar oder nicht
-- System stabil oder degradiert
-- Funktional oder gestoert
+Logs are not suitable for primary alerting.
 
-Zustaende sind abstrahiert und fuer Entscheidungen besonders geeignet.
+---
 
-## Zusammenspiel
-Metriken, Logs und Zustaende ergaenzen sich:
+## States
 
-- Zustaende geben schnellen Überblick
-- Metriken zeigen Entwicklung und Trends
-- Logs liefern Detailinformationen
+States represent binary or discrete conditions.
 
-Kein Signaltyp ersetzt die anderen.
+Examples include:
 
-## Auswahl relevanter Signale
-Nicht jedes Signal ist gleich wichtig:
+- Backup successful or failed
+- Service running or stopped
+- Host reachable or unreachable
 
-- Fokus auf betrieblich relevante Aspekte
-- Vermeidung von Signalflut
-- Klare Zuordnung zu Entscheidungen
+States are preferred for alerting because they directly map to actions.
 
-Relevanz bestimmt die Auswahl.
+---
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Operational Usage
 
-- Konkreten Metrikenlisten
-- Logformate oder Parser
-- Technische Sammel- oder Speichermechanismen
+Metrics explain trends.  
+Logs explain causes.  
+States explain whether action is required.
 
-Solche Details werden auf spezialisierten Detailseiten beschrieben.
+Mixing these concepts leads to unclear signals and operational noise.
 
-## Weiterfuehrend
-
-* [`Alarmierung und Reaktion`](/pages/Betrieb/Alarmierung-und-Reaktion.md)
-* [`Monitoring – Grundsaetze`](/pages/Betrieb/Monitoring-Grundsaetze.md)
-* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)

@@ -1,119 +1,78 @@
 ---
-title: "Betrieb - Monitoring-Grundsaetze"
+title: "Monitoring Principles"
 ---
 
-# Betrieb - Monitoring-Grundsaetze
+# Monitoring Principles
 
-← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
+Monitoring is a core operational discipline in this Homelab.
 
-Konzeptionelle Beschreibung der Monitoring-Grundsaetze im Homelab und der
-Rolle von Transparenz fuer stabilen Betrieb.
+Its purpose is not visual dashboards, but early detection, clear signals, and actionable outcomes. Monitoring is considered successful when silence means that everything is operating as intended.
 
-## Zweck
-Diese Seite beschreibt, warum Monitoring notwendig ist und welche Ziele
-damit verfolgt werden.
+---
 
-Ziel ist es, Zustaende sichtbar zu machen, Probleme fruehzeitig zu
-erkennen und fundierte Entscheidungen im Betrieb zu ermoeglichen.
+## Objectives
 
-## Rolle von Monitoring
-Monitoring ist ein zentrales Betriebsmittel:
+Monitoring serves the following objectives:
 
-- Sichtbarkeit von System- und Service-Zustaenden
-- Frueherkennung von Abweichungen
-- Grundlage fuer Analyse und Optimierung
-- Unterstuetzung bei Stoerungen und Restores
+- Detect failures before they escalate
+- Detect degradations before they cause outages
+- Provide clear operational signals
+- Enable fast and deterministic reactions
+- Support unattended operation
 
-Ohne Monitoring bleibt Betrieb reaktiv.
+---
 
-## Prinzipien
-Monitoring folgt klaren Prinzipien:
+## Push-Based Model
 
-- Relevanz vor Vollstaendigkeit
-- Kontinuitaet statt punktueller Messung
-- Vergleichbarkeit ueber Zeit
-- Verstaendliche Darstellung
+All monitoring follows a push-based model.
 
-Nicht alles Messbare ist auch relevant.
+Systems are responsible for actively reporting their state. Missing signals are treated as potential fault conditions.
 
-## Fokus auf Zustände
-Monitoring konzentriert sich auf Zustaende:
+This avoids hidden dependencies on polling infrastructure and prevents blind spots caused by unreachable targets.
 
-- Erreichbarkeit
-- Auslastung
-- Fehlerraten
-- Stabilitaet
+---
 
-Zustaende sind wichtiger als einzelne Messpunkte.
+## Events Over Metrics
 
-## Grenzen des Monitorings
-Monitoring ersetzt keine Analyse oder Planung:
+Monitoring prioritizes events over continuous metrics.
 
-- Es zeigt Symptome, nicht immer Ursachen
-- Es verhindert keine Fehler
-- Es benoetigt Interpretation
+Relevant events include:
 
-Monitoring ist ein Werkzeug, kein Selbstzweck.
+- Successful or failed backups
+- Service start and stop events
+- Planned maintenance windows
+- Unexpected restarts
 
-## Pflege und Weiterentwicklung
-Monitoring muss gepflegt werden:
+Metrics are only used when they directly support clear operational thresholds.
 
-- Anpassung an neue Services
-- Entfernen irrelevanter Signale
-- Regelmaessige Ueberpruefung der Aussagekraft
+---
 
-Ungepflegtes Monitoring verliert Wert.
+## Alert Quality
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+Alerts must be:
 
-- Tool- oder Produktvergleiche
-- Konkreten Metriken oder Schwellenwerte
-- Dashboard-Designs
+- Actionable
+- Rare
+- Unambiguous
+- Bound to responsibility
 
-Solche Details werden auf spezialisierten Detailseiten beschrieben.
+Alerts without required action are considered noise and must be removed.
 
-## Weiterfuehrend
+---
 
-* [`Metriken, Logs und Zustaende`](/pages/Betrieb/Metriken-Logs-und-Zustaende.md)
-* [`Alarmierung und Reaktion`](/pages/Betrieb/Alarmierung-und-Reaktion.md)
-* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
+## No Implicit Trust
 
-## Monitoring-Taxonomie und Alarmstrategie
+Monitoring does not assume that services, schedulers, networks, or storage work correctly by default.
 
-Das Monitoring ist bewusst in Kategorien unterteilt, um Ausfälle schnell
-einordnen und priorisieren zu können.
+All critical assumptions must be explicitly verified.
 
-### Kategorien
+---
 
-**[EXTERN]**
-Externe, öffentlich erreichbare Dienste.
-Sie repräsentieren die Außenwirkung und sind maßgeblich für Vertrauen
-in Zuverlässigkeit und Betrieb.
+## Relationship to Automation
 
-**[INFRA]**
-Zentrale technische Basis wie Proxmox, QNAP oder Router.
-Ausfälle erklären Ursachen, entschuldigen aber keine EXTERN-Probleme.
+Automation reduces failure modes.  
+Monitoring verifies automation outcomes.
 
-**[JOB]**
-Ereignisgetriebene Aufgaben wie Backups.
-Ein fehlender Push ist immer ein Fehlerzustand.
+Automation without monitoring is unsafe.  
+Monitoring without automation creates unnecessary manual effort.
 
-**[SERVICE]**
-Interne Dienste innerhalb des LANs.
-
-### Alarmpriorität
-
-Die Alarmierung folgt der Wirkung, nicht der technischen Abhängigkeit:
-
-1. [EXTERN] – höchste Priorität, sofortige Alarmierung
-2. [INFRA] – sofortige Alarmierung
-3. [JOB] – Alarm nach Ablauf des erwarteten Zeitfensters
-4. [SERVICE] Home Assistant – alarmrelevant als Alltags- und Vertrauenssystem
-5. [SERVICE] sonstige – Sichtbarkeit ohne Alarm
-
-### Grundsatz
-
-Ein Alarm bedeutet immer, dass eine Handlung erforderlich ist.
-Dienste, bei denen im Alarmfall keine Reaktion erfolgen würde,
-dürfen keine Benachrichtigungen auslösen.

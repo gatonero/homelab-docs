@@ -1,90 +1,49 @@
 ---
-title: "Monitoring Proxmox Backup Push"
+title: "Proxmox Backup Monitoring (Push-Based)"
 ---
 
-## Ziel
+# Proxmox Backup Monitoring (Push-Based)
 
-Proxmox-Backups werden push-basiert an Uptime Kuma gemeldet.
-Pro Backup-Job existiert genau ein Status.
+Proxmox backup monitoring follows the push-based monitoring model used throughout this Homelab.
 
-Erfolgreich:
-- Push mit Status up
+The backup system actively reports its execution results instead of being polled.
 
-Fehlerhaft oder ausgeblieben:
-- Alarm
+---
 
-Pull-basierte Prüfungen werden bewusst nicht verwendet.
+## Rationale
 
-## Architektur
+Backups are critical but infrequent operations.
 
-- Ein Hook-Script wird beim Ereignis vzdump job-end ausgeführt
-- Ein Guard-Mechanismus stellt sicher, dass der Hook dauerhaft aktiv bleibt
-- Der Push erfolgt IP-basiert, TLS wird vollständig validiert
-- Die Umsetzung ist node-lokal und für Multi-Node-Betrieb ausgelegt
+Polling-based monitoring risks missing failures between intervals or assuming success without confirmation.
 
-## Komponenten
+Push-based reporting provides explicit success or failure signals.
 
-### Hook-Script
+---
 
-Pfad:
+## Monitored Events
 
-    /var/lib/vz/snippets/vzdump-uptime-kuma-hook.sh
+The following events are monitored:
 
-Aufgabe:
-- reagiert ausschließlich auf das Ereignis job-end
-- bewertet den Gesamtstatus des Backup-Jobs
-- sendet genau einen Push an Uptime Kuma
+- Backup completed successfully
+- Backup failed
+- Backup skipped or aborted
+- Backup duration outside expected range
 
-### Guard-Script
+Each event generates a clear operational signal.
 
-Pfad:
+---
 
-    /usr/local/sbin/ensure-vzdump-hook.sh
+## Failure Handling
 
-Aufgabe:
-- überwacht die Datei /etc/pve/vzdump.cron
-- stellt sicher, dass folgende Zeile immer vorhanden ist:
+Any failed or missing backup signal is treated as an incident.
 
-        hookscript: local:snippets/vzdump-uptime-kuma-hook.sh
+There is no grace period or silent retry logic without visibility.
 
-Änderungen an Backup-Jobs oder an VMs/LXCs können den Push dadurch nicht versehentlich deaktivieren.
+---
 
-### systemd Guard
+## Operational Outcome
 
-Units:
+A backup that is not explicitly reported as successful is considered unreliable.
 
-    vzdump-hook-guard.path
-    vzdump-hook-guard.service
+Unverified backups are operationally equivalent to missing backups.
 
-Funktion:
-- reagiert auf jede Änderung an vzdump.cron
-- führt das Guard-Script automatisch aus
-- stellt den Sollzustand selbstheilend wieder her
-
-## Multi-Node-Betrieb
-
-- jeder Proxmox-Node besitzt die gleiche Backup-Push-Baseline
-- die Umsetzung erfolgt über die Ansible-Role proxmox-backup-push
-- neue Nodes werden durch Aufnahme in die Inventory-Gruppe proxmox_hosts integriert
-
-## Betriebsregeln
-
-- jeder produktive Proxmox-Node muss diese Role erhalten
-- ein fehlender Push ist immer als Fehler zu werten
-- es existiert keine stille Degradierung
-
-## Test
-
-Manueller Funktionstest auf einem Node:
-
-    /var/lib/vz/snippets/vzdump-uptime-kuma-hook.sh job-end ok
-
-Erwartetes Ergebnis:
-- der Push erscheint unmittelbar in Uptime Kuma
-- der Zeitstempel wird aktualisiert
-
-## Wartung
-
-- Änderungen an Backup-Jobs sind ohne zusätzliche Maßnahmen zulässig
-- der Guard stellt den korrekten Zustand automatisch wieder her
-- die Konfiguration ist vollständig versioniert und über Ansible reproduzierbar
