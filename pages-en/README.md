@@ -1,41 +1,37 @@
+# Homelab Documentation
+
+This documentation describes the architecture, operations, and services of the Homelab.
+
+German is the leading language of this documentation. All content is maintained there first.
+
 ---
-title: "Homelab - README"
+
+## Entry Point
+
+The entry point into the documentation is the central overview document:
+
+→ 00-Overview-Homelab.md
+
 ---
 
-# Homelab - README
+## Structure
 
-← Zurueck zur [`Overview`](/pages/00-Overview-Homelab.md)
+The documentation is organized by topic and covers, among others:
 
-Uebersicht und Einstieg in die technische Dokumentation des Homelabs.
+- Architecture
+- Operations
+- Services
+- Network, DNS, and TLS
+- NetBox
+- Security and governance
 
-## Zweck
-Dieses Repository enthaelt die strukturierte Dokumentation eines privat
-betriebenen Homelabs. Ziel ist eine nachvollziehbare, wartbare und langfristig
-stabile Beschreibung von Architektur, Betrieb, Netzwerk, Services und
-organisatorischen Regeln.
+Each section contains independent detail documents.
 
-Die Dokumentation ist bewusst textbasiert aufgebaut und folgt klaren
-Namens- und Strukturregeln, um Versionskontrolle und Automatisierung zu
-ermoeglichen.
+---
 
-## Aufbau der Dokumentation
-Der Kern der Dokumentation befindet sich im Verzeichnis `pages/` und ist
-thematisch gegliedert:
+## Validity
 
-- Zentrale Overviews zur Navigation und Einordnung
-- Fachbereiche wie Architektur, Betrieb, Netzwerk und Services
-- Detailseiten zu konkreten Systemen und Prozessen
+This documentation describes the **actual current state** of the Homelab.
 
-## Versionsmodell
-Die Versionierung der Dokumentation erfolgt ueber Git-Tags und Releases.
-Das Arbeitsverzeichnis bleibt ueber alle Versionen hinweg konstant, waehrend
-inhaltliche Meilensteine explizit versioniert werden.
+Undocumented systems, assumptions, or implicit dependencies are considered non-existent.
 
-## Abgrenzung
-Dieses Repository enthaelt ausschliesslich Dokumentation.
-Automatisierungsskripte, Konfigurationsdateien oder Betriebsdaten sind nicht
-Bestandteil dieses Repositories.
-
-## Weiterfuehrend
-Der empfohlene Einstiegspunkt fuer Leser ist die Seite
-`00-Overview-Homelab.md`.
