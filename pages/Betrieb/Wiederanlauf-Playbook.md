@@ -1,133 +1,59 @@
 ---
-title: "Betrieb – Wiederanlauf-Playbook"
+title: "Restart Playbook"
 ---
 
-# Betrieb – Wiederanlauf-Playbook
+# Restart Playbook
 
-← Zurueck zur [`Overview`](/pages/Betrieb/Overview-Betrieb.md)
+The restart playbook provides a deterministic sequence for bringing systems back online after shutdowns or failures.
 
-Hinweis: Die konzeptionelle Einordnung des Reverse Proxys erfolgt im Rahmen
-des Ingress-Modells.
-Siehe: [`Netzwerk – Reverse Proxy und Zugriffspfade`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
-
-## Zweck
-
-Dieses Playbook beschreibt den **standardisierten Wiederanlauf** des Homelabs nach:
-
-* geplantem Shutdown
-* ungeplantem Stromausfall
-
-Ziel ist ein **deterministisches Vorgehen ohne situative Entscheidungen**.
+It is designed to minimize guesswork under pressure.
 
 ---
 
-## Grundsatz (verbindlich)
+## Preconditions
 
-* **Backups werden ausschließlich zentral auf dem QNAP TS-464 durchgeführt**
-* Der QNAP ist der **Datenanker** des Homelabs
-* Nach einem Stromausfall sind **keine manuellen Backup-Aktionen** auf Clients oder Servern erforderlich
-* Google Drive dient **nur als Offsite-Ziel** für HBS3-Backups
+Before starting a restart:
 
-> Clientseitige Backup-Tools (rclone, restic) sind **nicht im Einsatz**.
+- The recovery objective is defined
+- Required backups are verified
+- Dependencies are understood
+- Access to core systems is available
 
----
-
-## Wiederanlauf – Übersicht
-
-Empfohlene Reihenfolge:
-
-1. Stromversorgung herstellen
-2. NAS starten (QNAP TS-464)
-3. Proxmox-Host starten (M720q)
-4. Docker-VM startet automatisch
-5. Docker-Stacks starten automatisch
-6. Funktionsprüfung
+Restarting without preconditions increases risk.
 
 ---
 
-## Schritt 1 – Stromversorgung
+## Restart Sequence
 
-* stabile Stromversorgung sicherstellen
-* ggf. USV-Status prüfen
+The standard restart sequence is:
 
----
+1. Physical hosts
+2. Core virtualization platform
+3. Base networking services
+4. Core infrastructure services
+5. Application services
 
-## Schritt 2 – NAS (QNAP TS-464)
-
-* NAS einschalten
-* warten, bis:
-
-  * Storage verfügbar ist
-  * Netzwerkdienste aktiv sind
-  * HBS3 betriebsbereit ist
-
-**Hinweis:**
-Backups laufen serverseitig und werden vom QNAP selbständig gemäß Zeitplan ausgeführt.
+The sequence is adjusted only if explicitly documented.
 
 ---
 
-## Schritt 3 – Proxmox-Host
+## Verification
 
-* Proxmox-Host starten
-* Management-UI (Web) erreichbar abwarten
+After restart:
 
----
+- Service availability is verified
+- Monitoring signals are checked
+- Logs are reviewed for anomalies
 
-## Schritt 4 – Docker-VM
-
-* startet automatisch
-* kein manuelles Eingreifen erforderlich
+A restart is not complete until verification succeeds.
 
 ---
 
-## Schritt 5 – Docker-Stacks
+## Post-Restart Actions
 
-* Start erfolgt durch `docker-compose-autostart.service`
-* erwarteter Zustand:
+After stabilization:
 
-  * alle produktiven Container im Status `Up`
-
----
-
-## Schritt 6 – Funktionsprüfung
-
-* Reverse Proxy erreichbar
-* kritische Dienste verfügbar (z. B.:
-
-  * NGINX Proxy Manager
-  * Home Assistant
-  * NetBox
-  * Uptime Kuma)
-
----
-
-## Abschlusskriterium
-
-Der Wiederanlauf gilt als erfolgreich, wenn:
-
-* alle kritischen Systeme erreichbar sind
-* keine manuellen Startmaßnahmen erforderlich waren
-* keine Backup-bezogenen Eingriffe notwendig waren
-
----
-
-## Abgrenzung
-
-* **Mini-IT13**:
-
-  * kein Backup-Knoten
-  * keine Cloud-Anbindung
-  * keine Backup-Tools aktiv
-
-* **Syncthing**:
-
-  * dient ausschließlich der Arbeitskopien
-  * kein Backup, keine Historisierung
-
----
-
-## Weiterfuehrend
-
-* [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)
-* [`Betrieb – Docker-VM Autostart & Reverse Proxy`](/pages/Betrieb/Betrieb-Docker-VM-Autostart-Reverse-Proxy.md)
+- Deferred documentation is completed
+- Root cause analysis is scheduled if required
+- Preventive measures are identified
 

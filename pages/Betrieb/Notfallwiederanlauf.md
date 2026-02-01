@@ -1,67 +1,62 @@
 ---
-title: "Betrieb - Notfallwiederanlauf"
+title: "Emergency Recovery"
 ---
 
-# Betrieb - Notfallwiederanlauf
+# Emergency Recovery
 
-← Zurueck zur [Betrieb-Overview](Overview-Betrieb.md)
+Emergency recovery describes the immediate actions required to restore minimal operational capability after a severe disruption.
 
-Konzeptionelle Beschreibung des Vorgehens beim Wiederanlauf des Homelabs
-nach schwerwiegenden Stoerungen oder Totalausfaellen.
-
-## Zweck
-Diese Seite beschreibt, wie nach einem groesseren Ausfall strukturiert
-und kontrolliert vorgegangen wird, um den Betrieb schrittweise
-wiederherzustellen.
-
-Ziel ist es, Chaos zu vermeiden und Wiederanlaufprozesse vorab gedanklich
-zu ordnen.
-
-## Abgrenzung zu Restore-Drills
-Der Notfallwiederanlauf unterscheidet sich bewusst von geplanten
-Restore-Drills:
-
-- Notfall: ungeplant, unter Zeitdruck
-- Restore-Drill: geplant, kontrolliert, dokumentiert
-- Fokus auf Mindestfunktion statt Optimierung
-
-Beide Szenarien nutzen jedoch dieselben technischen Grundlagen.
-
-## Grundprinzipien
-Fuer den Notfallwiederanlauf gelten klare Prinzipien:
-
-- Stabilisierung vor Optimierung
-- Wiederherstellung zentraler Infrastruktur zuerst
-- Schrittweises Vorgehen statt Parallelaktionen
-- Dokumentation der getroffenen Massnahmen
-
-Ruhe und Struktur sind entscheidend.
-
-## Wiederanlauf-Reihenfolge
-Die Wiederherstellung folgt typischerweise einer festen Reihenfolge:
-
-1. Basisinfrastruktur (Strom, Netzwerk, Plattform)
-2. Zentrale Dienste (DNS, Zugriff, Identitaet)
-3. Betriebs- und Steuerungsdienste
-4. Anwendungs-Services
-5. Komfort- und Nebenfunktionen
-
-Abweichungen muessen bewusst entschieden werden.
-
-## Kommunikation und Dokumentation
-Auch im Notfall ist Dokumentation wichtig:
-
-- Festhalten von Entscheidungen und Abweichungen
-- Nachtraegliche Dokumentation fuer Lessons Learned
-- Ableitung von Verbesserungen fuer Backup und Betrieb
-
-Der Notfall liefert wertvolle Erkenntnisse.
-
-## Abgrenzung
+The focus is on **restoring function**, not on root cause analysis.
 
 ---
 
-## Weiterfuehrend
+## Scope
 
-* [`Betrieb – Wiederanlauf-Playbook`](/pages/Betrieb/Wiederanlauf-Playbook.md)
-* [`Einstieg – Kritische Systeme`](/pages/Einstieg/Kritische-Systeme.md)
+Emergency recovery applies to situations such as:
+
+- Complete host failures
+- Loss of critical services
+- Corrupted system state
+- Unplanned extended outages
+
+These situations require fast, decisive action.
+
+---
+
+## Recovery Objectives
+
+The primary objectives are:
+
+- Restore core services
+- Re-establish monitoring and visibility
+- Prevent further damage
+- Stabilize the environment
+
+Non-essential services are deferred.
+
+---
+
+## Order of Operations
+
+Emergency recovery follows a strict order:
+
+1. Restore infrastructure reachability
+2. Restore identity and access where required
+3. Restore core platform services
+4. Restore dependent services
+5. Re-enable monitoring and alerting
+
+Deviation increases recovery risk.
+
+---
+
+## Documentation During Recovery
+
+During emergency recovery:
+
+- Actions are logged minimally
+- Decisions are noted briefly
+- Full documentation is deferred
+
+Completeness is restored after stabilization.
+
