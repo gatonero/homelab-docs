@@ -1,84 +1,83 @@
 ---
-title: "Architektur - Abhaengigkeiten und Reihenfolgen"
+title: "Architecture - Dependencies and Sequences"
 ---
 
-# Architektur - Abhaengigkeiten und Reihenfolgen
+# Architecture - Dependencies and Sequences
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
-Konzeptionelle Beschreibung der Abhaengigkeiten zwischen Architektur-,
-Betriebs- und Governance-Ebenen im Homelab.
+Conceptual description of dependencies between architecture,
+operations, and governance layers in the homelab.
 
-## Zweck
-Diese Seite beschreibt, welche Komponenten voneinander abhaengig sind
-und in welcher logischen Reihenfolge Aufbau, Betrieb und Wiederanlauf
-erfolgen muessen.
+## Purpose
+This page describes which components depend on each other
+and in which logical order setup, operation, and recovery
+must take place.
 
-Ziel ist es, implizites Wissen explizit zu machen und Fehlannahmen zu
-vermeiden.
+The goal is to make implicit knowledge explicit and avoid
+incorrect assumptions.
 
-## Grundlegende Abhaengigkeiten
-Das Homelab folgt klaren Abhaengigkeiten:
+## Fundamental Dependencies
+The homelab follows clear dependencies:
 
-- Physische Infrastruktur ist Grundlage aller weiteren Ebenen
-- Plattform und Virtualisierung bauen darauf auf
-- Netzwerk, Namensauflosung und Zugriff sind Voraussetzung fuer Services
-- Betrieb, Monitoring und Sicherheit setzen stabile Basisdienste voraus
+- Physical infrastructure is the foundation for all other layers
+- Platform and virtualization build on top of it
+- Network, name resolution, and access are prerequisites for services
+- Operations, monitoring, and security rely on stable base services
 
-Keine Ebene steht fuer sich allein.
+No layer stands on its own.
 
-## Reihenfolgen im Aufbau
-Beim Aufbau neuer Systeme gilt eine feste Reihenfolge:
+## Build Order
+When setting up new systems, a fixed order applies:
 
-1. Plattform und Basisdienste
-2. Netzwerk und Zugriff
-3. Inventarisierung und Dokumentation
-4. Services und Workloads
-5. Monitoring, Betrieb und Absicherung
+1. Platform and base services
+2. Network and access
+3. Inventory and documentation
+4. Services and workloads
+5. Monitoring, operations, and hardening
 
-Abweichungen erhoehen Komplexitaet und Risiko.
+Deviations increase complexity and risk.
 
-## Reihenfolgen im Betrieb
-Auch im Betrieb gelten implizite Prioritaeten:
+## Operational Order
+Implicit priorities also apply during operation:
 
-- Stabilitaet der Basis vor Funktionalitaet
-- Transparenz vor Optimierung
-- Sicherheit vor Komfort
+- Stability of the base before functionality
+- Transparency before optimization
+- Security before convenience
 
-Diese Prioritaeten leiten Entscheidungen.
+These priorities guide decisions.
 
-## Wiederanlauf und Restore
-Im Stoerungsfall sind Reihenfolgen entscheidend:
+## Recovery and Restore
+In failure scenarios, order is critical:
 
-- Wiederherstellung der Plattform
-- Aktivierung zentraler Dienste
-- Wiederanlauf abhängiger Services
-- Validierung und Monitoring
+- Restoration of the platform
+- Activation of central services
+- Restart of dependent services
+- Validation and monitoring
 
-Falsche Reihenfolgen fuehren zu Kaskadeneffekten.
+Incorrect ordering leads to cascading effects.
 
-## Dokumentation von Abhaengigkeiten
-Abhaengigkeiten muessen dokumentiert werden:
+## Documentation of Dependencies
+Dependencies must be documented:
 
-- In Architektur- und Ueberblicksseiten
-- In Inventarisierung und Rollenmodellen
-- In Betriebs- und Notfallkonzepten
+- In architecture and overview pages
+- In inventory and role models
+- In operations and emergency concepts
 
-Dokumentation ist Teil der Absicherung.
+Documentation is part of risk mitigation.
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Scope
+This page does not contain:
 
-- Konkreten Abhaengigkeitsdiagramme
-- Tool-spezifischen Abhängigkeitsmodelle
-- Automatisierte Orchestrierung
+- Concrete dependency diagrams
+- Tool-specific dependency models
+- Automated orchestration
 
-Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
+Such content is described on specialized detail pages.
 
-## Weiterfuehrend
+## Further Reading
+Additional pages describe related structural and conceptual aspects:
 
-Weitere Seiten beschreiben angrenzende strukturelle und konzeptionelle Aspekte:
-
-- [Gesamtzusammenhang](Gesamtzusammenhang.md)
-- [Integrationsprinzipien](Integrationsprinzipien.md)
-- [Plattform und Rollen](Plattform-und-Rollen.md)
+- [Overall Context](Gesamtzusammenhang.md)
+- [Integration Principles](Integrationsprinzipien.md)
+- [Platform and Roles](Plattform-und-Rollen.md)

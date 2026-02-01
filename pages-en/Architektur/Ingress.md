@@ -2,116 +2,128 @@
 title: "Ingress"
 ---
 
-# Zentraler Eintrittspunkt für externe und interne HTTP(S)-Zugriffe
+# Central Entry Point for External and Internal HTTP(S) Access
 
-← Zurück zur [`Overview Architektur`](/pages/Architektur/Overview-Architektur.md)
+← Back to the [`Architecture Overview`](/pages/Architektur/Overview-Architektur.md)
 
-Der externe Zugriff auf die im Homelab betriebenen Web-Services erfolgt ausschließlich über einen **dedizierten Ingress**.  
-Dieser stellt einen bewusst begrenzten, kontrollierten und nachvollziehbaren Eintrittspunkt dar.
+External access to web services operated in the homelab
+is handled exclusively via a **dedicated ingress**.
 
-Der hier beschriebene Zustand repräsentiert einen **verifizierten Referenzstand** nach vollständiger Härtung und praktischen Zugriffstests.
+This ingress represents a deliberately limited, controlled,
+and traceable entry point.
 
----
-
-## Architektur
-
-### Rolle des Ingress
-
-Der Ingress übernimmt die zentrale Rolle als:
-
-- einziger Eintrittspunkt für HTTP(S)-Traffic
-- Trennschicht zwischen externen Zugriffen und internen Services
-- Ort der TLS-Terminierung und Zugriffskontrolle
-
-Der Ingress enthält **keine Applikationslogik** und **keinen persistenten Storage**.
-
-Die technische Umsetzung des Reverse Proxys als Bestandteil des Ingress ist im Detail beschrieben unter:  
-[`Netzwerk – Reverse Proxy und Zugriffspfade`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
+The state described here represents a **verified reference state**
+after full hardening and practical access testing.
 
 ---
 
-### Netzwerkprinzipien
+## Architecture
 
-Der Ingress folgt klaren netzwerkseitigen Leitlinien:
+### Role of the Ingress
 
-- Extern erreichbar sind ausschließlich die für HTTP(S) erforderlichen Ports
-- Administrativer Zugriff ist **nicht öffentlich exponiert**
-- Management-Zugriffe erfolgen ausschließlich über kontrollierte interne Zugriffspfade
-- Nicht genutzte Protokolle und Adressfamilien sind konsequent ausgeschlossen
+The ingress serves as the central component for:
 
-Diese Prinzipien reduzieren die Angriffsfläche und vereinfachen Analyse und Betrieb.
+- the sole entry point for HTTP(S) traffic
+- separation layer between external access and internal services
+- TLS termination and access control
 
----
+The ingress contains **no application logic**
+and **no persistent storage**.
 
-## Sicherheitsprinzipien
-
-### Firewall-Grundsätze
-
-Der Ingress ist nach dem **fail-closed-Prinzip** abgesichert:
-
-- eingehender Traffic ist standardmäßig blockiert
-- explizit erlaubte Verbindungen sind auf das notwendige Minimum beschränkt
-- etablierte Verbindungen werden korrekt weitergeführt
-
-Firewall-Regeln sind vollständig reproduzierbar und Teil der automatisierten Systemkonfiguration.
+The technical implementation of the reverse proxy
+as part of the ingress is described in detail at:  
+[`Network – Reverse Proxy and Access Paths`](/pages/Netzwerk-DNS-TLS/Reverse-Proxy-und-Zugriffspfade.md)
 
 ---
 
-### TLS und HTTP-Sicherheit
+### Network Principles
+
+The ingress follows clear network guidelines:
+
+- Only the ports required for HTTP(S) are externally reachable
+- Administrative access is **not publicly exposed**
+- Management access occurs exclusively via controlled internal paths
+- Unused protocols and address families are consistently excluded
+
+These principles reduce the attack surface and simplify analysis and operation.
+
+---
+
+## Security Principles
+
+### Firewall Fundamentals
+
+The ingress is secured according to the **fail-closed principle**:
+
+- incoming traffic is blocked by default
+- explicitly allowed connections are limited to the necessary minimum
+- established connections are forwarded correctly
+
+Firewall rules are fully reproducible and part of automated system configuration.
+
+---
+
+### TLS and HTTP Security
 
 #### TLS
 
-- zeitgemäße, distributionskonforme TLS-Konfiguration
-- bewusste Vermeidung applikationsspezifischer Sonderkonfigurationen
-- zentrale Pflege der TLS-Parameter
+- modern, distribution-compliant TLS configuration
+- deliberate avoidance of application-specific special configurations
+- centralized maintenance of TLS parameters
 
-#### HTTP-Sicherheitsheader
+#### HTTP Security Headers
 
-Sicherheitsheader werden konsistent eingesetzt, ohne Konflikte zwischen Ingress und Applikationen zu erzwingen.
+Security headers are applied consistently
+without forcing conflicts between ingress and applications.
 
-Bewusst umgesetzt sind u. a.:
+Consciously implemented measures include, among others:
 
-- Schutz vor MIME-Type-Sniffing
-- kontrolliertes Referrer-Verhalten
-- Rahmensetzung durch die jeweilige Applikation
+- protection against MIME type sniffing
+- controlled referrer behavior
+- framing defined by the respective application
 
-Eine Erzwingung zusätzlicher Header auf Ingress-Ebene erfolgt nur dort, wo keine Konflikte entstehen.
-
----
-
-## Verifizierte Zugriffstests
-
-Der Referenzstand wurde durch gezielte Prüfungen validiert, darunter:
-
-- korrekte HTTPS-Erreichbarkeit
-- deterministische Weiterleitung von HTTP auf HTTPS
-- kontrollierter Umgang mit nicht vorgesehenen Pfaden
-- Blockade unsicherer HTTP-Methoden
-- kein unbeabsichtigtes Leaken interner Informationen
-
-Diese Tests bestätigen die Wirksamkeit der getroffenen Architektur- und Sicherheitsentscheidungen.
+Enforcement of additional headers at the ingress level
+only occurs where no conflicts arise.
 
 ---
 
-## Bewusste Akzeptanzen
+## Verified Access Tests
 
-Bestimmte Aspekte werden bewusst akzeptiert, um Stabilität und Wartbarkeit zu gewährleisten, darunter:
+The reference state was validated through targeted tests, including:
 
-- keine erzwungene globale HSTS-Policy auf Ingress-Ebene
-- applikationsseitige Verantwortung für bestimmte Header
-- kontrollierte Sichtbarkeit technischer Informationen bei abgewiesenen Anfragen
+- correct HTTPS reachability
+- deterministic redirection from HTTP to HTTPS
+- controlled handling of undefined paths
+- blocking of insecure HTTP methods
+- no unintended leakage of internal information
 
-Diese Entscheidungen sind dokumentiert, bewertet und können bei geänderten Anforderungen neu überprüft werden.
+These tests confirm the effectiveness of the architectural
+and security decisions taken.
 
 ---
 
-## Referenzstatus
+## Conscious Acceptances
 
-Der beschriebene Zustand ist:
+Certain aspects are deliberately accepted
+to ensure stability and maintainability, including:
 
-- technisch verifiziert
-- sicherheitsseitig bewertet
-- methodisch sauber dokumentiert
-- als stabiler Referenzstand eingefroren
+- no enforced global HSTS policy at ingress level
+- application-side responsibility for specific headers
+- controlled visibility of technical information for rejected requests
 
-Änderungen erfolgen ausschließlich nach erneuter Bewertung und dokumentierter Entscheidung.
+These decisions are documented, evaluated,
+and can be reassessed if requirements change.
+
+---
+
+## Reference Status
+
+The described state is:
+
+- technically verified
+- security-reviewed
+- methodically documented
+- frozen as a stable reference state
+
+Changes are made exclusively after renewed evaluation
+and documented decision-making.

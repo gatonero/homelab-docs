@@ -1,74 +1,81 @@
 ---
-title: "Architektur - Virtualisierung und Container"
+title: "Architecture - Virtualization and Containers"
 ---
 
-# Architektur - Virtualisierung und Container
+# Architecture - Virtualization and Containers
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
-Beschreibung der Rolle von Virtualisierung und Containerisierung innerhalb
-der Gesamtarchitektur des Homelabs.
+Description of the role of virtualization
+and containerization
+within the overall architecture of the homelab.
 
-## Zweck
-Diese Seite beschreibt, wie Virtualisierung und Containerisierung genutzt
-werden, um Workloads zu trennen, Systeme zu strukturieren und den Betrieb
-zu vereinfachen.
+## Purpose
+This page describes how virtualization
+and containerization are used
+to separate workloads, structure systems,
+and simplify operations.
 
-Der Fokus liegt auf der konzeptionellen Einordnung dieser Technologien
-innerhalb der Architektur, nicht auf konkreten Implementierungsdetails.
+The focus is on the conceptual classification
+of these technologies within the architecture,
+not on concrete implementation details.
 
-## Rolle der Virtualisierung
-Virtualisierung bildet die grundlegende Plattform des Homelabs:
+## Role of Virtualization
+Virtualization forms the fundamental platform of the homelab:
 
-- Trennung unterschiedlicher Systemrollen
-- Isolierung von Workloads
-- Flexible Ressourcenzuweisung
-- Vereinfachte Wiederherstellung und Migration
+- Separation of different system roles
+- Isolation of workloads
+- Flexible resource allocation
+- Simplified recovery and migration
 
-Virtuelle Maschinen dienen als stabile, klar abgegrenzte Einheiten fuer
-Systeme mit eigenstaendiger Verantwortung.
+Virtual machines serve as stable,
+clearly defined units
+for systems with independent responsibility.
 
-## Rolle der Containerisierung
-Containerisierung wird fuer leichtgewichtige, klar umrissene Dienste
-eingesetzt:
+## Role of Containerization
+Containerization is used
+for lightweight, clearly scoped services:
 
-- Schnelle Bereitstellung und Aktualisierung von Services
-- Klare Abhaengigkeiten und reproduzierbare Setups
-- Trennung von Anwendung und Plattform
+- Fast deployment and updating of services
+- Clear dependencies and reproducible setups
+- Separation of application and platform
 
-Container laufen in der Regel innerhalb virtualisierter Umgebungen und
-ergaenzen diese, statt sie zu ersetzen.
+Containers typically run within virtualized environments
+and complement them rather than replacing them.
 
-## Abgrenzung der Einsatzbereiche
-Virtualisierung und Containerisierung haben klar getrennte Einsatzgebiete:
+## Separation of Use Cases
+Virtualization and containerization
+have clearly separated use cases:
 
-- Virtualisierung: Plattformen, Infrastruktur, langlebige Systeme
-- Container: Anwendungen, Services, kurzlebige oder skalierbare Komponenten
+- Virtualization: platforms, infrastructure, long-lived systems
+- Containers: applications, services, short-lived or scalable components
 
-Diese Trennung verhindert unnoetige Komplexitaet und erleichtert Betrieb
-und Fehlersuche.
+This separation prevents unnecessary complexity
+and simplifies operations and troubleshooting.
 
-## Betriebsrelevante Aspekte
-Bei der Nutzung beider Technologien werden insbesondere beruecksichtigt:
+## Operationally Relevant Aspects
+When using both technologies,
+the following aspects are particularly considered:
 
-- Backup- und Restore-Faehigkeit
-- Monitoring und Logging
-- Dokumentation und Nachvollziehbarkeit
-- Klare Verantwortlichkeiten pro Systemebene
+- Backup and restore capability
+- Monitoring and logging
+- Documentation and traceability
+- Clear responsibilities per system layer
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Scope
+This page does not contain:
 
-- Tool- oder Produktvergleiche
-- Konkreten Installationsanleitungen
-- Plattform-spezifischen Konfigurationen
+- Tool or product comparisons
+- Concrete installation instructions
+- Platform-specific configurations
 
-Solche Details werden auf nachgelagerten Detailseiten behandelt.
+Such details are handled on downstream detail pages.
 
-## Weiterfuehrend
+## Further Reading
 
-Weitere Seiten beleuchten angrenzende Aspekte der Virtualisierungsstrategie:
+Additional pages cover related aspects
+of the virtualization strategy:
 
-- [`Virtualisierung`](/pages/Architektur/Virtualisierung.md)
-- [`Container und Workloads`](/pages/Architektur/Container-und-Workloads.md)
-- [`Plattform und Rollen`](/pages/Architektur/Plattform-und-Rollen.md)
+- [`Virtualization`](Virtualisierung.md)
+- [`Containers and Workloads`](Container-und-Workloads.md)
+- [`Platform and Roles`](Plattform-und-Rollen.md)

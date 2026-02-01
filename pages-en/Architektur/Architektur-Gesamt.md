@@ -1,29 +1,30 @@
 ---
-title: "Architektur - Gesamtueberblick"
+title: "Architecture - Overall Overview"
 ---
 
-# Konzeptionelles Architekturmodell des Homelabs
+# Conceptual Architecture Model of the Homelab
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
-
----
-## Zweck
-Vermittelt das Architekturmodell und die zentralen Ziele – unabhaengig von konkreten Implementierungen.
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
 ---
-## Architekturziele
-- Stabiler, nachvollziehbarer Betrieb
-- Kontrollierte Komplexitaet
-- Wart- und Wiederherstellbarkeit
-- Erweiterbarkeit ohne Strukturbrueche
+## Purpose
+Conveys the architecture model and its central goals,
+independent of specific implementations.
 
 ---
-## Systemebenen
-- Physische Ebene (Hardware, Verkabelung)
-- Plattform-Ebene (Virtualisierung, Container)
-- Service-Ebene (Dienste, Anwendungen)
-- Management-Ebene (Steuerung, Dokumentation, Betrieb)
+## Architecture Goals
+- Stable and traceable operation
+- Controlled complexity
+- Maintainability and recoverability
+- Extensibility without structural breaks
 
 ---
-## Abgrenzung
-Keine Meta-Rueckkopplungen zu Betrieb oder Governance.
+## System Layers
+- Physical layer (hardware, cabling)
+- Platform layer (virtualization, containers)
+- Service layer (services, applications)
+- Management layer (control, documentation, operations)
+
+---
+## Scope
+No meta feedback loops to operations or governance.

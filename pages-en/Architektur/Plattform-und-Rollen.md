@@ -1,79 +1,83 @@
 ---
-title: "Architektur - Plattform und Rollen"
+title: "Architecture - Platform and Roles"
 ---
 
-# Architektur - Plattform und Rollen
+# Architecture - Platform and Roles
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
-Konzeptionelle Beschreibung der Plattformebene und der darauf definierten
-Rollen im Homelab.
+Conceptual description of the platform layer
+and the roles defined on it within the homelab.
 
-## Zweck
-Diese Seite beschreibt, wie physische und logische Plattformen im Homelab
-eingeordnet werden und welche Rollen sie im Gesamtsystem einnehmen.
+## Purpose
+This page describes how physical and logical platforms
+are classified within the homelab
+and which roles they assume in the overall system.
 
-Ziel ist eine klare Trennung zwischen Hardware, Plattformdiensten und
-darauf betriebenen Workloads.
+The goal is a clear separation between hardware,
+platform services, and workloads running on top of them.
 
-## Plattformbegriff
-Eine Plattform stellt Ressourcen und Grundfunktionen bereit, auf denen
-Systeme und Services betrieben werden koennen.
+## Platform Concept
+A platform provides resources and basic functions
+on which systems and services can be operated.
 
-Dazu gehoeren insbesondere:
+This includes, in particular:
 
-- Rechenleistung
-- Speicher
-- Netzwerk
-- Basisdienste fuer Betrieb und Verwaltung
+- Compute resources
+- Storage
+- Network
+- Base services for operation and management
 
-Plattformen sind Mittel zum Zweck und nicht selbst der fachliche Fokus.
+Platforms are a means to an end,
+not the primary functional focus.
 
-## Rollen von Plattformen
-Plattformen uebernehmen klar definierte Rollen, zum Beispiel:
+## Roles of Platforms
+Platforms assume clearly defined roles, for example:
 
-- Hosting von virtuellen Maschinen
-- Bereitstellung von Container-Laufzeitumgebungen
-- Trennung von produktiven und experimentellen Workloads
-- Isolation unterschiedlicher Betriebszonen
+- Hosting of virtual machines
+- Provision of container runtime environments
+- Separation of productive and experimental workloads
+- Isolation of different operational zones
 
-Eine Plattform kann mehrere Rollen einnehmen, bleibt aber logisch klar
-abgegrenzt.
+A platform can assume multiple roles
+while remaining logically well separated.
 
-## Abgrenzung zu Workloads
-Plattformen unterscheiden sich bewusst von Workloads:
+## Separation from Workloads
+Platforms deliberately differ from workloads:
 
-- Plattformen stellen Infrastruktur bereit
-- Workloads nutzen diese Infrastruktur
-- Plattformen aendern sich seltener als Workloads
-- Stabilitaet der Plattform hat hohe Prioritaet
+- Platforms provide infrastructure
+- Workloads consume this infrastructure
+- Platforms change less frequently than workloads
+- Platform stability has high priority
 
-Diese Trennung vereinfacht Betrieb, Wartung und Fehleranalyse.
+This separation simplifies operations,
+maintenance, and fault analysis.
 
-## Lebenszyklus
-Plattformen unterliegen einem eigenen Lebenszyklus:
+## Lifecycle
+Platforms follow their own lifecycle:
 
-- Planung und Aufbau
-- Stabiler Betrieb
-- Geplante Aenderungen und Erweiterungen
-- Rueckbau oder Ablösung
+- Planning and setup
+- Stable operation
+- Planned changes and extensions
+- Decommissioning or replacement
 
-Aenderungen an Plattformen erfolgen kontrollierter als an einzelnen
-Workloads.
+Changes to platforms are more controlled
+than changes to individual workloads.
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Scope
+This page does not contain:
 
-- Hardware-Listen oder Spezifikationen
-- Tool- oder Produktentscheidungen
-- Konkreten Installationsschritte
+- hardware lists or specifications
+- tool or product decisions
+- concrete installation steps
 
-Solche Details werden auf spezialisierten Detailseiten beschrieben.
+Such details are described on specialized detail pages.
 
-## Weiterfuehrend
+## Further Reading
 
-Die folgenden Seiten vertiefen die technische Umsetzung der Plattform-Ebene:
+The following pages deepen the technical implementation
+of the platform layer:
 
-- [Virtualisierung](Virtualisierung.md)
-- [Container und Workloads](Container-und-Workloads.md)
-- [LAN-Konfiguration](LAN-Konfiguration.md)
+- [Virtualization](Virtualisierung.md)
+- [Containers and Workloads](Container-und-Workloads.md)
+- [LAN Configuration](LAN-Konfiguration.md)

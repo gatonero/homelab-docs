@@ -1,61 +1,62 @@
 ---
-title: "Architektur - Container und Workloads"
+title: "Architecture - Containers and Workloads"
 ---
 
-# Architektur - Container und Workloads
+# Architecture - Containers and Workloads
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
-Konzeptionelle Beschreibung von Containern und Workloads als flexible
-Ausfuehrungseinheiten auf der Plattform.
+Conceptual description of containers and workloads as flexible
+execution units on the platform.
 
-## Zweck
-Diese Seite beschreibt, wie Container und andere Workloads im Homelab
-eingeordnet werden und welche Rolle sie im Gesamtsystem spielen.
+## Purpose
+This page describes how containers and other workloads are
+classified within the homelab and which role they play
+in the overall system.
 
-Ziel ist es, kurzlebige, leicht aenderbare Komponenten klar von stabilen
-Plattform- und Systemebenen zu trennen.
+The goal is to clearly separate short-lived, easily changeable
+components from stable platform and system layers.
 
-## Workload-Begriff
-Ein Workload ist eine ausfuehrbare Einheit mit einem klaren Zweck:
+## Workload Concept
+A workload is an executable unit with a clear purpose:
 
-- Bereitstellung eines Services
-- Verarbeitung von Daten
-- Unterstuetzung betrieblicher Aufgaben
+- Provision of a service
+- Processing of data
+- Support of operational tasks
 
-Workloads sind funktional fokussiert und austauschbar.
+Workloads are functionally focused and replaceable.
 
-## Container als Workloads
-Container sind eine zentrale Form von Workloads:
+## Containers as Workloads
+Containers are a central form of workloads:
 
-- Geringe Start- und Aenderungskosten
-- Klare Abgrenzung von Abhaengigkeiten
-- Gute Automatisierbarkeit
-- Enge Kopplung an die darunterliegende Plattform
+- Low startup and change costs
+- Clear separation of dependencies
+- Good automation potential
+- Tight coupling to the underlying platform
 
-Container eignen sich besonders fuer Anwendungs- und Hilfsdienste.
+Containers are particularly suitable for application and helper services.
 
-## Abgrenzung zu virtuellen Systemen
-Container unterscheiden sich bewusst von virtuellen Systemen:
+## Separation from Virtual Systems
+Containers deliberately differ from virtual systems:
 
-- Keine eigenen Betriebssysteme
-- Kürzere Lebenszyklen
-- Hoehere Aenderungsfrequenz
-- Geringere Isolationstiefe
+- No own operating systems
+- Shorter lifecycles
+- Higher change frequency
+- Lower degree of isolation
 
-Virtuelle Systeme bleiben die stabilere Basis fuer langlebige Rollen.
+Virtual systems remain the more stable base for long-lived roles.
 
-## Betriebsprinzipien
-Fuer Container und Workloads gelten folgende Prinzipien:
+## Operational Principles
+The following principles apply to containers and workloads:
 
-- Reproduzierbarkeit statt manueller Pflege
-- Klare Trennung von Code, Konfiguration und Daten
-- Schnelle Wiederherstellbarkei
+- Reproducibility instead of manual maintenance
+- Clear separation of code, configuration, and data
+- Fast recoverability
 
-## Weiterfuehrend
+## Further Reading
 
-Weitere Seiten zu strukturellen und organisatorischen Aspekten von Workloads:
+Additional pages on structural and organizational aspects of workloads:
 
-* [`Virtualisierung`](/pages/Architektur/Virtualisierung.md)
-* [`Plattform und Rollen`](/pages/Architektur/Plattform-und-Rollen.md)
-* [`Integrationsprinzipien`](/pages/Architektur/Integrationsprinzipien.md)
+* [`Virtualization`](Virtualisierung.md)
+* [`Platform and Roles`](Plattform-und-Rollen.md)
+* [`Integration Principles`](Integrationsprinzipien.md)

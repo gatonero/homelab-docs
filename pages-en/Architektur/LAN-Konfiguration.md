@@ -1,74 +1,76 @@
 ---
-title: "Architektur - LAN-Konfiguration"
+title: "Architecture - LAN Configuration"
 ---
 
-# Architektur - LAN-Konfiguration
+# Architecture - LAN Configuration
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
-Konzeptionelle Beschreibung des LAN-Designs und der Netzwerksegmentierung
-im Homelab.
+Conceptual description of LAN design and network segmentation
+within the homelab.
 
-## Zweck
-Diese Seite beschreibt die grundlegenden Prinzipien der lokalen
-Netzwerkarchitektur (LAN). Sie erklaert, wie Systeme logisch voneinander
-getrennt werden, wie Kommunikation erfolgt und welche Ziele mit der
-Segmentierung verfolgt werden.
+## Purpose
+This page describes the fundamental principles
+of the local network architecture (LAN).
+It explains how systems are logically separated,
+how communication takes place,
+and which goals are pursued through segmentation.
 
-Der Fokus liegt auf Struktur und Designentscheidungen, nicht auf
-konkreten technischen Parametern.
+The focus is on structure and design decisions,
+not on concrete technical parameters.
 
-## Designziele
-Das LAN-Design verfolgt mehrere zentrale Ziele:
+## Design Goals
+The LAN design pursues several central goals:
 
-- Uebersichtliche und nachvollziehbare Netzwerkstruktur
-- Trennung unterschiedlicher Sicherheits- und Funktionsbereiche
-- Kontrollierte Kommunikationspfade
-- Erweiterbarkeit ohne grundlegende Umstrukturierung
+- Clear and traceable network structure
+- Separation of different security and functional areas
+- Controlled communication paths
+- Extensibility without fundamental restructuring
 
-## Netzwerksegmente
-Das Netzwerk ist logisch in mehrere Segmente gegliedert, zum Beispiel:
+## Network Segments
+The network is logically divided into several segments, for example:
 
-- Management-Segment fuer administrative Systeme
-- Server- und Service-Segmente fuer produktive Workloads
-- Client- und Nutzersegmente
-- Separierte Bereiche fuer Tests oder Experimente
+- Management segment for administrative systems
+- Server and service segments for productive workloads
+- Client and user segments
+- Separate areas for tests or experiments
 
-Die genaue Anzahl und Auspraegung der Segmente richtet sich nach den
-betriebenen Systemen und Sicherheitsanforderungen.
+The exact number and characteristics of segments
+depend on the operated systems and security requirements.
 
-## Kommunikationsprinzipien
-Zwischen Netzwerksegmenten gilt das Prinzip der minimal notwendigen
-Kommunikation:
+## Communication Principles
+Between network segments,
+the principle of minimal required communication applies:
 
-- Kommunikation ist explizit erlaubt, nicht implizit
-- Standardmaessig sind Segmente voneinander getrennt
-- Uebergaenge erfolgen ueber klar definierte Kontrollpunkte
+- Communication is explicitly allowed, not implicit
+- Segments are separated by default
+- Transitions occur via clearly defined control points
 
-Routing, Firewalls oder vergleichbare Mechanismen sorgen fuer die
-Durchsetzung dieser Prinzipien.
+Routing, firewalls, or comparable mechanisms
+enforce these principles.
 
-## Rolle von DNS und Namensraeumen
-Namensaufloesung spielt eine zentrale Rolle im LAN-Design:
+## Role of DNS and Namespaces
+Name resolution plays a central role in LAN design:
 
-- Konsistente interne Namensraeume
-- Klare Zuordnung von Namen zu Netzwerksegmenten
-- Abstraktion von IP-Adressen durch DNS
+- Consistent internal namespaces
+- Clear assignment of names to network segments
+- Abstraction of IP addresses through DNS
 
-DNS dient damit als stabiler Anker fuer Kommunikation und Konfiguration.
+DNS thus serves as a stable anchor
+for communication and configuration.
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Scope
+This page does not contain:
 
-- konkreten IP-Adressbereiche
-- VLAN-IDs oder Switch-Konfigurationen
-- Firewall-Regeln oder ACLs
+- concrete IP address ranges
+- VLAN IDs or switch configurations
+- firewall rules or ACLs
 
-Solche Details werden auf spezialisierten Detailseiten behandelt.
+Such details are handled on specialized detail pages.
 
-## Weiterfuehrend
+## Further Reading
 
-Weitere Seiten mit Bezug zur Netzwerk- und Plattformstruktur:
+Additional pages related to network and platform structure:
 
-* [`Plattform und Rollen`](/pages/Architektur/Plattform-und-Rollen.md)
-* [`Abhaengigkeiten und Reihenfolgen`](/pages/Architektur/Abhaengigkeiten-und-Reihenfolgen.md)
+* [`Platform and Roles`](/pages/Architektur/Plattform-und-Rollen.md)
+* [`Dependencies and Sequences`](/pages/Architektur/Abhaengigkeiten-und-Reihenfolgen.md)

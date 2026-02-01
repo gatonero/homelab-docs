@@ -1,61 +1,70 @@
 ---
-title: "Architektur - Virtualisierung"
+title: "Architecture - Virtualization"
 ---
 
-# Architektur - Virtualisierung
+# Architecture - Virtualization
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
-Konzeptionelle Beschreibung der Virtualisierung als zentrale Abstraktion
-zwischen physischer Plattform und betriebenen Systemen.
+Conceptual description of virtualization
+as the central abstraction
+between physical platform and operated systems.
 
-## Zweck
-Diese Seite beschreibt die Rolle der Virtualisierung im Homelab und
-ordnet sie als grundlegende Abstraktionsschicht ein.
+## Purpose
+This page describes the role of virtualization
+within the homelab
+and classifies it as a fundamental abstraction layer.
 
-Ziel ist es, physische Ressourcen von logischen Systemen zu entkoppeln
-und einen flexiblen, kontrollierbaren Betrieb zu ermoeglichen.
+The goal is to decouple physical resources
+from logical systems
+and enable flexible, controllable operation.
 
-## Rolle der Virtualisierung
-Virtualisierung erfuellt mehrere zentrale Aufgaben:
+## Role of Virtualization
+Virtualization fulfills several central tasks:
 
-- Abstraktion von Hardware
-- Isolation von Systemen
-- Flexible Zuweisung von Ressourcen
-- Vereinfachung von Backup, Restore und Migration
+- Abstraction of hardware
+- Isolation of systems
+- Flexible allocation of resources
+- Simplification of backup, restore, and migration
 
-Sie bildet die Basis fuer den Betrieb vieler Services und Plattformen.
+It forms the basis
+for operating many services and platforms.
 
-## Virtuelle Systeme
-Virtuelle Systeme werden als eigenstaendige Einheiten betrachtet:
+## Virtual Systems
+Virtual systems are treated as independent units:
 
-- Klare Verantwortung pro System
-- Definierter Zweck und Lebenszyklus
-- Eigene Konfiguration und Dokumentation
+- Clear responsibility per system
+- Defined purpose and lifecycle
+- Own configuration and documentation
 
-Virtuelle Maschinen repraesentieren stabile, langlebige Systemrollen.
+Virtual machines represent stable,
+long-lived system roles.
 
-## Abgrenzung zu Containern
-Virtualisierung und Containerisierung werden bewusst unterschieden:
+## Separation from Containers
+Virtualization and containerization
+are deliberately distinguished:
 
-- Virtuelle Maschinen kapseln komplette Betriebssysteme
-- Container teilen sich einen gemeinsamen Kernel
-- Virtualisierung ist schwergewichtiger, aber robuster
-- Container sind leichter und schneller veraenderbar
+- Virtual machines encapsulate complete operating systems
+- Containers share a common kernel
+- Virtualization is heavier but more robust
+- Containers are lighter and faster to change
 
-Beide Konzepte ergaenzen sich und werden gezielt kombiniert.
+Both concepts complement each other
+and are combined deliberately.
 
-## Betriebsaspekte
-Fuer virtualisierte Systeme gelten besondere Betriebsaspekte:
+## Operational Aspects
+Special operational aspects apply
+to virtualized systems:
 
-- Ressourcenplanung und -begrenzung
-- Klare Namens- und Rollenmodelle
-- Kontrollierte Aenderungen an Sys
+- Resource planning and limitation
+- Clear naming and role models
+- Controlled changes to systems
 
-## Weiterfuehrend
+## Further Reading
 
-Weitere Seiten beleuchten angrenzende Aspekte der Virtualisierungsstrategie:
+Additional pages address adjacent aspects
+of the virtualization strategy:
 
-* [`Virtualisierung und Container`](/pages/Architektur/Virtualisierung-und-Container.md)
-* [`Container und Workloads`](/pages/Architektur/Container-und-Workloads.md)
-* [`Plattform und Rollen`](/pages/Architektur/Plattform-und-Rollen.md)
+* [`Virtualization and Containers`](/pages/Architektur/Virtualisierung-und-Container.md)
+* [`Containers and Workloads`](/pages/Architektur/Container-und-Workloads.md)
+* [`Platform and Roles`](/pages/Architektur/Plattform-und-Rollen.md)

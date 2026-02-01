@@ -1,81 +1,81 @@
 ---
-title: "Architektur - Integrationsprinzipien"
+title: "Architecture - Integration Principles"
 ---
 
-# Architektur - Integrationsprinzipien
+# Architecture - Integration Principles
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
-Konzeptionelle Beschreibung der Prinzipien, nach denen einzelne
-Komponenten im Homelab miteinander integriert werden.
+Conceptual description of the principles by which individual
+components are integrated within the homelab.
 
-## Zweck
-Diese Seite beschreibt Leitlinien fuer Integration, um ein konsistentes,
-wartbares und erweiterbares Gesamtsystem zu erhalten.
+## Purpose
+This page describes guidelines for integration
+to maintain a consistent, maintainable, and extensible system.
 
-Ziel ist es, lose Kopplung zu foerdern und Abhaengigkeiten bewusst zu
-gestalten.
+The goal is to promote loose coupling
+and consciously design dependencies.
 
-## Lose Kopplung
-Integration folgt dem Prinzip der losen Kopplung:
+## Loose Coupling
+Integration follows the principle of loose coupling:
 
-- Komponenten erfuellen klar definierte Aufgaben
-- Schnittstellen sind stabil und bewusst gestaltet
-- Aenderungen sollen lokale Auswirkungen haben
+- Components fulfill clearly defined tasks
+- Interfaces are stable and deliberately designed
+- Changes should have local impact
 
-Lose Kopplung reduziert Folgekosten.
+Loose coupling reduces follow-up costs.
 
-## Klare Schnittstellen
-Integration erfolgt ueber klare Schnittstellen:
+## Clear Interfaces
+Integration is performed via clear interfaces:
 
-- Netzwerk- und Namensauflosung
-- Definierte Protokolle
-- Dokumentierte Abhaengigkeiten
+- Network and name resolution
+- Defined protocols
+- Documented dependencies
 
-Implizite oder versteckte Abhaengigkeiten werden vermieden.
+Implicit or hidden dependencies are avoided.
 
-## Schichtenmodell
-Das Homelab folgt einem Schichtenmodell:
+## Layer Model
+The homelab follows a layered model:
 
-- Physische Ebene
-- Plattform- und Virtualisierungsebene
-- Netzwerk- und Zugriffsebene
-- Service- und Anwendungsebene
-- Betriebs- und Governance-Ebene
+- Physical layer
+- Platform and virtualization layer
+- Network and access layer
+- Service and application layer
+- Operations and governance layer
 
-Integration erfolgt vertikal, nicht beliebig quer.
+Integration occurs vertically, not arbitrarily across layers.
 
-## Fehlerisolation
-Integration beruecksichtigt Fehlerfaelle:
+## Fault Isolation
+Integration considers failure scenarios:
 
-- Fehler sollen sich nicht unkontrolliert ausbreiten
-- Abhaengigkeiten werden bewusst begrenzt
-- Kritische Komponenten werden besonders geschuetzt
+- Failures must not spread uncontrollably
+- Dependencies are deliberately limited
+- Critical components are especially protected
 
-Isolation ist Teil der Stabilitaet.
+Isolation is part of stability.
 
-## Erweiterbarkeit
-Integration wird mit Blick auf Erweiterung gestaltet:
+## Extensibility
+Integration is designed with extensibility in mind:
 
-- Neue Komponenten sollen einfach integrierbar sein
-- Bestehende Strukturen bleiben stabil
-- Wachstum erhoeht Komplexitaet nicht unverhaeltnismaessig
+- New components should be easy to integrate
+- Existing structures remain stable
+- Growth does not increase complexity disproportionately
 
-Erweiterbarkeit ist ein Designziel.
+Extensibility is a design goal.
 
-## Abgrenzung
-Diese Seite enthaelt keine:
+## Scope
+This page does not contain:
 
-- Konkreten Integrationsarchitekturen
-- Tool- oder Technologieentscheidungen
-- Orchestrierungs- oder Automatisierungskonzepte
+- Concrete integration architectures
+- Tool or technology decisions
+- Orchestration or automation concepts
 
-Solche Inhalte werden auf spezialisierten Detailseiten beschrieben.
+Such content is described on specialized detail pages.
 
-## Weiterfuehrend
+## Further Reading
 
-Vertiefende Seiten zu technischen und strukturellen Integrationsaspekten:
+In-depth pages on technical and structural integration aspects:
 
-* [`Abhaengigkeiten und Reihenfolgen`](/pages/Architektur/Abhaengigkeiten-und-Reihenfolgen.md)
-* [`Virtualisierung`](/pages/Architektur/Virtualisierung.md)
-* [`Container und Workloads`](/pages/Architektur/Container-und-Workloads.md)
+* [`Dependencies and Sequences`](/pages/Architektur/Abhaengigkeiten-und-Reihenfolgen.md)
+* [`Virtualization`](/pages/Architektur/Virtualisierung.md)
+* [`Containers and Workloads`](/pages/Architektur/Container-und-Workloads.md)

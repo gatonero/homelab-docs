@@ -1,29 +1,30 @@
 ---
-title: "Architektur - Gesamtzusammenhang"
+title: "Architecture - Overall Context"
 ---
 
-# Zusammenspiel von Architektur, Betrieb und Governance
+# Interaction of Architecture, Operations, and Governance
 
-← Zurueck zur [Architektur-Overview](Overview-Architektur.md)
-
----
-## Zweck
-Stellt den Zusammenhang der Ebenen dar und dient als Orientierung fuer Entscheidungen und Weiterentwicklung.
+← Back to the [Architecture Overview](Overview-Architektur.md)
 
 ---
-## Ebenen im Zusammenspiel
-- Architektur definiert Struktur und Prinzipien
-- Betrieb sorgt fuer Stabilitaet und Alltagstauglichkeit
-- Sicherheit begrenzt Risiken und Zugaenge
-- Governance sichert Konsistenz und Nachvollziehbarkeit
-- Inventarisierung schafft Transparenz und Ordnung
+## Purpose
+Illustrates the relationship between layers and serves as
+orientation for decisions and further development.
 
 ---
-## Rueckkopplungen
-- Betriebsanforderungen beeinflussen Architekturentscheidungen
-- Sicherheitsaspekte praegen Integrations- und Zugriffsmodelle
-- Dokumentation und Inventar spiegeln den Soll-Zustand wider
+## Interacting Layers
+- Architecture defines structure and principles
+- Operations ensure stability and day-to-day usability
+- Security limits risks and access
+- Governance ensures consistency and traceability
+- Inventory creates transparency and order
 
 ---
-## Abgrenzung
-Keine Wiederholung von Architekturprinzipien oder Systemebenen.
+## Feedback Loops
+- Operational requirements influence architectural decisions
+- Security aspects shape integration and access models
+- Documentation and inventory reflect the target state
+
+---
+## Scope
+No repetition of architecture principles or system layers.
