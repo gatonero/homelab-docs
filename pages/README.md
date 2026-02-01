@@ -10,7 +10,7 @@ Deutsch ist die führende Sprache dieser Dokumentation. Alle Inhalte werden zuer
 
 Der Einstieg in die Dokumentation erfolgt über das zentrale Übersichts­dokument:
 
-→ [00-Overview-Homelab.md](00-Overview-Homelab.md)
+→ [00-Overview-Homelab.md](pages/00-Overview-Homelab.md)
 
 ---
 
@@ -34,4 +34,3 @@ Jeder Bereich enthält eigenständige Detaildokumente.
 Diese Dokumentation beschreibt den **tatsächlichen Ist-Zustand** des Homelabs.
 
 Undokumentierte Systeme, Annahmen oder implizite Abhängigkeiten gelten als nicht existent.
-
