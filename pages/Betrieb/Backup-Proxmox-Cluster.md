@@ -85,3 +85,15 @@ Pflichtkriterien:
 Backups können sensible Inhalte enthalten (Konfiguration, Schlüssel, Tokens in Configs).  
 Backup-Storage ist daher als **kritisch** zu behandeln (Zugriffskontrolle, Offline-/Immutable-Strategie nach Bedarf).
 
+
+---
+
+## Durchgeführte Restore-Tests (Ist)
+
+- Datum: 2026-02-09
+  - Quelle: vzdump-lxc-104-2026_02_09-18_47_22.tar.zst
+  - Restore: CT 104 → CT 9104 (Test-CTID)
+  - Isolation: net0 link_down=1 (keine externen Effekte)
+  - Smoke-Test: ddclient enabled + nach Start active (running)
+  - Hinweis: DNS/API-Fehler im Log erwartbar wegen link_down=1
+
