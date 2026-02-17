@@ -1,5 +1,7 @@
 ---
 title: "Proxmox-Cluster-Boot-ESP-Sync"
+---
+
 # Boot-Stack und ESP-Sync-Verhalten im Proxmox-Cluster (Ist-Zustand)
 
 ---
@@ -48,4 +50,3 @@ Bewertung:
 
 - Das ist kein Fehlerzustand, sondern ein deaktiviertes Feature.
 - Zielzustand (Ziel A): keine Änderung am System; nur Dokumentation des Ist-Zustands und der erwartbaren Warnung.
-
