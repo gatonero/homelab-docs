@@ -70,3 +70,11 @@ This overview serves as the **entry point** for the Operations section.
 
 Each linked document below expands on a specific operational domain and can be read independently, but together they form a complete operational model.
 
+
+---
+
+## Proxmox-Cluster
+
+- [Repo- und DNS-Harmonisierung](./Proxmox-Cluster-Repo-DNS.md)
+- [Boot-Stack und ESP-Sync (Ist)](./Proxmox-Cluster-Boot-ESP-Sync.md)
+

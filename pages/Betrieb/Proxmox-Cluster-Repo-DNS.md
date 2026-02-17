@@ -119,3 +119,10 @@ title: "Proxmox-Cluster-Repo-DNS"
 - APT-Repos sind auf allen Nodes vereinheitlicht und bereinigt.
 - Keine Beta-Test-Repos aktiv.
 - Enterprise-Repos bleiben als deaktivierte Referenz vorhanden.
+
+---
+
+## Weiterfuehrend
+
+- Boot-Stack und ESP-Sync (Ist): [Proxmox-Cluster-Boot-ESP-Sync](./Proxmox-Cluster-Boot-ESP-Sync.md)
+
