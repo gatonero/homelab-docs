@@ -1,4 +1,4 @@
-# Component: kpi
+# Component: dashboard
 
 ## Status
 
