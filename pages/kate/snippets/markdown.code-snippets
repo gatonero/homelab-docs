@@ -1,0 +1,82 @@
+{
+  "Bash code block": {
+    "prefix": "bash",
+    "body": [
+      "```bash",
+      "${1}",
+      "```"
+    ],
+    "description": "Bash code block"
+  },
+  "Completed checkbox": {
+    "prefix": "done",
+    "body": [
+      "- [x] ${1:Task}"
+    ],
+    "description": "Completed checkbox"
+  },
+  "Heading 1": {
+    "prefix": "h1",
+    "body": [
+      "# ${1:Title}"
+    ],
+    "description": "Heading 1"
+  },
+  "Heading 2": {
+    "prefix": "h2",
+    "body": [
+      "## ${1:Title}"
+    ],
+    "description": "Heading 2"
+  },
+  "Heading 3": {
+    "prefix": "h3",
+    "body": [
+      "### ${1:Title}"
+    ],
+    "description": "Heading 3"
+  },
+  "Note": {
+    "prefix": "note",
+    "body": [
+      "> **Hinweis**",
+      ">",
+      "> ${1:Text}"
+    ],
+    "description": "Note"
+  },
+  "Console output": {
+    "prefix": "shell",
+    "body": [
+      "```console",
+      "$ ${1}",
+      "```"
+    ],
+    "description": "Console output"
+  },
+  "Checkbox": {
+    "prefix": "todo",
+    "body": [
+      "- [ ] ${1:Task}"
+    ],
+    "description": "Checkbox"
+  },
+  "Warning": {
+    "prefix": "warn",
+    "body": [
+      "> **Warnung**",
+      ">",
+      "> ${1:Text}"
+    ],
+    "description": "Warning"
+  },
+  "YAML code block": {
+    "prefix": "yaml",
+    "body": [
+      "```yaml",
+      "${1}",
+      "```"
+    ],
+    "description": "YAML code block"
+  }
+}

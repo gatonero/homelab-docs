@@ -1,0 +1,57 @@
+{
+  "Docker Compose": {
+    "prefix": "compose",
+    "body": [
+      "services:",
+      "  ${1:app}:",
+      "    image: ${2:image}",
+      "    container_name: ${1:app}",
+      "    restart: unless-stopped"
+    ],
+    "description": "Docker Compose"
+  },
+  "Environment": {
+    "prefix": "env",
+    "body": [
+      "environment:",
+      "  TZ: Europe/Berlin"
+    ],
+    "description": "Environment"
+  },
+  "Healthcheck": {
+    "prefix": "health",
+    "body": [
+      "healthcheck:",
+      "  test: [\"CMD\", \"${1:true}\"]",
+      "  interval: 30s",
+      "  timeout: 10s",
+      "  retries: 3"
+    ],
+    "description": "Healthcheck"
+  },
+  "Docker Network": {
+    "prefix": "network",
+    "body": [
+      "networks:",
+      "  default:",
+      "    name: ${1:network}"
+    ],
+    "description": "Docker Network"
+  },
+  "Docker Ports": {
+    "prefix": "ports",
+    "body": [
+      "ports:",
+      "  - \"${1:8080}:80\""
+    ],
+    "description": "Docker Ports"
+  },
+  "Docker Volume": {
+    "prefix": "volume",
+    "body": [
+      "volumes:",
+      "  - ${1:source}:${2:target}"
+    ],
+    "description": "Docker Volume"
+  }
+}

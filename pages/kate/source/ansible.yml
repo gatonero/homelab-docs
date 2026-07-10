@@ -1,0 +1,63 @@
+snippets:
+
+  - trigger: play
+    description: Ansible Playbook
+    body: |
+      ---
+      - name: ${1:Playbook}
+        hosts: ${2:all}
+        become: true
+
+        tasks:
+
+  - trigger: task
+    description: Ansible Task
+    body: |
+      - name: ${1:Task}
+        ansible.builtin.${2:module}:
+          ${3}
+
+  - trigger: apt
+    description: Install package
+    body: |
+      - name: Install ${1:package}
+        ansible.builtin.apt:
+          name: ${1:package}
+          state: present
+          update_cache: true
+
+  - trigger: copy
+    description: Copy file
+    body: |
+      - name: Copy ${1:file}
+        ansible.builtin.copy:
+          src: ${2}
+          dest: ${3}
+          owner: root
+          group: root
+          mode: "0644"
+
+  - trigger: template
+    description: Template
+    body: |
+      - name: Deploy ${1:template}
+        ansible.builtin.template:
+          src: ${2}.j2
+          dest: ${3}
+
+  - trigger: service
+    description: Service
+    body: |
+      - name: Restart ${1:service}
+        ansible.builtin.service:
+          name: ${1:service}
+          state: restarted
+
+  - trigger: handler
+    description: Handler
+    body: |
+      handlers:
+        - name: Restart ${1:service}
+          ansible.builtin.service:
+            name: ${1:service}
+            state: restarted

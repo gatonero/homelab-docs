@@ -1,0 +1,98 @@
+snippets:
+
+  - trigger: vm
+    description: Virtual Machine
+    body: |
+      # ${1:VM-Name}
+
+      ## Zweck
+
+      ${2}
+
+      ## Host
+
+      ${3}
+
+      ## Betriebssystem
+
+      ${4}
+
+      ## CPU
+
+      ${5}
+
+      ## RAM
+
+      ${6}
+
+      ## Storage
+
+      ${7}
+
+      ## Netzwerk
+
+      ${8}
+
+      ## Dienste
+
+      ${9}
+
+      ## Backup
+
+      ${10}
+
+      ## Monitoring
+
+      ${11}
+
+      ## Änderungen
+
+      ${12}
+
+  - trigger: service
+    description: Service
+    body: |
+      # ${1:Service}
+
+      ## Zweck
+
+      ${2}
+
+      ## URL
+
+      ${3}
+
+      ## Container
+
+      ${4}
+
+      ## Konfiguration
+
+      ${5}
+
+      ## Backup
+
+      ${6}
+
+      ## Monitoring
+
+      ${7}
+
+  - trigger: trouble
+    description: Troubleshooting
+    body: |
+      ## Problem
+
+      ${1}
+
+      ## Ursache
+
+      ${2}
+
+      ## Lösung
+
+      ${3}
+
+      ## Verifikation
+
+      ${4}

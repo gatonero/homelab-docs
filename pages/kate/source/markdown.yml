@@ -1,0 +1,61 @@
+snippets:
+
+  - trigger: h1
+    description: Heading 1
+    body: |
+      # ${1:Title}
+
+  - trigger: h2
+    description: Heading 2
+    body: |
+      ## ${1:Title}
+
+  - trigger: h3
+    description: Heading 3
+    body: |
+      ### ${1:Title}
+
+  - trigger: todo
+    description: Checkbox
+    body: |
+      - [ ] ${1:Task}
+
+  - trigger: done
+    description: Completed checkbox
+    body: |
+      - [x] ${1:Task}
+
+  - trigger: note
+    description: Note
+    body: |
+      > **Hinweis**
+      >
+      > ${1:Text}
+
+  - trigger: warn
+    description: Warning
+    body: |
+      > **Warnung**
+      >
+      > ${1:Text}
+
+  - trigger: bash
+    description: Bash code block
+    body: |
+      ```bash
+      ${1}
+      ```
+
+  - trigger: yaml
+    description: YAML code block
+    body: |
+      ```yaml
+      ${1}
+      ```
+
+  - trigger: shell
+    description: Console output
+    body: |
+      ```console
+      $ ${1}
+      ```

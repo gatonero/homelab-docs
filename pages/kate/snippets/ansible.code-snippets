@@ -1,0 +1,78 @@
+{
+  "Install package": {
+    "prefix": "apt",
+    "body": [
+      "- name: Install ${1:package}",
+      "  ansible.builtin.apt:",
+      "    name: ${1:package}",
+      "    state: present",
+      "    update_cache: true"
+    ],
+    "description": "Install package"
+  },
+  "Copy file": {
+    "prefix": "copy",
+    "body": [
+      "- name: Copy ${1:file}",
+      "  ansible.builtin.copy:",
+      "    src: ${2}",
+      "    dest: ${3}",
+      "    owner: root",
+      "    group: root",
+      "    mode: \"0644\""
+    ],
+    "description": "Copy file"
+  },
+  "Handler": {
+    "prefix": "handler",
+    "body": [
+      "handlers:",
+      "  - name: Restart ${1:service}",
+      "    ansible.builtin.service:",
+      "      name: ${1:service}",
+      "      state: restarted"
+    ],
+    "description": "Handler"
+  },
+  "Ansible Playbook": {
+    "prefix": "play",
+    "body": [
+      "---",
+      "- name: ${1:Playbook}",
+      "  hosts: ${2:all}",
+      "  become: true",
+      "",
+      "  tasks:"
+    ],
+    "description": "Ansible Playbook"
+  },
+  "Service": {
+    "prefix": "service",
+    "body": [
+      "- name: Restart ${1:service}",
+      "  ansible.builtin.service:",
+      "    name: ${1:service}",
+      "    state: restarted"
+    ],
+    "description": "Service"
+  },
+  "Ansible Task": {
+    "prefix": "task",
+    "body": [
+      "- name: ${1:Task}",
+      "  ansible.builtin.${2:module}:",
+      "    ${3}"
+    ],
+    "description": "Ansible Task"
+  },
+  "Template": {
+    "prefix": "template",
+    "body": [
+      "- name: Deploy ${1:template}",
+      "  ansible.builtin.template:",
+      "    src: ${2}.j2",
+      "    dest: ${3}"
+    ],
+    "description": "Template"
+  }
+}

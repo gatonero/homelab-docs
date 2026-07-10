@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets><snippet><trigger>h1</trigger><description>Heading 1</description><body># ${cursor}
+</body></snippet><snippet><trigger>h2</trigger><description>Heading 2</description><body>## ${cursor}
+</body></snippet><snippet><trigger>h3</trigger><description>Heading 3</description><body>### ${cursor}
+</body></snippet><snippet><trigger>todo</trigger><description>Checkbox</description><body>- [ ] ${cursor}
+</body></snippet><snippet><trigger>done</trigger><description>Completed checkbox</description><body>- [x] ${cursor}
+</body></snippet><snippet><trigger>bash</trigger><description>Bash code block</description><body>```bash
+${cursor}
+```
+</body></snippet><snippet><trigger>yaml</trigger><description>YAML code block</description><body>```yaml
+${cursor}
+```
+</body></snippet></snippets>
