@@ -1,14 +1,16 @@
-# Larapaper BYOS – Phase 3 Zusammenfassung
+# Larapaper BYOS – Phase 3 Abschluss
 
 ## Ziel
 
-Analyse der TRMNL-Blade-Komponenten und der Render-Pipeline.
+Phase 3 diente der Analyse der Larapaper-Renderpipeline und der TRMNL-Blade-Komponenten als Grundlage für den Aufbau einer eigenen Homelab-Komponentenbibliothek.
 
 ---
 
 # Verifizierte Erkenntnisse
 
 ## Render Pipeline
+
+Die Renderpipeline wurde vollständig nachvollzogen.
 
 Plugin::render()
 
@@ -28,21 +30,46 @@ trmnl-layouts.single
 
 Plugin-Markup
 
----
+Der äußere Screen wird automatisch vom Framework erzeugt.
 
-## Plugin-Struktur
-
-Ein Plugin beginnt mit
+Plugins beginnen daher mit
 
 <x-trmnl::view>
 
-Der äußere Screen wird automatisch erzeugt.
+nicht mit
+
+<x-trmnl::screen>.
 
 ---
 
-## Verifizierte Komponenten
+## Blade Rendering
 
-- view
+Verifiziert:
+
+- Blade::render() wird für render_markup verwendet.
+- render_markup_view rendert direkt eine Blade-View.
+- @include() funktioniert innerhalb von Plugins.
+- Blade-Komponenten werden innerhalb von Includes korrekt kompiliert.
+
+---
+
+## Plugin-Kontext
+
+Blade erhält mindestens folgende Variablen:
+
+- size
+- data
+- config
+- trmnl (nur render_markup)
+
+---
+
+## Komponentenarchitektur
+
+Die Komponenten wurden systematisch untersucht.
+
+Begonnene Analyse:
+
 - layout
 - grid
 - col
@@ -53,22 +80,38 @@ Der äußere Screen wird automatisch erzeugt.
 - content
 - title-bar
 
+Die Detailergebnisse befinden sich in
+
+docs/04-components.md
+
+und den jeweiligen Beispielen unter
+
+examples/
+
 ---
 
 ## Projektstruktur
 
+Die Dokumentation trennt konsequent zwischen
+
 examples/
 
-enthält reproduzierbare Tests.
+=
+
+reproduzierbare Tests
+
+und
 
 docs/
 
-enthält ausschließlich verifizierte Erkenntnisse.
+=
+
+verifizierte Erkenntnisse.
 
 ---
 
 ## Ergebnis
 
-Die Grundlagen für eine eigene Homelab-Komponentenbibliothek sind vorhanden.
+Die technische Grundlage für eine eigene Homelab-Komponentenbibliothek wurde geschaffen.
 
-Weitere Entwicklung erfolgt auf Basis der dokumentierten Komponenten.
+Die weitere Entwicklung erfolgt auf Basis der dokumentierten Komponenten und der verifizierten Renderarchitektur.
