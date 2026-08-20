@@ -1,31 +1,45 @@
-# WordPress elselevy7.org – Betriebs- und Benutzerhandbuch
 
-**Version:** 4.0
+# WordPress elselevy7.org – Benutzerhandbuch
+
+**Version:** 4.1
 **Stand:** 20.08.2026
-**Status:** Produktionssystem
 
-## 1. Systemübersicht
+## Änderungen Version 4.1
 
-| Komponente | Wert |
-|------------|------|
-| Hostname | elselevy7-org.home.arpa |
-| Domain | https://elselevy7.org |
-| Betriebssystem | Debian 12 |
-| Webserver | NGINX 1.22 |
-| PHP | PHP 8.4-FPM |
-| WordPress | 7.1 |
+- WordPress 7.1 erfolgreich aktualisiert.
+- HTTP-500 nach Update analysiert und behoben.
+- `wp-config.php` Rechte dauerhaft auf `root:www-data 640`.
+- NGINX auf Debian-Standard (`sites-available` + Symlink in `sites-enabled`) umgestellt.
+- JSON-Endpunkt `/status/wordpress-security.json` produktiv.
+- Recovery-Prozedur für `wordpress-security-check.sh` ergänzt.
+- Homelab-Arbeitsregeln (Eye-Catcher, vollständige `cat <<'EOF'` Dateien).
 
-## 2. Architektur
+## Incident: HTTP 500 nach WordPress-Update
 
-- Cloudflare → NGINX → PHP-FPM → WordPress
-- JSON-Monitoring-Endpunkt über NGINX.
-- Security-Check erzeugt `/var/lib/wordpress-security/status.json`.
+### Ursache
 
-## 3. NGINX-Standard
+`wp-config.php` gehörte `root:root` und war für PHP-FPM nicht lesbar.
+
+### Lösung
+
+```bash
+chown root:www-data /var/www/html/wp-config.php
+chmod 640 /var/www/html/wp-config.php
+```
+
+### Prüfung
+
+```bash
+curl -I https://elselevy7.org/
+```
+
+Erwartung: `HTTP/2 200`.
+
+## NGINX-Standard
 
 ### Verzeichnisstruktur
 
-```text
+```
 /etc/nginx/
 ├── sites-available/
 │   └── elselevy7.org
@@ -36,60 +50,35 @@
 
 ### Regeln
 
-1. Änderungen ausschließlich in `sites-available`.
-2. `sites-enabled` enthält nur Symlinks.
-3. Backups nach `/root/nginx-backups/`.
+1. Nur `sites-available` bearbeiten.
+2. `sites-enabled` enthält ausschließlich Symlinks.
+3. Backups liegen **nicht** in `sites-enabled`.
 
-## 4. Health- und Monitoring-Endpunkte
+## JSON-Endpunkt
 
-| URL | Zweck |
-|-----|------|
-| `/healthz` | NGINX Healthcheck |
-| `/status/wordpress-security.json` | Home Assistant / TRMNL / Uptime Kuma |
-
-## 5. WordPress Security Check
-
-Pfad:
-
-```text
-/usr/local/sbin/wordpress-security-check.sh
+```
+https://elselevy7.org/status/wordpress-security.json
 ```
 
-JSON-Datei:
+Lieferant:
 
-```text
+```
 /var/lib/wordpress-security/status.json
 ```
 
-## 6. Standardprüfungen
+## Recovery `wordpress-security-check.sh`
 
 ```bash
-/usr/local/sbin/wordpress-security-check.sh
-curl -s https://elselevy7.org/status/wordpress-security.json | jq
-wp --path=/var/www/html --allow-root core verify-checksums
+cp /usr/local/sbin/wordpress-security-check.sh.v2.1.backup    /usr/local/sbin/wordpress-security-check.sh
+chmod 755 /usr/local/sbin/wordpress-security-check.sh
 ```
 
-## 7. Backup und Wiederherstellung
+## Aktueller Produktivstand
 
-Vor jeder Änderung:
-
-```bash
-cp DATEI DATEI.backup
-```
-
-Danach:
-
-```bash
-nginx -t && systemctl reload nginx
-```
-
-## 8. Home Assistant Integration
-
-Home Assistant liest ausschließlich den JSON-Endpunkt.
-
-## 9. Homelab-Regeln
-
-- Vollständige Dateien per `cat <<'EOF'`.
-- Keine Diffs.
-- Keine Platzhalter.
-- Eye-Catcher in allen technischen Anleitungen.
+| Komponente | Status |
+|------------|--------|
+| WordPress | 7.1 |
+| PHP | 8.4-FPM |
+| NGINX | OK |
+| Security Check | Version 2.1 |
+| JSON-Endpunkt | HTTP 200 |

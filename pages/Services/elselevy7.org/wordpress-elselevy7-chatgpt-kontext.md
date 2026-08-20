@@ -1,53 +1,37 @@
+
 # WordPress elselevy7.org – ChatGPT-Kontext
 
-**Version:** 4.0
+**Version:** 4.1
 **Stand:** 20.08.2026
 
-## Infrastruktur
+## Produktivstand
 
-| Komponente | Wert |
-|------------|------|
-| Host | elselevy7-org.home.arpa |
-| NGINX | 1.22 |
-| PHP | 8.4-FPM |
-| WordPress | 7.1 |
+- WordPress 7.1.
+- Security Check 2.1.
+- JSON-Endpunkt produktiv.
+- NGINX Debian-Standard.
 
-## Verbindliche Konventionen
+## Persistente Homelab-Regeln
 
-### Dateibearbeitung
+### H-001
 
-- Immer Backup.
-- Immer komplette Datei.
-- Immer `cat <<'EOF'`.
-- Keine Teil-Patches.
+Kurze und mittlere Dateien vollständig als `cat <<'EOF'`.
 
-### NGINX
+### H-002
 
-- `sites-available` = Single Source of Truth.
-- `sites-enabled` = ausschließlich Symlinks.
-- Backups außerhalb von `sites-enabled`.
+Kein geöffneter `cat <<'EOF'` ohne abschließendes `EOF`.
 
-### Monitoring
+### H-003
 
-JSON-Endpunkt:
+Keine Platzhalter (`...`) in installierbaren Dateien.
 
-```text
-https://elselevy7.org/status/wordpress-security.json
-```
+### H-004
 
-Liefert den Inhalt von:
+Große Skripte modularisieren oder als Datei liefern.
 
-```text
-/var/lib/wordpress-security/status.json
-```
+### H-005
 
-## WordPress Security Check
-
-Produktive Version: 2.1
-
-## Dokumentationsstandard
-
-Technische Antworten beginnen immer mit:
+Jede technische Antwort verwendet Eye-Catcher:
 
 - 🖥️ ZIELSYSTEM
 - 📄 DATEI
@@ -56,3 +40,16 @@ Technische Antworten beginnen immer mit:
 - 🔎 PRÜFUNG
 - ✅ ERGEBNIS
 - ▶️ NÄCHSTER BEFEHL
+
+## Wichtige Pfade
+
+```
+/usr/local/sbin/wordpress-security-check.sh
+/etc/wordpress-security/
+/var/lib/wordpress-security/status.json
+/etc/nginx/sites-available/elselevy7.org
+```
+
+## Monitoring
+
+Home Assistant und TRMNL lesen ausschließlich den JSON-Endpunkt.
