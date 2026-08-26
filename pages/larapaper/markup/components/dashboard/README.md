@@ -1,17 +1,36 @@
-# Component: dashboard
+# Dashboard Component
 
 ## Status
 
-Planned
+Draft
 
-## Zweck
+## Ziel
 
-Noch nicht dokumentiert.
+Stellt den standardisierten Rahmen eines Homelab-Screens bereit.
+
+## Verantwortung
+
+- erzeugt den äußeren View-Container
+- erzeugt das Layout
+- erzeugt die Title Bar
+- enthält keine Business-Logik
 
 ## API
 
-Noch offen.
+Eingaben
+
+- title
+- instance
+
+Slot
+
+Beliebiger Blade-Inhalt.
 
 ## Beispiel
 
-Noch offen.
+<x-homelab::dashboard>
+
+    ...
+
+</x-homelab::dashboard>
+
