@@ -356,3 +356,20 @@ Kalenderdaten werden über `input_text`-Helper bereitgestellt.
 ### Referenzbestand erhalten
 
 Golden Reference dient als dokumentierter, funktionierender Ausgangspunkt für spätere Änderungen.
+
+## Externe Komponente: TRMNL Home Assistant Add-on
+
+TRMNL-X verwendet das TRMNL Home Assistant Add-on ausschließlich als Rendering- und Übertragungsdienst.
+
+### Aufgabe des Add-ons
+
+- Öffnet die Lovelace-View im Kiosk-Modus.
+- Erstellt einen Screenshot des Dashboards.
+- Optimiert das Bild für ePaper (Dithering).
+- Überträgt das Bild per Webhook an das TRMNL X Display.
+
+### Nicht Bestandteil dieser Dokumentation
+
+Installation, Konfiguration, Web UI, Zeitpläne, Webhooks und Troubleshooting werden nicht dokumentiert, sondern in der offiziellen Projektdokumentation gepflegt.
+
+**Offizielle Dokumentation:** https://github.com/usetrmnl/trmnl-home-assistant
