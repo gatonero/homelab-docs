@@ -100,9 +100,11 @@ Die produktive View besteht aus genau vier Karten.
 
 | Pfad | Aufgabe |
 |------|---------|
-| `/config/trmnl/cards/` | Produktive Karten des Dashboards. |
-| `/config/trmnl/golden-reference/trmnl-x/` | Referenzversionen der Karten. |
-| `/config/packages/trmnl_calendar.yaml` | Gemeinsame Kalender-Pipeline. |
+| `/config/trmnl/cards/` | Produktive Karten des TRMNL-X Dashboards. |
+| `/config/trmnl/golden-reference/trmnl-x/` | Referenzversionen der vier TRMNL-X Karten. |
+| `/config/packages/trmnl_calendar.yaml` | Gemeinsame Kalender-Pipeline für Termine, Feiertage und Jahrestage. |
+| `pages/Services/Home-Assistant/TRMNL-X.md` | Architektur- und Systemdokumentation von TRMNL-X. |
+| `pages/Services/Home-Assistant/TRMNL-OG.md` | Golden Reference des ursprünglichen TRMNL-OG Dashboards. |
 
 ### Karten
 
@@ -285,11 +287,15 @@ Die Darstellung ist auf ein 16-Graustufen-ePaper abgestimmt.
 
 ## Golden Reference
 
-Verzeichnis:
+Die Referenzkonfiguration des ursprünglichen TRMNL-Dashboards ist in `TRMNL-OG.md` dokumentiert.
+
+Für TRMNL-X existieren zusätzlich Referenzversionen der vier produktiven Karten unter:
 
 ```text
 /config/trmnl/golden-reference/trmnl-x/
 ```
+
+Dieses Verzeichnis dient ausschließlich als Referenzbestand der TRMNL-X-Karten und wird nicht produktiv verwendet.
 
 ### Zweck
 
