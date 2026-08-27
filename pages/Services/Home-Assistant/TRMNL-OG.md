@@ -1,4 +1,4 @@
-# TRMNL Dashboard – Golden Reference
+# TRMNL-OG
 
 Stand: 26.08.2026
 
