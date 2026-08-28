@@ -1,381 +1,441 @@
 # TRMNL-X
 
-## Home Assistant Dashboard für das TRMNL X Display
+**Golden Reference V1.2 (WAF Edition)**
+
+Status: Produktiv · Freigegeben
 
 ---
 
 ## Zweck
 
-TRMNL-X ist ein eigenständiges Lovelace-Dashboard für das TRMNL X ePaper-Display. Es stellt ausgewählte Informationen aus Home Assistant in einer für das Display optimierten Darstellung bereit.
+TRMNL-X ist das produktive Dashboard für das **TRMNL X High Density ePaper Display** im Homelab.
 
-Das Dashboard ist bewusst schlank aufgebaut:
+### Referenzhardware
 
-- vier spezialisierte Karten
-- zentrale Datenaufbereitung in einem Package
-- keine Geschäftslogik innerhalb der Karten
-- optimiert für den Screenshot-Workflow des TRMNL Home Assistant Add-ons
+| Merkmal | Wert |
+|---------|------|
+| Display | TRMNL X High Density ePaper |
+| Displaygröße | **10,3 Zoll** |
+| Auflösung | **1872 × 1404 Pixel** |
+| Farbtiefe | **16 Graustufen** |
+| Vollständiger Refresh | **≤ 1,2 Sekunden** |
+| Partieller Refresh | **≤ 200 Millisekunden** |
 
-TRMNL-X ist unabhängig vom übrigen Home-Assistant-Dashboard.
+### Designziele
 
----
-
-## Architektur
-
-```text
-                    Home Assistant
-                           │
-        ┌──────────────────┴──────────────────┐
-        │                                     │
- Wetterintegration                     Google Kalender
-        │                                     │
-        └──────────────────┬──────────────────┘
-                           │
-              Package: trmnl_calendar.yaml
-                           │
-      ┌────────────────────┼────────────────────┐
-      │                    │                    │
-input_text.trmnl_   input_text.trmnl_   input_text.trmnl_
-next_events         x_birthdays         next_holidays
-      │                    │                    │
-      ├──────────────┬─────┴─────────────┬──────┤
-      │              │                   │
-calendar.yaml  anniversaries.yaml  holidays.yaml
-      │
-weather.yaml (direkte Wetterdaten)
-      │
-      ▼
-Dashboard „TRMNL X“
-      │
-TRMNL Home Assistant Add-on
-      │
-TRMNL X Display
-```
-
-### Grundprinzip
-
-Das Dashboard rendert ausschließlich bereits vorbereitete Daten.
-
-- Kalenderdaten werden im Package formatiert.
-- Wetterdaten stammen direkt aus Wetter-Entitäten.
-- Die Karten enthalten ausschließlich Präsentationslogik.
+- maximale Lesbarkeit auf einem 16-Graustufen-ePaper-Display.
+- hohe Informationsdichte ohne Überladung.
+- klare Trennung zwischen Datenbereitstellung und Darstellung.
+- identisches Layout (`card_mod`) auf allen Karten.
+- optimiert für schnelle partielle Refreshes mit möglichst wenig Flackern.
 
 ---
 
-## Dashboard-Struktur
+# Architektur
 
-Die produktive View besteht aus genau vier Karten.
+TRMNL-X besteht aus vier klar getrennten Schichten.
 
-```yaml
-###########################################################################
-# TRMNL X
-###########################################################################
-- title: TRMNL X
-  path: x
-  icon: mdi:tablet-dashboard
-  type: sections
-  max_columns: 2
-
-  kiosk_mode:
-    hide_header: true
-    hide_sidebar: true
-
-  sections:
-    - !include /config/trmnl/cards/weather.yaml
-    - !include /config/trmnl/cards/calendar.yaml
-    - !include /config/trmnl/cards/anniversaries.yaml
-    - !include /config/trmnl/cards/holidays.yaml
-```
-
-### Eigenschaften
-
-- Dashboard-Typ: `sections`
-- Zwei Spalten (`max_columns: 2`)
-- Kiosk-Modus aktiviert.
-- Keine Sidebar.
-- Kein Header.
-
----
+| Ebene | Aufgabe |
+|-------|----------|
+| Templates | Erzeugen der darzustellenden Message-Sensoren. |
+| Automation | Bereitet Kalender- und Jahrestage-Daten auf. |
+| Dashboard Cards | Präsentation der Sensoren. Keine Geschäftslogik. |
+| View | Anordnung der Karten auf dem Display. |
 
 ## Verzeichnisstruktur
 
-| Pfad | Aufgabe |
-|------|---------|
-| `/config/trmnl/cards/` | Produktive Karten des TRMNL-X Dashboards. |
-| `/config/trmnl/golden-reference/trmnl-x/` | Referenzversionen der vier TRMNL-X Karten. |
-| `/config/packages/trmnl_calendar.yaml` | Gemeinsame Kalender-Pipeline für Termine, Feiertage und Jahrestage. |
-| `pages/Services/Home-Assistant/TRMNL-X.md` | Architektur- und Systemdokumentation von TRMNL-X. |
-| `pages/Services/Home-Assistant/TRMNL-OG.md` | Golden Reference des ursprünglichen TRMNL-OG Dashboards. |
-
-### Karten
-
-| Datei | Inhalt |
-|-------|--------|
-| `weather.yaml` | Wetterübersicht. |
-| `calendar.yaml` | Kommende Termine. |
-| `anniversaries.yaml` | Geburtstage, Hochzeiten und Gedenktage. |
-| `holidays.yaml` | Kommende Feiertage. |
+```text
+/config/
+├── packages/
+│   └── trmnl_calendar.yaml
+│
+├── templates/
+│   ├── weather.yaml
+│   ├── calendar.yaml
+│   ├── anniversaries.yaml
+│   └── holidays.yaml
+│
+├── trmnl/
+│   ├── cards/
+│   │   ├── weather.yaml
+│   │   ├── calendar.yaml
+│   │   ├── anniversaries.yaml
+│   │   └── holidays.yaml
+│   │
+│   ├── views/
+│   │   └── trmnl-x.yaml
+│   │
+│   └── golden-reference/
+│       ├── trmnl-og/
+│       └── trmnl-x/
+│           ├── README.md
+│           ├── weather.yaml
+│           ├── calendar.yaml
+│           ├── anniversaries.yaml
+│           ├── holidays.yaml
+│           └── view.yaml
+```
 
 ---
+
+# Dashboard
+
+Die View besteht aus vier Karten.
+
+| Position | Karte | Datenquelle |
+|----------|-------|-------------|
+| Links oben | Wetter | `templates/weather.yaml` |
+| Rechts oben | Kalender | `packages/trmnl_calendar.yaml` + `templates/calendar.yaml` |
+| Links unten | Jahrestage | `packages/trmnl_calendar.yaml` + `templates/anniversaries.yaml` |
+| Rechts unten | FEIERTG. & FERIEN | `templates/holidays.yaml` |
+
+Alle Karten besitzen identisches Layout und identische Typografie.
+
+---
+
+# Karte Wetter
+
+**Dateien**
+
+- `templates/weather.yaml`
+- `cards/weather.yaml`
+
+## Datenfluss
+
+OpenWeatherMap, GW1100A und DWD-Warnsensoren werden in `templates/weather.yaml` zu Anzeige-Sensoren zusammengeführt.
+
+## Sensoren
+
+- `sensor.trmnl_weather_temperature`
+- `sensor.trmnl_weather_message_1`
+- `sensor.trmnl_weather_message_2`
+- `sensor.trmnl_weather_message_3`
+- `sensor.trmnl_weather_message_4`
+- `sensor.trmnl_weather_message_5`
+- `sensor.trmnl_weather_message_6`
+
+## Darstellung
+
+- große Temperatur links oben,
+- Wetterzustand,
+- DWD-Warnhinweis,
+- sechs feste Message-Zeilen,
+- gemeinsamer Footer.
+
+---
+
+# Karte Kalender
+
+**Dateien**
+
+- `packages/trmnl_calendar.yaml`
+- `templates/calendar.yaml`
+- `cards/calendar.yaml`
+
+## Datenfluss
+
+```text
+calendar.christoph_schwaeppe_gmail_com
+        │
+        ▼
+automation.trmnl_calendar_update
+        │
+        ▼
+input_text.trmnl_x_events
+        │
+        ▼
+templates/calendar.yaml
+        │
+        ▼
+sensor.trmnl_calendar_message_1 ... 6
+        │
+        ▼
+cards/calendar.yaml
+```
+
+## Automation
+
+**Automation**
+
+`automation.trmnl_calendar_update`
+
+**Friendly Name**
+
+`TRMNL Calendar Update`
+
+## Aufgabe
+
+Alle 15 Minuten werden die nächsten Termine aus dem Google-Kalender gelesen.
+
+## Aufbereitungsregeln
+
+- Zeitraum: 30 Tage.
+- Ganztagstermine ohne Uhrzeit.
+- Termine mit Uhrzeit als `DD.MM. HH:MM`.
+- Lange Titel werden gekürzt.
+- Häufige Bezeichnungen werden vereinheitlicht.
+
+Die Karte enthält keinerlei Logik.
+
+---
+
+# Karte Jahrestage
+
+**Dateien**
+
+- `packages/trmnl_calendar.yaml`
+- `templates/anniversaries.yaml`
+- `cards/anniversaries.yaml`
+
+## Datenfluss
+
+```text
+calendar.geburtstage_01
+        │
+        ▼
+automation.trmnl_calendar_update
+        │
+        ▼
+input_text.trmnl_x_birthdays
+        │
+        ▼
+templates/anniversaries.yaml
+        │
+        ▼
+sensor.trmnl_anniversaries_message_1
+sensor.trmnl_anniversaries_message_2
+sensor.trmnl_anniversaries_message_3
+sensor.trmnl_anniversaries_message_4
+sensor.trmnl_anniversaries_message_5
+sensor.trmnl_anniversaries_message_6
+sensor.trmnl_anniversaries_footer
+        │
+        ▼
+cards/anniversaries.yaml
+```
+
+## Aufgabe der Automation
+
+Die Automation liest den Kalender `calendar.geburtstage_01` und schreibt eine kompakte Darstellung nach `input_text.trmnl_x_birthdays`.
+
+## Aufbereitungsregeln
+
+Die Automation
+
+- entfernt Zusätze wie *Birthday* oder *Geburtstag*,
+- erkennt Geburtstage, Hochzeitstage und Gedenktage anhand des Kalendereintrags,
+- schreibt die ersten sechs Einträge in den Helfer `input_text.trmnl_x_birthdays`.
+
+## Darstellung
+
+`templates/anniversaries.yaml` zerlegt den Inhalt des Helfers in sechs Message-Sensoren sowie einen Footer-Sensor.
+
+| Sensor | Inhalt |
+|--------|--------|
+| `sensor.trmnl_anniversaries_message_1` | erster Jahrestag |
+| `sensor.trmnl_anniversaries_message_2` | zweiter Jahrestag |
+| `sensor.trmnl_anniversaries_message_3` | dritter Jahrestag |
+| `sensor.trmnl_anniversaries_message_4` | vierter Jahrestag |
+| `sensor.trmnl_anniversaries_message_5` | fünfter Jahrestag |
+| `sensor.trmnl_anniversaries_message_6` | sechster Jahrestag |
+| `sensor.trmnl_anniversaries_footer` | Wochentag, Datum und Uhrzeit |
+
+Die Karte enthält keine eigene Logik zur Interpretation der Jahrestage.
+
+---
+
+# Karte FEIERTG. & FERIEN
+
+**Dateien**
+
+- `templates/holidays.yaml`
+- `cards/holidays.yaml`
+
+## Datenfluss
+
+```text
+sensor.feiertag_de_nw
+sensor.schulferien_de_nw
+        │
+        ▼
+templates/holidays.yaml
+        │
+        ▼
+sensor.trmnl_holidays_message_1
+sensor.trmnl_holidays_message_2
+sensor.trmnl_holidays_message_3
+sensor.trmnl_holidays_message_4
+sensor.trmnl_holidays_message_5
+sensor.trmnl_holidays_message_6
+        │
+        ▼
+cards/holidays.yaml
+```
 
 ## Datenquellen
 
-### Übersicht
+Integration **Schulferien Deutschland** (Nordrhein-Westfalen).
 
-| Karte | Datenquelle |
-|-------|-------------|
-| `weather.yaml` | Wetterintegration (DWD/OpenWeather). |
-| `calendar.yaml` | `input_text.trmnl_next_events` |
-| `anniversaries.yaml` | `input_text.trmnl_x_birthdays` |
-| `holidays.yaml` | `input_text.trmnl_next_holidays` |
+Verwendete Sensoren:
 
-### Datenfluss
+- `sensor.feiertag_de_nw`
+- `sensor.schulferien_de_nw`
 
-Die drei Kalenderkarten verwenden dieselbe Datenpipeline.
+## Logik
 
-- Termine
-- Jahrestage
-- Feiertage
+Die komplette Logik befindet sich ausschließlich in `templates/holidays.yaml`.
 
-werden gemeinsam durch `trmnl_calendar.yaml` erzeugt.
+Das Template verwendet ausschließlich die beiden Sensoren der HACS-Integration und erzeugt sechs Message-Sensoren.
 
----
+Es werden **keine Input-Text-Helfer** verwendet.
 
-## Kalender-Pipeline (`trmnl_calendar.yaml`)
+## Darstellung
 
-### Aufgabe
+| Sensor | Inhalt |
+|--------|--------|
+| `sensor.trmnl_holidays_message_1` | nächster gesetzlicher Feiertag (Datum + Name) |
+| `sensor.trmnl_holidays_message_2` | Leerzeile (Abstand) |
+| `sensor.trmnl_holidays_message_3` | Leerzeile (Abstand vor Ferien) |
+| `sensor.trmnl_holidays_message_4` | Name der laufenden oder nächsten NRW-Schulferien |
+| `sensor.trmnl_holidays_message_5` | Zeitraum der Ferien (`TT.MM.–TT.MM.`) |
+| `sensor.trmnl_holidays_message_6` | Reserve (derzeit leer) |
 
-Das Package sammelt Kalenderereignisse und erzeugt Anzeige-Strings für das Dashboard.
+Die Karte besitzt **keinen Footer**.
 
-### Quellen
-
-- Google Kalender „Geburtstage“
-- Google Kalender „Christoph“
-- Deutscher Feiertagskalender
-
-### Ergebnis
-
-Das Package schreibt vorbereitete Zeichenketten in `input_text`-Helper.
-
-| Helper | Verwendung |
-|--------|------------|
-| `input_text.trmnl_next_events` | Termine |
-| `input_text.trmnl_x_birthdays` | Jahrestage |
-| `input_text.trmnl_next_holidays` | Feiertage |
-
-Die Karten lesen ausschließlich diese Helper.
+Das im gemeinsamen `card_mod` vorhandene `.footer`-CSS wird von dieser Karte derzeit nicht verwendet.
 
 ---
 
-## Karte: Wetter
+# Einheitliches Kartenlayout
 
-### Zweck
+Alle vier Karten besitzen identisches `card_mod`.
 
-Darstellung der aktuellen Wetterlage auf TRMNL X.
+Gemeinsame Eigenschaften
 
-### Inhalte
+- identische Kartenhöhe,
+- identische Innenabstände,
+- identische Typografie,
+- identischer `card-body`,
+- sechs Message-Zeilen als gemeinsames Layoutprinzip.
 
-- Temperatur
-- Wetterzustand
-- Tagesprognose
-- DWD-Warnstatus
+Besonderheit:
 
-### Datenquelle
-
-Direkte Wetter-Entitäten aus Home Assistant.
-
-Die Karte verarbeitet keine Wetterdaten selbst.
+- Wetter, Kalender und Jahrestage verwenden einen Footer.
+- FEIERTG. & FERIEN verwendet keinen Footer.
 
 ---
 
-## Karte: Kalender
+# Golden Reference
 
-### Zweck
+Referenzverzeichnis
 
-Anzeige der nächsten Termine.
+`/config/trmnl/golden-reference/trmnl-x/`
 
-### Datenquelle
+Enthält den vollständigen Satz der freigegebenen produktiven Dashboard-Dateien.
 
-`input_text.trmnl_next_events`
+## Aktualisierung der Golden Reference
 
-### Darstellung
+```bash
+cp -f /config/trmnl/cards/weather.yaml \
+      /config/trmnl/golden-reference/trmnl-x/weather.yaml
 
-- Liste der nächsten Termine.
-- Bereits formatiert.
-- Zeitinformationen werden unverändert übernommen.
+cp -f /config/trmnl/cards/calendar.yaml \
+      /config/trmnl/golden-reference/trmnl-x/calendar.yaml
 
----
+cp -f /config/trmnl/cards/anniversaries.yaml \
+      /config/trmnl/golden-reference/trmnl-x/anniversaries.yaml
 
-## Karte: Jahrestage
+cp -f /config/trmnl/cards/holidays.yaml \
+      /config/trmnl/golden-reference/trmnl-x/holidays.yaml
 
-### Zweck
-
-Anzeige kommender Geburtstage, Hochzeiten und Gedenktage.
-
-### Datenquelle
-
-`input_text.trmnl_x_birthdays`
-
-### Darstellung
-
-Die Karte
-
-1. liest den Helper,
-2. trennt die Einträge an `|`,
-3. zeigt maximal sechs Einträge.
-
-### Anzeigeformat
-
-Beispiele:
-
-```text
-🎂 04.10. André Marjanović
-💍 11.12. Karl und Brigitte Wiegand
-🕯 03.03. …
+cp -f /config/trmnl/views/trmnl-x.yaml \
+      /config/trmnl/golden-reference/trmnl-x/view.yaml
 ```
 
-Am unteren Rand wird der Aktualisierungszeitpunkt angezeigt.
+---
 
-Format:
+# Betrieb
 
-```text
-Do 27.08.2026 08:15
+## Konfiguration prüfen
+
+```bash
+ha core check
 ```
 
-Die deutschen Wochentage werden lokal in der Karte erzeugt.
+## Home Assistant neu starten
 
----
-
-## Karte: Feiertage
-
-### Zweck
-
-Anzeige des nächsten gesetzlichen Feiertags.
-
-### Datenquelle
-
-`input_text.trmnl_next_holidays`
-
-### Darstellung
-
-- Name des Feiertags.
-- Datum.
-- Restliche Tage bis zum Feiertag (falls vom Package bereitgestellt).
-
----
-
-## Gestaltung der Karten
-
-Alle vier Karten folgen demselben Layoutprinzip.
-
-### Aufbau
-
-- `grid`-Karte
-- `markdown`-Karte
-- `card_mod` für Layout und Typografie
-
-### Einheitliche Gestaltung
-
-- große Überschrift (`h1`)
-- große Markdown-Schrift
-- kompakte Zeilenabstände
-- Zeitstempel als `sub`
-- optimierte Abstände für das TRMNL X Display
-
-Die Darstellung ist auf ein 16-Graustufen-ePaper abgestimmt.
-
----
-
-## Golden Reference
-
-Die Referenzkonfiguration des ursprünglichen TRMNL-Dashboards ist in `TRMNL-OG.md` dokumentiert.
-
-Für TRMNL-X existieren zusätzlich Referenzversionen der vier produktiven Karten unter:
-
-```text
-/config/trmnl/golden-reference/trmnl-x/
+```bash
+ha core restart
 ```
 
-Dieses Verzeichnis dient ausschließlich als Referenzbestand der TRMNL-X-Karten und wird nicht produktiv verwendet.
+---
 
-### Zweck
+# Wartung
 
-Golden Reference enthält funktionierende Referenzversionen aller produktiven Karten.
+## Neue Karte hinzufügen
 
-### Regeln
+1. Template erstellen.
+2. Message-Sensoren erzeugen.
+3. Karte unter `cards/` erstellen.
+4. Karte in `views/trmnl-x.yaml` einbinden.
+5. Golden Reference aktualisieren.
 
-- niemals produktiv bearbeiten
-- dient ausschließlich als Referenz
-- Aktualisierung nur nach erfolgreichem Test einer neuen Version
+## Automation erweitern
+
+Nur `packages/trmnl_calendar.yaml`.
+
+Darstellung gehört ausschließlich in Templates und Karten.
 
 ---
 
-## Rendering auf das TRMNL X Display
+# Home Assistant Betriebsregeln
 
-### Ablauf
+## HA-BusyBox-01
 
-1. Home Assistant öffnet die TRMNL-X-View im Kiosk-Modus.
-2. Das TRMNL Home Assistant Add-on erzeugt einen Screenshot.
-3. Der Screenshot wird für das Display optimiert.
-4. Das Bild wird per Webhook an das TRMNL X übertragen.
+Home Assistant OS SSH verwendet BusyBox.
 
-### Aufgabe des Dashboards
+GNU-Optionen wie `grep --include` stehen nicht zur Verfügung.
 
-Das Dashboard liefert ausschließlich die Darstellung.
+Verwendung:
 
-Die Kommunikation mit dem Display übernimmt das Add-on.
-
----
-
-## Wartung
-
-### Änderungen an einer Karte
-
-1. Datei unter `/config/trmnl/cards/` bearbeiten.
-2. Dashboard neu laden.
-3. Darstellung prüfen.
-4. Golden Reference bei stabilem Stand aktualisieren.
-
-### Änderungen an Kalenderdaten
-
-Änderungen erfolgen ausschließlich in
-
-```text
-/config/packages/trmnl_calendar.yaml
+```bash
+find /config -name "*.yaml" -exec grep -Hn "SUCHTEXT" {} \;
 ```
 
-Die Karten bleiben unverändert, solange die Helper dieselbe Schnittstelle bereitstellen.
+## HA-Storage-01
+
+Verwaiste Entitäten entfernen
+
+1. Konfigurationsquelle entfernen.
+2. `ha core stop`
+3. `core.entity_registry` bereinigen.
+4. `core.restore_state` bereinigen.
+5. `ha core start`
+6. Prüfung über die Supervisor API (`404 Not Found`).
 
 ---
 
-## Designprinzipien
+# Migration V1.1 → V1.2
 
-TRMNL-X folgt im Homelab drei einfachen Regeln.
+## Änderungen
 
-### Darstellung und Logik trennen
+- Wetter vollständig auf Message-Sensoren umgestellt.
+- Kalender vollständig auf Message-Sensoren umgestellt.
+- Jahrestage vollständig auf Message-Sensoren umgestellt.
+- FEIERTG. & FERIEN ersetzt die bisherige Feiertagskarte.
+- NRW-Schulferien über die HACS-Integration integriert.
+- Einheitliches `card_mod` auf allen Karten.
+- `TRMNL Calendar V3 Update` → `TRMNL Calendar Update`.
+- Automation-ID auf `trmnl_calendar_update` bereinigt.
+- `input_text.trmnl_x_holidays` entfernt.
+- `input_text.trmnl_next_holidays` entfernt.
 
-Karten enthalten nur Präsentation.
+---
 
-### Einheitliche Datenschnittstellen
+# Abnahme
 
-Kalenderdaten werden über `input_text`-Helper bereitgestellt.
+**Golden Reference V1.2 (WAF Edition)**
 
-### Referenzbestand erhalten
+Status: Freigegeben.
 
-Golden Reference dient als dokumentierter, funktionierender Ausgangspunkt für spätere Änderungen.
-
-## Externe Komponente: TRMNL Home Assistant Add-on
-
-TRMNL-X verwendet das TRMNL Home Assistant Add-on ausschließlich als Rendering- und Übertragungsdienst.
-
-### Aufgabe des Add-ons
-
-- Öffnet die Lovelace-View im Kiosk-Modus.
-- Erstellt einen Screenshot des Dashboards.
-- Optimiert das Bild für ePaper (Dithering).
-- Überträgt das Bild per Webhook an das TRMNL X Display.
-
-### Nicht Bestandteil dieser Dokumentation
-
-Installation, Konfiguration, Web UI, Zeitpläne, Webhooks und Troubleshooting werden nicht dokumentiert, sondern in der offiziellen Projektdokumentation gepflegt.
-
-**Offizielle Dokumentation:** https://github.com/usetrmnl/trmnl-home-assistant
+Abnahmekriterium: **100 % Wife Acceptance (WAF)**.
