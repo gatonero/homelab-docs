@@ -41,3 +41,18 @@ Nicht Bestandteil dieses Dokuments:
 - IF-* Infrastruktur-Befunde
 
 Diese werden im Golden Reference Index bzw. in den jeweiligen Referenzseiten geführt.
+
+
+### AD-021
+
+PKI V2 ersetzt ausschließlich Zertifikate für `home.arpa`-Dienste.
+
+
+### AD-022
+
+Hypervisor-PKI und Dienst-PKI werden strikt getrennt.
+
+
+### AD-023
+
+Die QNAP-System-CA bleibt außerhalb der Homelab-PKI.

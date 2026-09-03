@@ -51,3 +51,18 @@ Nicht Bestandteil dieses Dokuments:
 - IF-* Infrastruktur-Befunde
 
 Diese werden in den entsprechenden Referenzseiten geführt.
+
+
+### PR-060
+
+Chatname beginnt immer mit der AP-ID.
+
+
+### PR-061
+
+Jeder Arbeitsschritt dokumentiert HOST, ROLLE, SHELL und PATCHGRENZE.
+
+
+### PR-062
+
+Der Ausführungskontext für LXC/VM auf Proxmox wird eindeutig dokumentiert.

@@ -1,7 +1,7 @@
 # Golden Reference Index
 
 Stand: AP0.13
-Status: Golden Reference V2.0 (konsolidierter Regelindex)
+Status: Golden Reference V2.1 (konsolidierter Regelindex)
 
 ## Projekt-Baseline
 
@@ -47,7 +47,7 @@ Status: Golden Reference V2.0 (konsolidierter Regelindex)
 |----------|-------|--------|----------|
 | PM-010 | Dokumentationsbasis MCP API Reference | Gültig | Project Master |
 | PM-011 | Architekturentscheidungen Golden Reference | Gültig | Project Master |
-| PM-012 | Golden Reference V2.0 Konsolidierung | Gültig | Project Master |
+| PM-012 | Golden Reference V2.1 Konsolidierung | Gültig | Project Master |
 
 ---
 
@@ -70,3 +70,8 @@ Die Golden Reference konsolidiert ausschließlich freigegebene Entscheidungen au
 - Gültige PR-, AR-, DR- und IF-Regeln
 
 Es werden keine neuen Regeln definiert.
+
+
+## PKI-Inventur
+
+- PKI-Inventur M1 abgeschlossen.

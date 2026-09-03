@@ -16,3 +16,9 @@
 - PM-010 bis PM-012
 
 Keine neuen Regeln eingeführt.
+
+## AP0.15 – Golden Reference V2.1
+
+- PKI-Inventur Infrastruktur abgeschlossen.
+- PKI-Migrationsmatrix dokumentiert.
+- Golden Reference auf Version V2.1 angehoben.
